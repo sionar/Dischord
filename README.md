@@ -1,2 +1,2 @@
-# DiscordClone
+# Dischord
 Discord clone
