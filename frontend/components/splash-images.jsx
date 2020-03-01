@@ -26,7 +26,10 @@ const SplashImages = () => {
       <img src="/assets/splash-shapes-square.svg" className="splash-shape"  id="splash-shapes-square1"></img>
       <img src="/assets/splash-shapes-square.svg" className="splash-shape"  id="splash-shapes-square2"></img>
       <img src="/assets/splash-shapes-square.svg" className="splash-shape"  id="splash-shapes-square3"></img>
-
+      <img src="/assets/splash-float-bomb.svg" className="splash-image"  id="splash-float-bomb"></img>
+      <img src="/assets/splash-float-disk.svg" className="splash-image"  id="splash-float-disk"></img>
+      <img src="/assets/splash-float-coin.svg" className="splash-image"  id="splash-float-coin1"></img>
+      <img src="/assets/splash-float-coin.svg" className="splash-image"  id="splash-float-coin2"></img>
     </section>
   )
 };
