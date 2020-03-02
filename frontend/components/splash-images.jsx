@@ -19,8 +19,10 @@ const SplashImages = () => {
       <img src="/assets/splash-shapes-dot.svg" className="splash-shape"  id="splash-shapes-dot5"></img>
       <img src="/assets/splash-shapes-triangle.svg" className="splash-shape"  id="splash-shapes-triangle1"></img>
       <img src="/assets/splash-shapes-triangle.svg" className="splash-shape"  id="splash-shapes-triangle2"></img>
+      <img src="/assets/splash-shapes-triangle.svg" className="splash-shape"  id="splash-shapes-triangle3"></img>
       <img src="/assets/splash-shapes-circle.svg" className="splash-shape"  id="splash-shapes-circle1"></img>
       <img src="/assets/splash-shapes-circle.svg" className="splash-shape"  id="splash-shapes-circle2"></img>
+      <img src="/assets/splash-shapes-circle.svg" className="splash-shape"  id="splash-shapes-circle3"></img>
       <img src="/assets/splash-shapes-cross.svg" className="splash-shape"  id="splash-shapes-cross1"></img>
       <img src="/assets/splash-shapes-cross.svg" className="splash-shape"  id="splash-shapes-cross2"></img>
       <img src="/assets/splash-shapes-square.svg" className="splash-shape"  id="splash-shapes-square1"></img>

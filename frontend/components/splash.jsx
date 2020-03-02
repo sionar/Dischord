@@ -2,6 +2,7 @@ import React from 'react';
 import SplashHeader from './splash-header';
 import SplashBody from './splash-body';
 import SplashImages from './splash-images';
+import SplashFooter from './splash-footer';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -14,10 +15,10 @@ class Splash extends React.Component {
         <SplashHeader />
         <SplashBody />
         <SplashImages />
+        <SplashFooter />
       </div>
     )
   }
-
 }
 
 export default Splash;
