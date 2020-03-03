@@ -1,0 +1,115 @@
+#register-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#auth-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+
+}
+
+#fade-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color:rgba(0,0,0,1);
+  animation: background-fade 0.5s ease-in-out 0s 1 forwards;
+}
+
+@keyframes background-fade {
+  from { background-color:rgba(0,0,0,1) }
+  to { background-color:rgba(1,0,0,0) }
+}
+
+
+#register-form {
+  position: absolute;
+  max-width: 1480px;
+  width: 400px;
+  height: 412px;
+  padding: 40px;
+  border-radius: 5px;
+  background-color: #36393f;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#register-div-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 21px;
+}
+
+#register-form-label {
+  color: white;
+  font-size: 26px;
+  line-height: 32px;
+}
+.register-label {
+  font-size: 12px;
+  line-height: 16px;
+  color: hsla(0, 0%, 100%, 0.8);
+  margin-bottom: 8px;
+}
+
+.register-input {
+  box-sizing: border-box;
+  width: 400px;
+  height: 40px;
+  background-color: rgba(0,0,0, 0.15);
+  border: 1px solid rgba(0,0,0,0.4);
+  margin-bottom: 18px;
+  border-radius: 3px;
+  color: hsla(0, 0%, 100%, 0.8);
+  padding: 0px 10px;
+  font-size: 13.33px;
+}
+
+#register-form-submit-button {
+  box-sizing: border-box;
+  width: 400px;
+  height: 44px;
+  padding: 2px 16px;
+  background-color: #7289DA;
+  color: hsla(0, 0%, 100%, 0.8);
+  border: 1px solid rgba(0,0,0,0.4);
+  font-size: 16px;
+  border-radius: 3px;
+  margin: 2px 0px 5px 0px;
+}
+
+#register-div-bottom h3 {
+  color: #7289DA;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#register-div-bottom {
+  align-self: flex-start;
+}
+
+#register-div-bottom h4 {
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 12px;
+  margin-top: 25px;
+}
+
+#register-div-bottom span {
+  color: #7289DA;
+  font-weight: bold;
+}

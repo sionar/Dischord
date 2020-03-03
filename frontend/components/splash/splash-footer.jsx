@@ -6,7 +6,8 @@ const SplashFooter = () => {
     <div id="splash-footer-flex-container">
       <ul id="splash-footer-links-container">
         <Link to="/">
-          <img src="/assets/splash-header-logo.svg" id="splash-footer-logo"/>
+          <img src="/assets/splash-header-logo.svg" id="splash-footer-logo"
+          onClick={()=> document.documentElement.scrollTop = 0}/>
         </Link >
         <li>
           <ul className="splash-footer-links-ul">

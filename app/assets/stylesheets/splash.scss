@@ -170,20 +170,22 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  
 }
 
 #splash-footer-links-container {
   display:flex;
   flex-direction: row;
   height: 149px;
+  margin-top: 810px;
 }
 
 #splash-footer-background {
   width: 100%;
   min-height: 300px;
   position: relative;
-  bottom: -195px;
+  bottom: 370px;
+  z-index: -2;
 }
 
 #splash-footer-logo {
@@ -251,6 +253,7 @@ html {
   line-height: 15px;
   border-radius: 3px;
   cursor: pointer;
+  z-index: 1;
 }
 
 #splash-footer-signup-container h2 {
