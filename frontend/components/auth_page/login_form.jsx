@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
       password: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(field) {
@@ -18,9 +19,14 @@ class LoginForm extends React.Component {
     );
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.loginUser(this.state);
+  }
+
   render() {
     return (
-      <form id="login-form">
+      <form id="login-form" onSubmit={this.handleSubmit}>
         <div id="login-form-label">
           <h2 id="login-form-label">Welcome back!</h2>
           <h3 id="login-form-sublabel">We're so excited to see you again!</h3>

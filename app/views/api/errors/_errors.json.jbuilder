@@ -1,7 +1,7 @@
 json.errors do
   if flash[:errors]
-    json.session flash[:errors]
+    json.sessionErrors flash[:errors]
   else
-    json.session Array.new
+    json.sessionErrors Array.new
   end
 end

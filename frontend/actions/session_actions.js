@@ -20,12 +20,12 @@ export const receiveSessionErrors = (errors) => ({
 
 export const loginUser = user => dispatch => login(user)
   .then(response => dispatch(receiveCurrentUser(response.entities.users[response.session.id])))
-  .fail(response => dispatch(receiveSessionErrors(response.responseJSON.errors.session)));
+  .fail(response => dispatch(receiveSessionErrors(response.responseJSON.errors.sessionErrors)));
 
 export const logoutUser = () => dispatch => logout()
   .then(() => dispatch(logoutCurrentUser()))
-  .fail((response) => dispatch(receiveSessionErrors(response.errors.session)));
+  .fail((response) => dispatch(receiveSessionErrors(response.responseJSON.errors.sessionErrors)));
 
 export const signupUser = user => dispatch => signup(user)
-  .then(response => dispatch(receiveCurrentUser(response.users[response.session.id])))
-  .fail((response) => dispatch(receiveSessionErrors(response.responseJSON.errors.session)));
+  .then(response => dispatch(receiveCurrentUser(response.entities.users[response.session.id])))
+  .fail((response) => dispatch(receiveSessionErrors(response.responseJSON.errors.sessionErrors)));

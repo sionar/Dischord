@@ -3,9 +3,13 @@ import { connect } from 'react-redux';
 import { loginUser } from '../../actions/session_actions'
 import LoginForm from './login_form'
 
+const mapStateToProps = (state) => ({
+  errors: state.errors,
+})
+
 const mapDispatchToProps = dispatch => ({
   loginUser: (user) => dispatch(loginUser(user))
 });
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
 

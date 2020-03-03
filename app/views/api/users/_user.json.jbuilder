@@ -1,5 +1,5 @@
 json.entities do
-  if user.id
+  if user
     json.users do
       json.set! user.id do
         json.id user.id
@@ -7,17 +7,11 @@ json.entities do
         json.usertag user.usertag
       end
     end
-  else
-    json.users do
-      json.set! user.id do
-        json.id nil
-        json.username nil
-        json.usertag nil
-      end
-    end
   end
 end
 
-json.session do
-  json.id user.id
+if user 
+  json.session do
+    json.id user.id
+  end
 end

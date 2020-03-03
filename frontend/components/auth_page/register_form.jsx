@@ -10,6 +10,7 @@ class RegisterForm extends React.Component {
       password: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(field) {
@@ -18,9 +19,14 @@ class RegisterForm extends React.Component {
     );
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.signupUser(this.state);
+  }
+
   render() {
     return (
-      <form id="register-form">
+      <form id="register-form" onSubmit={this.handleSubmit}>
         <div id="register-div-label">
           <h2 id="register-form-label">Create an account</h2>
         </div>
@@ -28,7 +34,7 @@ class RegisterForm extends React.Component {
           <label className="register-label" id="register-form-label-email">EMAIL</label>
           <input className="register-input" onChange={this.handleChange("email")} type="text" value={this.state.email}/>              
           <label className="register-label" id="register-form-label-username">USERNAME</label>
-          <input className="register-input"  onChange={this.handleChange("username")}  type="text" value={this.state.username}/>              
+          <input className="register-input" onChange={this.handleChange("username")}  type="text" value={this.state.username}/>              
           <label className="register-label" id="register-form-label-password">PASSWORD</label>
           <input className="register-input"  onChange={this.handleChange("password")}  type="password" value={this.state.password}/>              
           <input type="submit" id="register-form-submit-button" value="Continue"/>
