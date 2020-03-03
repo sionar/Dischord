@@ -1,0 +1,131 @@
+#login-form {
+  position: absolute;
+  max-width: 1480px;
+  width: 400px;
+  height: 360px;
+  padding: 40px;
+  border-radius: 5px;
+  background-color: #36393f;
+  box-shadow: -5px -5px 5px rgba(0,0,0,0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login-form-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login-form-label {
+  color: white;
+  font-size: 26px;
+  line-height: 32px;
+}
+
+#login-form-sublabel {
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 8px;
+
+}
+
+#login-div-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 21px;
+}
+
+.login-label {
+  font-size: 12px;
+  line-height: 16px;
+  color: hsla(0, 0%, 100%, 0.8);
+  margin-bottom: 8px;
+}
+
+.login-input {
+  box-sizing: border-box;
+  width: 400px;
+  height: 40px;
+  background-color: rgba(0,0,0, 0.15);
+  border: 1px solid rgba(0,0,0,0.4);
+  margin-bottom: 18px;
+  border-radius: 3px;
+  color: hsla(0, 0%, 100%, 0.8);
+  padding: 0px 10px;
+  font-size: 13.33px;
+}
+
+.login-input:focus {
+  border: 1px solid #7289DA;
+  outline: none;
+}
+
+#login-form-input-password {
+  margin-bottom: 0px;
+}
+
+#login-div-inputs h3 {
+  line-height: 20px;
+}
+
+#login-form-submit-button {
+  box-sizing: border-box;
+  width: 400px;
+  height: 44px;
+  padding: 2px 16px;
+  background-color: #7289DA;
+  color: hsla(0, 0%, 100%, 0.8);
+  border: 1px solid rgba(0,0,0,0.4);
+  font-size: 16px;
+  border-radius: 3px;
+  margin: 20px 0px 5px 0px;
+}
+
+#login-div-inputs h3 {
+  color: #7289DA;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#login-div-bottom {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+#login-div-bottom h4 {
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 12px;
+
+}
+
+#login-div-bottom span {
+  color: #7289DA;
+  font-weight: bold;
+}
+
+#login-form-submit-button:hover {
+  cursor: pointer;
+}
+
+#login-div-bottom h4{
+  font-size: 14px;
+}
+
+#login-div-bottom-link {
+  text-decoration: none;
+}
+
+#login-div-bottom-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #7289DA;
+}
+
+#login-div-bottom-link span {
+  margin-left: 4px;
+}
