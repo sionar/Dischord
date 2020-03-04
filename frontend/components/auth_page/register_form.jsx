@@ -122,7 +122,7 @@ class RegisterForm extends React.Component {
           <input type="submit" id="register-form-submit-button" value="Continue"/>
         </div>
         <div id="register-div-bottom">
-          <Link to="/register" id="register-div-bottom-link">
+          <Link to="/login" id="register-div-bottom-link">
             <h3>Already have an account?</h3>
           </Link>
           <h4>By registering, you agree to Discord's <span>Terms of Service</span> and <span>Privacy Policy.</span></h4>
