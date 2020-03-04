@@ -1,0 +1,2 @@
+class ServerKey < ApplicationRecord
+end
