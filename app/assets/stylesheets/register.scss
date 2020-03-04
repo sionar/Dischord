@@ -32,6 +32,13 @@
   margin-bottom: 8px;
 }
 
+.register-label-error {
+  font-size: 12px;
+  line-height: 16px;
+  color: #f04747;
+  margin-bottom: 8px;
+}
+
 .register-input {
   box-sizing: border-box;
   width: 400px;
@@ -43,11 +50,30 @@
   color: hsla(0, 0%, 100%, 0.8);
   padding: 0px 10px;
   font-size: 13.33px;
+  outline: none;
 }
 
 .register-input:focus {
   border: 1px solid #7289DA;
+}
+
+.register-input-error {
+  box-sizing: border-box;
+  width: 400px;
+  height: 40px;
+  background-color: rgba(0,0,0, 0.15);
+  margin-bottom: 18px;
+  border-radius: 3px;
+  color: hsla(0, 0%, 100%, 0.8);
+  padding: 0px 10px;
+  font-size: 13.33px;
   outline: none;
+  animation: border-red 0.1s linear 0s 1 forwards;
+}
+
+@keyframes border-red {
+  from { border: 1px solid rgba(0,0,0,0.4)}
+  to { border: 1px solid #f04747; }
 }
 
 #register-form-submit-button {
@@ -61,6 +87,7 @@
   font-size: 16px;
   border-radius: 3px;
   margin: 2px 0px 5px 0px;
+  outline: none;
 }
 
 #register-div-bottom h3 {

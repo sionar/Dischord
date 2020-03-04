@@ -4,7 +4,7 @@ import { loginUser } from '../../actions/session_actions'
 import LoginForm from './login_form'
 
 const mapStateToProps = (state) => ({
-  errors: state.errors,
+  errors: state.errors.sessionErrors,
 })
 
 const mapDispatchToProps = dispatch => ({

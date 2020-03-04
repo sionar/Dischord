@@ -7,7 +7,6 @@ class LoginForm extends React.Component {
     this.state = {
       user: {
         email: '',
-        username: '',
         password: ''
       },
       emailLabel: 'EMAIL',
@@ -15,24 +14,79 @@ class LoginForm extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFlag = false;
   }
 
   handleChange(field) {
-    return e => this.setState(
-      { user: { [field]: e.target.value } }
-    );
-  }
-
-  frontEndValidation() {
-
-
+    return e => this.setState({ user : {...this.state.user, [field]: e.target.value }});
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const frontEndErrorsPassed = this.frontEndValidation();
     if (frontEndErrorsPassed)
-      this.props.loginUser(this.state);
+      this.props.loginUser(this.state.user);
+  }
+
+  frontEndValidation() {
+    let valid = true;
+    let emailLabel = document.getElementById('login-form-label-email');
+    let emailInput = document.getElementById('login-form-input-email');
+    let passwordLabel = document.getElementById('login-form-label-password');
+    let passwordInput = document.getElementById('login-form-input-password');
+    emailLabel.className = "login-label";
+    emailInput.className = "login-input";
+    passwordLabel.className = "login-label";
+    passwordInput.className = "login-input";
+
+    if (!this.state.user.email) {
+      valid = false;
+      emailLabel.className = "login-label-error"
+      emailInput.className = "login-input-error"
+      this.setState({emailLabel : 'EMAIL - This field is required'})
+    } else {
+      this.setState({emailLabel : 'EMAIL'})
+    }
+  
+    if (!this.state.user.password) {
+      valid = false;
+      passwordLabel.className = "login-label-error";
+      passwordInput.className = "login-input-error"
+      this.setState({passwordLabel : 'PASSWORD - This field is required'})
+    } else {
+      this.setState({passwordLabel : 'PASSWORD'})
+    }
+    return valid;
+  }
+  
+  componentDidUpdate() {
+    if (this.props.errors.length > 0 && (!this.updateFlag)) {
+      this.updateFlag = true
+      let emailLabel = document.getElementById('login-form-label-email');
+      let emailInput = document.getElementById('login-form-input-email');
+      let passwordLabel = document.getElementById('login-form-label-password');
+      let passwordInput = document.getElementById('login-form-input-password');
+      if (this.props.errors[0] === "Password does not match.") {
+        emailLabel.className = "login-label";
+        emailInput.className = "login-input";
+        passwordLabel.className = "login-label-error";
+        passwordInput.className = "login-input-error"
+        this.setState(
+          {emailLabel: 'EMAIL', 
+           passwordLabel : 'PASSWORD - Password does not match.'});
+      } else {
+        emailLabel.className = "login-label-error";
+        emailInput.className = "login-input-error"
+        passwordLabel.className = "login-label";
+        passwordInput.className = "login-input";
+        this.setState(
+          {emailLabel : 'EMAIL - Email does not exist.',
+          passwordLabel: 'PASSWORD'});
+      }
+    }
+    else {
+      this.updateFlag = false;
+    }
   }
 
   render() {
@@ -44,7 +98,7 @@ class LoginForm extends React.Component {
         </div>
         <div id="login-div-inputs">
           <label className="login-label" id="login-form-label-email">{this.state.emailLabel}</label>
-          <input className="login-input login-input-normal" onChange={this.handleChange("email")} type="text" value={this.state.email}/>              
+          <input className="login-input" id="login-form-input-email" onChange={this.handleChange("email")} type="text" value={this.state.email}/>              
           <label className="login-label" id="login-form-label-password">{this.state.passwordLabel}</label>
           <input className="login-input" id="login-form-input-password"  onChange={this.handleChange("password")}  type="password" value={this.state.password}/>              
           <h3>Forgot your password?</h3>
