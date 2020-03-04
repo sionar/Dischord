@@ -51,18 +51,32 @@
   box-sizing: border-box;
   width: 400px;
   height: 40px;
-  background-color: rgba(0,0,0, 0.15);
-  border: 1px solid rgba(0,0,0,0.4);
   margin-bottom: 18px;
   border-radius: 3px;
+  background-color: rgba(0,0,0, 0.15);
   color: hsla(0, 0%, 100%, 0.8);
   padding: 0px 10px;
   font-size: 13.33px;
+  outline: none;
+  border: 1px solid rgba(0,0,0,0.4);
 }
 
 .login-input:focus {
   border: 1px solid #7289DA;
+}
+
+.login-input-error {
+  box-sizing: border-box;
+  width: 400px;
+  height: 40px;
+  margin-bottom: 18px;
+  border-radius: 3px;
+  background-color: rgba(0,0,0, 0.15);
+  color: hsla(0, 0%, 100%, 0.8);
+  padding: 0px 10px;
+  font-size: 13.33px;
   outline: none;
+  border: 1px solid #f04747;
 }
 
 #login-form-input-password {

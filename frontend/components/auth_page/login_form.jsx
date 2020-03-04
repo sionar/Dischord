@@ -5,9 +5,13 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      email: '',
-      username: '',
-      password: ''
+      user: {
+        email: '',
+        username: '',
+        password: ''
+      },
+      emailLabel: 'EMAIL',
+      passwordLabel: 'PASSWORD'
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,13 +19,20 @@ class LoginForm extends React.Component {
 
   handleChange(field) {
     return e => this.setState(
-      {[field]: e.target.value }
+      { user: { [field]: e.target.value } }
     );
+  }
+
+  frontEndValidation() {
+
+
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.loginUser(this.state);
+    const frontEndErrorsPassed = this.frontEndValidation();
+    if (frontEndErrorsPassed)
+      this.props.loginUser(this.state);
   }
 
   render() {
@@ -32,9 +43,9 @@ class LoginForm extends React.Component {
           <h3 id="login-form-sublabel">We're so excited to see you again!</h3>
         </div>
         <div id="login-div-inputs">
-          <label className="login-label" id="login-form-label-email">EMAIL</label>
-          <input className="login-input" onChange={this.handleChange("email")} type="text" value={this.state.email}/>              
-          <label className="login-label" id="login-form-label-password">PASSWORD</label>
+          <label className="login-label" id="login-form-label-email">{this.state.emailLabel}</label>
+          <input className="login-input login-input-normal" onChange={this.handleChange("email")} type="text" value={this.state.email}/>              
+          <label className="login-label" id="login-form-label-password">{this.state.passwordLabel}</label>
           <input className="login-input" id="login-form-input-password"  onChange={this.handleChange("password")}  type="password" value={this.state.password}/>              
           <h3>Forgot your password?</h3>
           <input type="submit" id="login-form-submit-button" value="Login"/>
