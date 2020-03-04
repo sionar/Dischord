@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AuthRoute } from '../../util/route_util';
+
+import SplashDemoButtonContainer from './splash-demo-button-container';
 
 const SplashBody = (props) => {
   return (
@@ -9,9 +12,7 @@ const SplashBody = (props) => {
         <p id="splash-p">All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone. Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.</p>
       </div>
       <div id="splash-button-container">
-        <Link to="/@me">
-          <button id="splash-demo-button" className="splash-button">Try for free</button>
-        </Link>
+        <SplashDemoButtonContainer/>
         <Link to={props.loggedIn ? "/channels/@me" : "/register"}>
           <button id="splash-register-button" className="splash-button">{props.loggedIn? "Open Discord" : "Sign up"}</button>
         </Link>

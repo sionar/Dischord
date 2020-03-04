@@ -26,14 +26,12 @@ class Register extends React.Component {
           <img src="/assets/splash-header-logo.svg" id="auth-header-logo"/>
           <img src="/assets/splash-header-label.svg" id="auth-header-label"/>
         </nav>
-        <Switch>
-          <Route path="/register">
-            <RegisterFormContainer />
-          </Route>          
-          <Route path="/login">
-            <LoginFormContainer />
-          </Route>
-        </Switch>
+        <Route path="/register">
+          <RegisterFormContainer />
+        </Route>          
+        <Route path="/login">
+          <LoginFormContainer />
+        </Route>
       </section>
     )
   }
