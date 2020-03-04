@@ -16,9 +16,9 @@ class SplashDemoButton extends React.Component {
   render() {
     return (
       this.props.loggedIn ?
-        <Link to="/channels/@me"><button id="splash-demo-button" className="splash-button">Try for free</button></Link>
+        <Link to="/channels/@me"><button id="splash-demo-button" className="splash-button">Try the demo!</button></Link>
         :
-        <button id="splash-demo-button" className="splash-button" onClick={this.handleClick}>Try for free</button>
+        <button id="splash-demo-button" className="splash-button" onClick={this.handleClick}>Try the demo!</button>
     )
   }
 }

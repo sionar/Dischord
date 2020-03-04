@@ -101,10 +101,6 @@
   margin-bottom: 0px;
 }
 
-#login-div-inputs h3 {
-  line-height: 20px;
-}
-
 #login-form-submit-button {
   box-sizing: border-box;
   width: 400px;
@@ -128,11 +124,19 @@
   to { background-color: rgb(96, 114, 180) }
 }
 
-#login-div-inputs h3 {
+#login-form-guest-button {
   color: #7289DA;
   margin-top: 5px;
   font-weight: bold;
   font-size: 14px;
+  line-height: 20px;
+  background: none;
+  text-align: start;
+  width: 115px;
+}
+
+#login-form-guest-button:hover {
+  text-decoration: underline;
 }
 
 #login-div-bottom {
