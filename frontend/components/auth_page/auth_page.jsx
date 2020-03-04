@@ -23,8 +23,8 @@ class Register extends React.Component {
         <img src={window.authBackground} id="auth-background"/>
         <div id="fade-box"></div>
         <nav id="auth-header">
-          <img src="/assets/splash-header-logo.svg" id="auth-header-logo"/>
-          <img src="/assets/splash-header-label.svg" id="auth-header-label"/>
+          <img src={window.splashHeaderLogo} id="auth-header-logo"/>
+          <img src={window.splashHeaderLabel} id="auth-header-label"/>
         </nav>
         <Route path="/register">
           <RegisterFormContainer />

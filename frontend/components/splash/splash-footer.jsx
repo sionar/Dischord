@@ -6,7 +6,7 @@ const SplashFooter = (props) => {
     <div id="splash-footer-flex-container">
       <ul id="splash-footer-links-container">
         <Link to="/">
-          <img src="/assets/splash-header-logo.svg" id="splash-footer-logo"
+          <img src={window.splashHeaderLogo} id="splash-footer-logo"
           onClick={()=> document.documentElement.scrollTop = 0}/>
         </Link >
         <li>
@@ -65,7 +65,7 @@ const SplashFooter = (props) => {
             <button id="splash-footer-signup-button">{props.loggedIn ? "Open Discord" : "Sign Up Now"}</button>
         </Link>
       </ul>
-      <img src="/assets/splash-footer-background.svg" id="splash-footer-background"></img>
+      <img src={window.splashFooterBackground} id="splash-footer-background"></img>
     </div>
   )
 };
