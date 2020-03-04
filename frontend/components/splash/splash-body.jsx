@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SplashBody = () => {
+const SplashBody = (props) => {
   return (
     <section id="splash-body-flex-container">
       <div id="splash-text-container">
@@ -12,8 +12,8 @@ const SplashBody = () => {
         <Link to="/@me">
           <button id="splash-demo-button" className="splash-button">Try for free</button>
         </Link>
-        <Link to="/register">
-          <button id="splash-register-button" className="splash-button">Sign up</button>
+        <Link to={props.loggedIn ? "/channels/@me" : "/register"}>
+          <button id="splash-register-button" className="splash-button">{props.loggedIn? "Open Discord" : "Sign up"}</button>
         </Link>
       </div>        
     </section>  

@@ -3,14 +3,17 @@ import { AuthRoute } from './util/route_util';
 import { Route } from 'react-router-dom';
 
 import AuthPage from './components/auth_page/auth_page';
-import Splash from './components/splash/splash';
+import SplashContainer from './components/splash/splash-container';
 
-const App = () => (
+const App = () => {
+  return (
   <div id="app-div">
-    <Route exact path="/" component={Splash} />
-    <Route path="/register" component={AuthPage}/>
-    <Route path="/login" component={AuthPage}/>
+    <Route exact path="/" component={SplashContainer} />
+    <AuthRoute path="/register" component={AuthPage} redirectRoute={"/channels/@me"}/>
+    <AuthRoute path="/login" component={AuthPage} redirectRoute={"/channels/@me"}/>
+    
   </div>
-);
+  )
+};
 
 export default App;

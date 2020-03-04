@@ -61,16 +61,17 @@ html {
   user-select: none;
 }
 
-#splash-header-login-button {
+.splash-header-button {
   color:hsla(0,0%,100%,.8);
   background-color: transparent;
   border: 2px solid hsla(0,0%,100%,.8);
   border-radius: 20px;
   line-height: 24px;
+  margin-left: 5px;
   text-decoration: none;
   width: 69px;
   height: 32px;
-  padding: 0px 17px;
+  padding: 0px 5px;
   font-size: 14px;
   user-select: none;
   cursor: pointer;

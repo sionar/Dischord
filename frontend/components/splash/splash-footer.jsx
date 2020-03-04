@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SplashFooter = () => {
+const SplashFooter = (props) => {
   return (
     <div id="splash-footer-flex-container">
       <ul id="splash-footer-links-container">
@@ -61,8 +61,8 @@ const SplashFooter = () => {
           <h2>Ready to try Discord? It's free!</h2>
           <h3>JOIN OVER 250 MILLION PLAYERS TODAY</h3>
         </div>
-        <Link to="/register">
-            <button id="splash-footer-signup-button">Sign Up Now</button>
+        <Link to={props.loggedIn ? "/channels/@me" : "/register"}>
+            <button id="splash-footer-signup-button">{props.loggedIn ? "Open Discord" : "Sign Up Now"}</button>
         </Link>
       </ul>
       <img src="/assets/splash-footer-background.svg" id="splash-footer-background"></img>

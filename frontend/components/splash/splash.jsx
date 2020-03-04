@@ -8,14 +8,13 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
   }
-
   render() {
     return (
       <div id="splash-flex-container">
-        <SplashHeader />
-        <SplashBody />
+        <SplashHeader loggedIn={this.props.loggedIn} logoutUser={this.props.logoutUser}/>
+        <SplashBody loggedIn={this.props.loggedIn}/>
         <SplashImages />
-        <SplashFooter />
+        <SplashFooter loggedIn={this.props.loggedIn}/>
       </div>
     )
   }

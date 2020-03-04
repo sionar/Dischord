@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SplashLogOutButton from './splash-log-out-button';
 
-const SplashHeader = () => {
+const SplashHeader = (props) => {
   return (
     <header id="splash-header-flex-container">
       <div id="splash-header-left-flexbox">
@@ -14,9 +15,10 @@ const SplashHeader = () => {
         <a href="https://github.com/sionar">
           <img src="/assets/splash-header-github-logo.svg" id="splash-header-github-logo"/>
         </a>
-          <Link to="/login">
-            <button id="splash-header-login-button">Login</button>
+          <Link to={props.loggedIn ? "/channels/@me" : "/login"}>
+            <button className="splash-header-button">{props.loggedIn? "Open" : "Login"}</button>
           </Link>
+          {props.loggedIn ? <SplashLogOutButton logoutUser={props.logoutUser}/> : null}
       </div>
     </header>  
   )
