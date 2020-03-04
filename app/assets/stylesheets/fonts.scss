@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'WhitneyBold';
-  src: asset-url('/assets/WhitneyBold.otf');
+  src: asset-path(WhitneyBold) format("opentype");
 }
 
 @font-face {
   font-family: 'Whitney';
-  src: asset-url('/assets/Whitney.otf');
+  src: asset-path(Whitney) format("opentype");
 }
