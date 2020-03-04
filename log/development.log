@@ -33998,3 +33998,32 @@ Processing by Api::UsersController#create as JSON
 Completed 200 OK in 214ms (Views: 2.7ms | ActiveRecord: 5.8ms)
 
 
+Started GET "/" for ::1 at 2020-03-04 11:26:16 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sionar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fSEmKm3V28VeXLWORHgQdw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 543ms (Views: 540.4ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-04 11:26:23 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fSEmKm3V28VeXLWORHgQdw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "asdfasdfasdf"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "DOSk_KHCQnC9J8AI2adlUQ"], ["updated_at", "2020-03-04 19:26:23.480216"], ["id", 11]]
+  ↳ app/models/user.rb:40
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/errors/_errors.json.jbuilder (0.4ms)
+  Rendered api/sessions/destroy.json.jbuilder (1.6ms)
+Completed 200 OK in 20ms (Views: 5.3ms | ActiveRecord: 6.7ms)
+
+
