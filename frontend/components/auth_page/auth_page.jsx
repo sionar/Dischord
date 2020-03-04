@@ -20,7 +20,7 @@ class Register extends React.Component {
   render () {
     return (
       <section id="auth-page-container">
-        <img src={window.auth-background} id="auth-background"/>
+        <img src={window.authBackground} id="auth-background"/>
         <div id="fade-box"></div>
         <nav id="auth-header">
           <img src="/assets/splash-header-logo.svg" id="auth-header-logo"/>
