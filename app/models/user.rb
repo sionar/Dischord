@@ -15,16 +15,23 @@ class User < ApplicationRecord
 
   attr_reader :password
   validates :email, presence: true, uniqueness: true
-  validates :username, :usertag, presence: true
+  validates :username, presence: true
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
   
-  before_validation :ensure_session_token
+  before_validation :ensure_session_token, :ensure_usertag
 
   has_many :owned_servers,
     foreign_key: :owner_id,
     class_name: :Server
 
+  has_many :subscriptions,
+    foreign_key: :user_id,
+    class_name: :Subscriber
+
+  has_many :subscribed_servers,
+    through: :subscriptions,
+    source: :server
 
 
   def self.find_by_credentials(email, password)
@@ -51,6 +58,15 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
+  end
+
+  def ensure_usertag
+    already_taken = true
+    while already_taken do
+      usertag = rand(1000..9999)
+      already_taken = false unless User.find_by(username: self.username, usertag: usertag) 
+    end
+    self.usertag = usertag
   end
 
 end

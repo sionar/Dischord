@@ -10,8 +10,3 @@ json.entities do
   end
 end
 
-if user 
-  json.session do
-    json.id user.id
-  end
-end
