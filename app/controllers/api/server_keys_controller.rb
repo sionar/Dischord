@@ -26,6 +26,7 @@ class Api::ServerKeysController < ApplicationController
         render partial: 'api/errors/server_errors', status: 422
       else
         @users = @server.subscribed_users
+        @subscribers = @server.subscriptions
         render :show, status: 200
       end
     end
