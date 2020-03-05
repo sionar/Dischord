@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by(email: params[:user][:email])
     if !@user
       flash.now[:errors] = ['Email does not exist.']
-      render :create, status: 422
+      render partial: 'api/errors/session_errors', status: 422
     else
       @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
       if @user
@@ -12,7 +12,7 @@ class Api::SessionsController < ApplicationController
         render :create
       else
         flash.now[:errors] = ['Password does not match.']
-        render :create, status: 422
+        render partial: 'api/errors/session_errors', status: 422
       end
     end
   end
@@ -23,7 +23,7 @@ class Api::SessionsController < ApplicationController
       render :destroy
     else
       flash.now[:errors] = ['Not logged in.']
-      render :destroy, status: 404
+      render partial: 'api/errors/session_errors', status: 412
     end
   end
 end

@@ -11,8 +11,8 @@ Server.destroy_all
 ServerKey.destroy_all
 Subscriber.destroy_all
 
-u1 = User.create!(username: 'Sionar', email: 'tonyyye@gmail.com', password: 'password')
-u2 = User.create!(username: 'Guest', email: 'guest@dischordapp.com', password: 'password')
+u1 = User.create!(username: 'Sionar', email: 'tonyyye@gmail.com', password: 'sionar')
+u2 = User.create!(username: 'Guest', email: 'guestuser@dischord.com', password: 'password')
 
 s1 = Server.create!(name: 'Dischord Main Server', owner_id:u1.id, private: false)
 s2 = Server.create!(name: 'Cats!', owner_id:u1.id, private: false)

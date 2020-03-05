@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
       render :create, status: 200
     else
       flash.now[:errors] = @user.errors.full_messages
-      render :create, status: 422
+      render partial: 'api/errors/session_errors', status: 422
     end
   end
 
@@ -19,5 +19,4 @@ class Api::UsersController < ApplicationController
   def user_params
     user_params = params.require(:user).permit(:username, :email, :password)
   end
-
 end

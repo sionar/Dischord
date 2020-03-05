@@ -24,7 +24,8 @@ class Server < ApplicationRecord
 
   has_many :subscriptions,
     foreign_key: :server_id,
-    class_name: :Subscriber
+    class_name: :Subscriber,
+    dependent: :destroy
 
   has_many :subscribed_users,
     through: :subscriptions,

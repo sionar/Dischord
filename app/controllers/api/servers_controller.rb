@@ -1,56 +1,69 @@
 class Api::ServersController < ApplicationController
+  before_action :require_login
+
   def index
-    user = User.includes(:servers).find_by(session_token: session[:session_token])
-    if user
-      @servers = user.subscribed_servers
-      @users = Array.new
-      @servers.each do |server|
-        @users += server.subscribed_users
-      end
-      render :index, status: 200
-    else
-      flash.now[:errors] = ['Not logged in.']
-      render :index, status: 401
+    @servers = current_user.subscribed_servers.includes(:subscribed_users)
+    @users = Array.new
+    @servers.each do |server|
+      @users += server.subscribed_users
     end
+    render :index, status: 200
   end
 
   def create
     @server = Server.create(server_params)
-    if @server
+    unless @server
+      flash.now[:errors] = @server.errors.full_messages
+      render partial: 'api/errors/server_errors', status: 422
+    else
       Subscriber.create(user_id: current_user.id, server_id: @server.id)
       render :create, status: 200
-    else
-      flash.now[:errors] = @server.errors.full_messages
-      render :create, status: 422
     end
   end
 
   def update
     @server = Server.find_by(id: params[:id])
-    if @server
-      if @server.owner_id == current_user.id
-        if @server.update(server_params)
-          render :update, status: 200
-        else
-          flash.now[:errors] = @server.errors.full_messages
-          render :update, status: 422
-        end
-      else
-        flash.now[:errors] = ['You do not own this server.']
-        render :update, status: 403
-      end
-    else
+    unless @server
       flash.now[:errors] = ['Server not found.'] 
-      render :update, status: 404
+      render partial: 'api/errors/server_errors', status: 404
+    else
+      unless @server.owner_id == current_user.id
+        flash.now[:errors] = ['You do not own this server.']
+        render partial: 'api/errors/server_errors', status: 403
+      else
+        unless @server.update(server_params)
+          flash.now[:errors] = @server.errors.full_messages
+          render partial: 'api/errors/server_errors', status: 422
+        else
+          render :update, status: 200
+        end
+      end
     end
   end
 
   def destroy
-
+    @server = Server.find_by(id: params[:id])
+    if @server
+      if @server.owner_id == current_user.id
+        if @server.destroy
+          render :destroy, status: 200
+        else
+          flash.now[:errors] = @server.errors.full_messages
+          render partial: 'api/errors/server_errors', status: 422
+        end
+      else
+        flash.now[:errors] = ['You do not own this server.']
+        render partial: 'api/errors/server_errors', status: 403
+      end
+    else
+      flash.now[:errors] = ['Server not found.'] 
+      ender partial: 'api/errors/server_errors', status: 404
+    end
   end
 
   def server_params
-    serv_params = params.require(:server).permit(name, private)
+    serv_params = params.require(:server).permit(:name, :private)
     serv_params[:owner_id] = current_user.id
+    serv_params
   end
 end
