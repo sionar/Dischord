@@ -1,4 +1,5 @@
-import { signup, login, logout } from '../util/session_api_util';
+import { login, logout } from '../util/session_api_util';
+import { signup } from '../util/user_api_util';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
@@ -19,13 +20,13 @@ export const receiveSessionErrors = (errors) => ({
 });
 
 export const loginUser = user => dispatch => login(user)
-  .then(response => dispatch(receiveCurrentUser(response.entities.users[response.session.id])))
-  .fail(response => dispatch(receiveSessionErrors(response.responseJSON.errors.sessionErrors)));
+  .then(res => dispatch(receiveCurrentUser(res.entities.users[res.session.id])))
+  .fail(res => dispatch(receiveSessionErrors(res.responseJSON.errors.sessionErrors)));
 
 export const logoutUser = () => dispatch => logout()
   .then(() => dispatch(logoutCurrentUser()))
-  .fail((response) => dispatch(receiveSessionErrors(response.responseJSON.errors.sessionErrors)));
+  .fail((res) => dispatch(receiveSessionErrors(res.responseJSON.errors.sessionErrors)));
 
 export const signupUser = user => dispatch => signup(user)
-  .then(response => dispatch(receiveCurrentUser(response.entities.users[response.session.id])))
-  .fail((response) => dispatch(receiveSessionErrors(response.responseJSON.errors.sessionErrors)));
+  .then(res => dispatch(receiveCurrentUser(res.entities.users[res.session.id])))
+  .fail((res) => dispatch(receiveSessionErrors(res.responseJSON.errors.sessionErrors)));
