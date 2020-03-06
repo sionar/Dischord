@@ -1,8 +1,7 @@
-export const getData = userId => (
+export const getData = () => (
   $.ajax({
     url: `api/servers`,
     method: 'GET',
-    data: userId
   })
 );
 

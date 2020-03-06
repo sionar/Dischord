@@ -15,24 +15,24 @@ export const createServerKey = serverKey => ({
   serverKey
 })
 
-export const receiveServer = payload => ({
+export const receiveServerData = payload => ({
   type: RECEIVE_SERVER_DATA,
   payload
 })
 
-export const receieveServerKeyErrors = (errors) => ({
+export const receiveServerKeyErrors = (errors) => ({
   type: RECEIVE_SERVER_KEY_ERRORS,
   errors
 });
 
-export const getKeys = serverId => ServerKeyUtil.getKeys(serverId)
+export const getKeys = serverId => dispatch => ServerKeyUtil.getKeys(serverId)
   .then(res => dispatch(receiveServerKeys(res.entities.sessionKeys)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverKeyErrors)));
 
-export const makeKey = serverId => ServerKeyUtil.makeKey(serverId)
+export const makeKey = serverId => dispatch => ServerKeyUtil.makeKey(serverId)
   .then(res => dispatch(createServerKey(res.entities.sessionKeys)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverKeyErrors)));
 
-export const getServer = serverKey => ServerKeyUtil.getServer(serverKey)
-  .then(res => dispatch(createServerKey(res.entities)))
+export const getServer = serverKey => dispatch => ServerKeyUtil.getServer(serverKey)
+  .then(res => dispatch(receiveServerData(res.entities)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverKeyErrors)));

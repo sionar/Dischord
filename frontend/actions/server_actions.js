@@ -26,24 +26,24 @@ export const deleteServer = server => ({
   server
 });
 
-export const receieveServerErrors = (errors) => ({
+export const receiveServerErrors = (errors) => ({
   type: RECEIVE_SERVER_ERRORS,
   errors
 });
 
 
-export const getData = userId => ServerUtil.getData(userId)
+export const getData = () => dispatch => ServerUtil.getData(userId)
   .then(res => dispatch(receiveData(res.entities)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
 
-export const makeServer = server => ServerUtil.makeServer(server)
+export const makeServer = server => dispatch => ServerUtil.makeServer(server)
   .then(res => dispatch(createServer(res.entities)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
 
-export const updateServer = server => ServerUtil.updateServer(server)
+export const updateServer = server => dispatch => ServerUtil.updateServer(server)
   .then(res => dispatch(editServer(res.entities.servers)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
 
-export const destroyServer = serverId => ServerUtil.updateServer(serverId)
+export const destroyServer = serverId => dispatch => ServerUtil.updateServer(serverId)
   .then(res => dispatch(deleteServer(res.entities.servers)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
