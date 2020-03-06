@@ -27,7 +27,7 @@ class User < ApplicationRecord
 
   has_many :subscriptions,
     foreign_key: :user_id,
-    class_name: :Subscriber
+    class_name: :Subscription
 
   has_many :subscribed_servers,
     through: :subscriptions,

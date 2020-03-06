@@ -5,15 +5,9 @@ class Main extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.getData();
-  }
-
   render() {
     return (
-      <div>
-        Main component
-      </div>
+      <div>Hi!</div>
     )
   }
 }

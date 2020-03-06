@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: subscribers
+# Table name: subscriptions
 #
 #  id         :bigint           not null, primary key
 #  user_id    :integer          not null
@@ -10,7 +10,7 @@
 #
 require 'test_helper'
 
-class SubscriberTest < ActiveSupport::TestCase
+class SubscriptionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

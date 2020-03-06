@@ -9,7 +9,7 @@
 User.destroy_all
 Server.destroy_all
 ServerKey.destroy_all
-Subscriber.destroy_all
+Subscription.destroy_all
 
 u1 = User.create!(username: 'Sionar', email: 'tonyyye@gmail.com', password: 'sionar')
 u2 = User.create!(username: 'Guest', email: 'guestuser@dischord.com', password: 'password')
@@ -20,6 +20,6 @@ s2 = Server.create!(name: 'Cats!', owner_id:u1.id, private: false)
 k1 = ServerKey.create!(server_id: s1.id)
 k2 = ServerKey.create!(server_id: s2.id)
 
-sub1 = Subscriber.create(user_id: u1.id, server_id: s1.id)
-sub2 = Subscriber.create(user_id: u1.id, server_id: s2.id)
-sub3 = Subscriber.create(user_id: u2.id, server_id: s1.id)
+sub1 = Subscription.create(user_id: u1.id, server_id: s1.id)
+sub2 = Subscription.create(user_id: u1.id, server_id: s2.id)
+sub3 = Subscription.create(user_id: u2.id, server_id: s1.id)

@@ -3,8 +3,8 @@ json.entities do
     json.partial! 'server', server: @server
   end
 
-  json.subscribers do
-    json.partial! 'api/subscribers/subscriber', subscriber: @subscriber
+  json.subscriptions do
+    json.partial! 'api/subscriptions/subscription', subscription: @subscription
   end
 end
 

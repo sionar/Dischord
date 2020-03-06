@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 
 import AuthPage from './components/auth_page/auth_page';
 import SplashContainer from './components/splash/splash-container';
-import MainContainer from './components/main/main_container';
+import MainModalContainer from './components/main/main_modal_container';
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
     <Route exact path="/" component={SplashContainer} />
     <AuthRoute path="/register" component={AuthPage} redirectRoute={"/channels/@me"}/>
     <AuthRoute path="/login" component={AuthPage} redirectRoute={"/channels/@me"}/>
-    <ProtectedRoute path="/channels/@me" component={MainContainer} redirectRoute={"/login"}/>
+    <ProtectedRoute path="/channels/@me" component={MainModalContainer} redirectRoute={"/login"}/>
   </div>
   )
 };

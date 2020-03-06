@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: subscribers
+# Table name: subscriptions
 #
 #  id         :bigint           not null, primary key
 #  user_id    :integer          not null
@@ -8,7 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class Subscriber < ApplicationRecord
+class Subscription < ApplicationRecord
   belongs_to :user,
     foreign_key: :user_id,
     class_name: :User

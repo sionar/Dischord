@@ -8,11 +8,11 @@ export default (state = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_SERVER_DATA:
-      return action.payload.subscribers;
+      return action.payload.subscriptions;
     case CREATE_SERVER:
-      return Object.assign(nextState, action.subscribers);
+      return Object.assign(nextState, action.subscriptions);
     case RECEIVE_DATA:
-      return action.payload.subscribers;
+      return action.payload.subscriptions;
     case LOGOUT_CURRENT_USER:
       return {};
     default:

@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Server < ApplicationRecord
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
   validates :owner_id, presence: true
 
   belongs_to :owner,
@@ -24,7 +24,7 @@ class Server < ApplicationRecord
 
   has_many :subscriptions,
     foreign_key: :server_id,
-    class_name: :Subscriber,
+    class_name: :Subscription,
     dependent: :destroy
 
   has_many :subscribed_users,

@@ -4,10 +4,10 @@ class Api::ServersController < ApplicationController
   def index
     @servers = current_user.subscribed_servers.includes(:subscribed_users, :subscriptions)
     @users = Array.new
-    @subscribers = Array.new
+    @subscriptions = Array.new
     @servers.each do |server|
       @users += server.subscribed_users
-      @subscribers += server.subscriptions
+      @subscriptions += server.subscriptions
     end
     render :index, status: 200
   end
@@ -18,7 +18,7 @@ class Api::ServersController < ApplicationController
       flash.now[:errors] = @server.errors.full_messages
       render partial: 'api/errors/server_errors', status: 422
     else
-      @subscriber = Subscriber.create(user_id: current_user.id, server_id: @server.id)
+      @subscription = Subscription.create(user_id: current_user.id, server_id: @server.id)
       render :create, status: 200
     end
   end

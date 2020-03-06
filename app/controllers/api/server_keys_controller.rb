@@ -20,13 +20,13 @@ class Api::ServerKeysController < ApplicationController
       render partial: 'api/errors/server_key_errors', status: 422
     else
       @server = Server.find_by(id: server_key.server_id)
-      user = Subscriber.find_by(server_id: @server.id, user_id: current_user.id)
+      user = Subscription.find_by(server_id: @server.id, user_id: current_user.id)
       if user
         flash[:errors] = ['Already subscribed to server']
         render partial: 'api/errors/server_key_errors', status: 422
       else
         @users = @server.subscribed_users
-        @subscribers = @server.subscriptions
+        @subscriptions = @server.subscriptions
         render :show, status: 200
       end
     end
@@ -44,7 +44,7 @@ class Api::ServerKeysController < ApplicationController
 
   private
   def require_subscribed
-    @subscription = Subscriber.find_by(server_id:params[:server_id], user_id: current_user.id)
+    @subscription = Subscription.find_by(server_id:params[:server_id], user_id: current_user.id)
     unless @subscription
       flash[:errors] = ['Current user not subscribed to the server.']
       render partial: 'api/errors/server_errors', status: 422

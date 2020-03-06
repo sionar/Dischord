@@ -11,9 +11,9 @@ json.entities do
     end
   end
 
-  json.subscribers do
-    @subscribers.each do |subscriber|
-      json.partial! 'api/subscribers/subscriber', subscriber: subscriber
+  json.subscriptions do
+    @subscriptions.each do |subscription|
+      json.partial! 'api/subscriptions/subscription', subscription: subscription
     end
   end
 end

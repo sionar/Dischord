@@ -1,0 +1,19 @@
+#loading-flex-container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: calc(50% - 90px);
+  width: 100%;
+}
+
+#loading-icon {
+  height: 120px;
+}
+
+#loading-text {
+  color: white;
+  font-size: 18px;
+  font-style: italic;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+}

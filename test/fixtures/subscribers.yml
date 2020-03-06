@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: subscribers
+# Table name: subscriptions
 #
 #  id         :bigint           not null, primary key
 #  user_id    :integer          not null
