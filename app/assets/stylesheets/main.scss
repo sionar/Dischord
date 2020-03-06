@@ -1,0 +1,68 @@
+#main-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: stretch;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#server-bar {
+  width: 72px;
+  padding-top: 12px;
+  background-color: #202225;
+}
+
+#channel-bar-container {
+  width: 240px;
+  background-color: #2f3136;
+  display: flex;
+  flex-direction: column;
+}
+
+#server-name-button {
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  height: 49px;
+  box-sizing: border-box;
+}
+
+#channel-bar {
+  flex-grow: 1;
+}
+
+#user-name-button {
+  height: 52px;
+  background-color: #292b2f;
+}
+
+#content-outer-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#content-body-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+#header-bar {
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  height: 52px;
+  background-color: #36393f;
+  box-sizing: border-box;
+}
+
+#messages-box {
+  background-color: #36393f;
+  flex-grow: 1;
+}
+
+#users-bar {
+  width: 240px;
+  background-color: #2f3136;
+}
+
+
