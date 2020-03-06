@@ -18,4 +18,4 @@ json.entities do
   end
 end
 
-json.partial! '/api/errors/serverErrors'
+json.partial! '/api/errors/server_errors'

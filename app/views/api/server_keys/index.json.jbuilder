@@ -6,4 +6,4 @@ json.entities do
   end
 end
 
-json.partial! '/api/errors/serverKeyErrors'
+json.partial! '/api/errors/server_key_errors'

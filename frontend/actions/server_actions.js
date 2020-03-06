@@ -32,7 +32,7 @@ export const receiveServerErrors = (errors) => ({
 });
 
 
-export const getData = () => dispatch => ServerUtil.getData(userId)
+export const getData = () => dispatch => ServerUtil.getData()
   .then(res => dispatch(receiveData(res.entities)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
 
