@@ -1,12 +1,12 @@
-export const getData = user_id => (
+export const getData = userId => (
   $.ajax({
     url: `api/servers`,
     method: 'GET',
-    data: user_id
+    data: userId
   })
 );
 
-export const createServer = server => (
+export const makeServer = server => (
   $.ajax({
     url: `api/servers`,
     method: 'POST',

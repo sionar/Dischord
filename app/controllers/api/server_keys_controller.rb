@@ -6,7 +6,7 @@ class Api::ServerKeysController < ApplicationController
     server = Server.find_by(id:params[:server_id])
     unless server
       flash[:errors] = ['Server not found']
-      render partial: 'api/errors/server_errors', status: 422
+      render partial: 'api/errors/server_key_errors', status: 422
     else
       @server_keys = server.server_keys
       render :index, status: 200  
@@ -17,13 +17,13 @@ class Api::ServerKeysController < ApplicationController
     server_key = ServerKey.find_by(server_key: params[:server_key])
     unless server_key
       flash[:errors] = ['Server not found']
-      render partial: 'api/errors/server_errors', status: 422
+      render partial: 'api/errors/server_key_errors', status: 422
     else
       @server = Server.find_by(id: server_key.server_id)
       user = Subscriber.find_by(server_id: @server.id, user_id: current_user.id)
       if user
         flash[:errors] = ['Already subscribed to server']
-        render partial: 'api/errors/server_errors', status: 422
+        render partial: 'api/errors/server_key_errors', status: 422
       else
         @users = @server.subscribed_users
         @subscribers = @server.subscriptions

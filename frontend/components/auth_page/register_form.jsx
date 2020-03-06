@@ -28,7 +28,7 @@ class RegisterForm extends React.Component {
     e.preventDefault();
     const frontEndErrorsPassed = this.frontEndValidation();
     if (frontEndErrorsPassed)
-      this.props.signupUser(this.state.user);
+      this.props.signup(this.state.user);
   }
 
   frontEndValidation() {

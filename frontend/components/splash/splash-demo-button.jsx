@@ -9,7 +9,7 @@ class SplashDemoButton extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.props.loginUser({email: 'guestuser@dischord.com', password: 'password'})
+    this.props.login({email: 'guestuser@dischord.com', password: 'password'})
     .then(result => this.props.history.push('/channels/@me'));
   }
 

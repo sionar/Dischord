@@ -7,7 +7,7 @@ class SplashLogOutButton extends React.Component {
   }
 
   handleClick() {
-    this.props.logoutUser();
+    this.props.logout();
   }
 
   render() {

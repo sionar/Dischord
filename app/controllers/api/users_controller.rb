@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     unless @user
       flash[:errors] = ['User not found']
-      ender partial: 'api/errors/session_errors', status: 404
+      render partial: 'api/errors/user_errors', status: 404
     else
       render :show, status: 200
     end

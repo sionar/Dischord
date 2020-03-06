@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   def require_login
     unless logged_in?
       flash[:errors] = ["Not logged in."]
-      render partial: 'api/errors/session_errors', status: 401 
+      render partial: 'api/errors/errors', error_name: sessionErrors, status: 401 
     end
   end
 end

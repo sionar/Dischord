@@ -18,7 +18,7 @@ const SplashHeader = (props) => {
           <Link to={props.loggedIn ? "/channels/@me" : "/login"}>
             <button className="splash-header-button">{props.loggedIn? "Open" : "Login"}</button>
           </Link>
-          {props.loggedIn ? <SplashLogOutButton logoutUser={props.logoutUser}/> : null}
+          {props.loggedIn ? <SplashLogOutButton logout={props.logout}/> : null}
       </div>
     </header>  
   )

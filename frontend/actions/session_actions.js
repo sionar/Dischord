@@ -1,5 +1,5 @@
-import { login, logout } from '../util/session_api_util';
-import { signup } from '../util/user_api_util';
+import * as SessionUtil from '../util/api_session_util';
+import * as UserUtil from '../util/api_user_util';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
@@ -19,14 +19,14 @@ export const receiveSessionErrors = (errors) => ({
   errors
 });
 
-export const loginUser = user => dispatch => login(user)
+export const login = user => dispatch => SessionUtil.login(user)
   .then(res => dispatch(receiveCurrentUser(res.entities.users[res.session.id])))
   .fail(res => dispatch(receiveSessionErrors(res.responseJSON.errors.sessionErrors)));
 
-export const logoutUser = () => dispatch => logout()
+export const logout = () => dispatch => SessionUtil.logout()
   .then(() => dispatch(logoutCurrentUser()))
   .fail((res) => dispatch(receiveSessionErrors(res.responseJSON.errors.sessionErrors)));
 
-export const signupUser = user => dispatch => signup(user)
+export const signup = user => dispatch => UserUtil.signup(user)
   .then(res => dispatch(receiveCurrentUser(res.entities.users[res.session.id])))
   .fail((res) => dispatch(receiveSessionErrors(res.responseJSON.errors.sessionErrors)));

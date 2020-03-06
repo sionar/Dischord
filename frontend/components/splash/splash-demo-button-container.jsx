@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { loginUser } from '../../actions/session_actions';
+import { login } from '../../actions/session_actions';
 import SplashDemoButton from './splash-demo-button';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  loginUser: (user) => dispatch(loginUser(user))
+  login: (user) => dispatch(login(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SplashDemoButton);

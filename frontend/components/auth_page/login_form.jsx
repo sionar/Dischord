@@ -26,12 +26,12 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const frontEndErrorsPassed = this.frontEndValidation();
     if (frontEndErrorsPassed)
-      this.props.loginUser(this.state.user);
+      this.props.login(this.state.user);
   }
 
   handleDemoLogin(e) {
     e.preventDefault();
-    this.props.loginUser({email: 'guestuser@dischord.com', password: 'password'})
+    this.props.login({email: 'guestuser@dischord.com', password: 'password'})
   }
 
   frontEndValidation() {
