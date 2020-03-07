@@ -1,0 +1,15 @@
+#server-name-button {
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  height: 49px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+#server-name-button span {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}

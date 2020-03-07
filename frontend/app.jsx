@@ -12,7 +12,7 @@ const App = () => {
     <Route exact path="/" component={SplashContainer} />
     <AuthRoute path="/register" component={AuthPage} redirectRoute={"/channels/@me"}/>
     <AuthRoute path="/login" component={AuthPage} redirectRoute={"/channels/@me"}/>
-    <ProtectedRoute path="/channels/" component={MainModalContainer} redirectRoute={"/login"}/>
+    <ProtectedRoute path="/channels/:channelId" component={MainModalContainer} redirectRoute={"/login"}/>
   </div>
   )
 };

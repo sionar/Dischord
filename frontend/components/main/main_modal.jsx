@@ -19,7 +19,6 @@ class MainModal extends React.Component {
 
   render() {
     const component = this.state.doneLoading ? <Main /> : <Loading />;
-
     return (
       component
     )
