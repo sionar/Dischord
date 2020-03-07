@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import ServerBarContainer from './server_bar/server_bar_container';
 import ServerNameButtonContainer from './channel_bar/server_name_button_container';
+import UsersBarContainer from './users_bar/users_bar_container';
 
 class Main extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Main extends React.Component {
       <div id="main-container">
         <ServerBarContainer />
         <div id="channel-bar-container">
-          <Route exact path="/channels/:serverId" component={ServerNameButtonContainer} />
+          <Route path="/channels/:serverId" component={ServerNameButtonContainer} />
           <section id="channel-bar"></section>
           <section id="user-name-button"></section>
         </div>
@@ -23,7 +24,7 @@ class Main extends React.Component {
             <section id="header-bar"></section>
           <div id="content-body-container">
             <section id="messages-box"></section>
-            <section id="users-bar"></section>
+            <Route exact path="/channels/:serverId" component={UsersBarContainer} />
           </div>
         </div>
       </div>

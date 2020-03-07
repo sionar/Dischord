@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { NavLink } from 'react-router-dom'; 
 
 class ServerButton extends React.Component {
   constructor(props) {
@@ -8,11 +8,11 @@ class ServerButton extends React.Component {
   
   render () {
     return (
-      <Link to={`/channels/${this.props.server.id}`}>
+      <NavLink to={`/channels/${this.props.server.id}`} activeClassName="server-button-active" >
         <div className="server-bar-server-button">
           <div className="server-button-hover-label"><p>{this.props.server.name}</p></div>
         </div>
-      </Link>
+      </NavLink>
     )
   }
 }

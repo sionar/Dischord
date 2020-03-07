@@ -1,0 +1,30 @@
+#users-bar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#users-bar-user-header {
+  padding: 24px 8px 0px 16px;
+  width: 208px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  color: #8E9297;
+}
+
+.users-bar-user-name {
+  width: 208px;
+  height: 42px;
+  padding: 0px 8px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 42px;
+  font-size: 16px;
+  color: #8E9297;
+}
+
+.users-bar-user-name:hover {
+  background-color: rgba(79,84,92,0.16);
+  color: #FFFFFF;
+}

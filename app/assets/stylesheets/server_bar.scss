@@ -41,11 +41,15 @@
   height: 15px;
   padding: 2px;
   left: 75px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
   line-height: 16px;
   display: none;
+}
+
+.server-button-active .server-bar-server-button {
+  border-radius: 35%;
 }
 
 #server-bar-home-button {
