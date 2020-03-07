@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
+import ServerBarContainer from './server_bar/server_bar_container';
+
 class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +11,7 @@ class Main extends React.Component {
   render() {
     return (
       <div id="main-container">
-        <section id="server-bar"></section>
+        <ServerBarContainer />
         <div id="channel-bar-container">
           <section id="server-name-button"></section>
           <section id="channel-bar"></section>

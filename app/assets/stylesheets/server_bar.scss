@@ -1,0 +1,66 @@
+
+
+.server-bar-separator {
+  width: 32px;
+  height: 2px;
+  margin-bottom: 8px;
+  background-color: rgba(255,255,255,0.05);
+} 
+
+.server-bar-server-button {
+  width: 48px;
+  height: 48px;
+  background-color: #7289DA;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.server-bar-server-button:hover {
+  animation: change-border-radius 0.2s linear 0s 1 forwards;
+}
+
+@keyframes change-border-radius {
+  from { border-radius: 50%; }
+  to { border-radius: 35%; }
+}
+
+
+.server-bar-server-button:hover div{
+  display: block;
+}
+
+.server-button-hover-label {
+  position: absolute;
+  width: fit-content;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-radius: 3px;
+  height: 15px;
+  padding: 2px;
+  left: 75px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 16px;
+  display: none;
+}
+
+#server-bar-home-button {
+  background-color: #36393F;
+}
+
+#add-server-button-container {
+  background-color: #36393F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#add-server-button-icon {
+  color: #43b581;
+  width: 24px;
+  height: 24px;
+}

@@ -25,8 +25,9 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const frontEndErrorsPassed = this.frontEndValidation();
-    if (frontEndErrorsPassed)
+    if (frontEndErrorsPassed) {
       this.props.login(this.state.user);
+    }
   }
 
   handleDemoLogin(e) {
@@ -107,7 +108,7 @@ class LoginForm extends React.Component {
           <input className="login-input" id="login-form-input-email" onChange={this.handleChange("email")} type="text" value={this.state.email}/>              
           <label className="login-label" id="login-form-label-password">{this.state.passwordLabel}</label>
           <input className="login-input" id="login-form-input-password"  onChange={this.handleChange("password")}  type="password" value={this.state.password}/>              
-          <button onClick={this.handleDemoLogin} id="login-form-guest-button">Log in as a guest</button>
+          <button onClick={this.handleDemoLogin} id="login-form-guest-button" type="button">Log in as a guest</button>
           <input type="submit" id="login-form-submit-button" value="Login"/>
         </div>
         <div id="login-div-bottom">

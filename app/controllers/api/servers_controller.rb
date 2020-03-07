@@ -9,6 +9,7 @@ class Api::ServersController < ApplicationController
       @users += server.subscribed_users
       @subscriptions += server.subscriptions
     end
+
     render :index, status: 200
   end
 
