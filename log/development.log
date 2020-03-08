@@ -59343,3 +59343,837 @@ Processing by Api::ServersController#index as JSON
 Completed 200 OK in 24ms (Views: 18.7ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for ::1 at 2020-03-08 12:52:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "huMU9ZNeY1OhQN2pVS-Urw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 286ms (Views: 285.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 12:52:16 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "huMU9ZNeY1OhQN2pVS-Urw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.3ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" IN ($1, $2)[0m  [["server_id", 1], ["server_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.2ms)
+  Rendered api/servers/_server.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.2ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.2ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.3ms)
+  Rendered api/servers/index.json.jbuilder (8.7ms)
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 12:52:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "huMU9ZNeY1OhQN2pVS-Urw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 12:52:29 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "huMU9ZNeY1OhQN2pVS-Urw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.3ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.3ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" IN ($1, $2)[0m  [["server_id", 1], ["server_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.3ms)
+  Rendered api/servers/_server.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.3ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.3ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.4ms)
+  Rendered api/servers/index.json.jbuilder (14.2ms)
+Completed 200 OK in 20ms (Views: 15.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 12:53:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "huMU9ZNeY1OhQN2pVS-Urw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 384ms (Views: 384.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 12:54:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "huMU9ZNeY1OhQN2pVS-Urw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 54ms (Views: 53.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 12:54:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "huMU9ZNeY1OhQN2pVS-Urw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 294ms (Views: 293.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-08 12:54:33 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "huMU9ZNeY1OhQN2pVS-Urw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:55
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 AND "users"."usertag" = $2 LIMIT $3[0m  [["username", "Sionar"], ["usertag", 9316], ["LIMIT", 1]]
+  ↳ app/models/user.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tonyyye@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "usertag" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "Oy_0MsjLjT4M-naD1xcWVA"], ["usertag", 9316], ["updated_at", "2020-03-08 19:54:33.765692"], ["id", 1]]
+  ↳ app/models/user.rb:55
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:55
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/errors/_session_errors.json.jbuilder (0.2ms)
+  Rendered api/sessions/destroy.json.jbuilder (1.5ms)
+Completed 200 OK in 12ms (Views: 2.8ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-08 12:54:36 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guestuser@dischord.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guestuser@dischord.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guestuser@dischord.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:55
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 AND "users"."usertag" = $2 LIMIT $3[0m  [["username", "Guest"], ["usertag", 7051], ["LIMIT", 1]]
+  ↳ app/models/user.rb:69
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guestuser@dischord.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "usertag" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["usertag", 7051], ["updated_at", "2020-03-08 19:54:36.644963"], ["id", 2]]
+  ↳ app/models/user.rb:55
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:55
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/sessions/_session.json.jbuilder (0.2ms)
+  Rendered api/errors/_session_errors.json.jbuilder (0.2ms)
+  Rendered api/sessions/create.json.jbuilder (1.7ms)
+Completed 200 OK in 198ms (Views: 2.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 12:54:36 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" = $1[0m  [["server_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.4ms)
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.4ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.3ms)
+  Rendered api/servers/index.json.jbuilder (5.1ms)
+Completed 200 OK in 12ms (Views: 6.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:00:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 279ms (Views: 278.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:01:21 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 288ms (Views: 286.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:01:22 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.1ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" = $1[0m  [["server_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.2ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.2ms)
+  Rendered api/servers/index.json.jbuilder (3.1ms)
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:02:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:02:07 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.3ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" = $1[0m  [["server_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.5ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.4ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.5ms)
+  Rendered api/servers/index.json.jbuilder (12.0ms)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:02:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:02:12 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.1ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" = $1[0m  [["server_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.3ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.3ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.2ms)
+  Rendered api/servers/index.json.jbuilder (8.4ms)
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:03:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 277ms (Views: 276.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:03:06 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" = $1[0m  [["server_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (1.0ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.3ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.5ms)
+  Rendered api/servers/index.json.jbuilder (10.2ms)
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:22:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 272ms (Views: 271.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:23:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 272ms (Views: 271.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:23:16 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.3ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" = $1[0m  [["server_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.4ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.2ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.3ms)
+  Rendered api/servers/index.json.jbuilder (7.5ms)
+Completed 200 OK in 16ms (Views: 9.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:26:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 274ms (Views: 273.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:26:03 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.3ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" = $1[0m  [["server_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.3ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.4ms)
+  Rendered api/servers/index.json.jbuilder (10.9ms)
+Completed 200 OK in 18ms (Views: 12.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:45:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 290ms (Views: 289.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:45:53 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" = $1[0m  [["server_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.3ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.4ms)
+  Rendered api/servers/index.json.jbuilder (8.3ms)
+Completed 200 OK in 16ms (Views: 10.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:50:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 284ms (Views: 284.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:50:21 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.6ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" = $1[0m  [["server_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.3ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.4ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.3ms)
+  Rendered api/servers/index.json.jbuilder (9.7ms)
+Completed 200 OK in 18ms (Views: 11.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:50:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 40ms (Views: 39.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-08 13:50:49 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6x-GNiRsFwnP-a3cdqBvcA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:55
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 AND "users"."usertag" = $2 LIMIT $3[0m  [["username", "Guest"], ["usertag", 8620], ["LIMIT", 1]]
+  ↳ app/models/user.rb:69
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guestuser@dischord.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "usertag" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "Y3GgcUbsLPo4Ip_b4o1Ssw"], ["usertag", 8620], ["updated_at", "2020-03-08 20:50:49.617858"], ["id", 2]]
+  ↳ app/models/user.rb:55
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:55
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/errors/_session_errors.json.jbuilder (0.3ms)
+  Rendered api/sessions/destroy.json.jbuilder (1.0ms)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-08 13:50:52 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guestuser@dischord.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guestuser@dischord.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guestuser@dischord.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:55
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 AND "users"."usertag" = $2 LIMIT $3[0m  [["username", "Guest"], ["usertag", 6528], ["LIMIT", 1]]
+  ↳ app/models/user.rb:69
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guestuser@dischord.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "usertag" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "jVj3yE2GoQYYfZ6Pg2nZ2Q"], ["usertag", 6528], ["updated_at", "2020-03-08 20:50:53.015881"], ["id", 2]]
+  ↳ app/models/user.rb:55
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:55
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/sessions/_session.json.jbuilder (0.2ms)
+  Rendered api/errors/_session_errors.json.jbuilder (0.2ms)
+  Rendered api/sessions/create.json.jbuilder (1.9ms)
+Completed 200 OK in 228ms (Views: 3.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:50:53 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "jVj3yE2GoQYYfZ6Pg2nZ2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.3ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" = $1[0m  [["server_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.4ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.4ms)
+  Rendered api/servers/index.json.jbuilder (4.5ms)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-08 13:50:55 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "jVj3yE2GoQYYfZ6Pg2nZ2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:55
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 AND "users"."usertag" = $2 LIMIT $3[0m  [["username", "Guest"], ["usertag", 5160], ["LIMIT", 1]]
+  ↳ app/models/user.rb:69
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guestuser@dischord.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "usertag" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "F2jrQQucFbFMLjyL4NKY8w"], ["usertag", 5160], ["updated_at", "2020-03-08 20:50:55.520551"], ["id", 2]]
+  ↳ app/models/user.rb:55
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:55
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/errors/_session_errors.json.jbuilder (0.8ms)
+  Rendered api/sessions/destroy.json.jbuilder (3.2ms)
+Completed 200 OK in 24ms (Views: 7.6ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-08 13:51:04 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"tonyyye@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tonyyye@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tonyyye@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:55
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 AND "users"."usertag" = $2 LIMIT $3[0m  [["username", "Sionar"], ["usertag", 3545], ["LIMIT", 1]]
+  ↳ app/models/user.rb:69
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tonyyye@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "usertag" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["usertag", 3545], ["updated_at", "2020-03-08 20:51:04.724335"], ["id", 1]]
+  ↳ app/models/user.rb:55
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:55
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/sessions/_session.json.jbuilder (0.1ms)
+  Rendered api/errors/_session_errors.json.jbuilder (0.2ms)
+  Rendered api/sessions/create.json.jbuilder (1.6ms)
+Completed 200 OK in 223ms (Views: 2.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:51:04 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.4ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" IN ($1, $2)[0m  [["server_id", 1], ["server_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.2ms)
+  Rendered api/servers/_server.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.5ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.3ms)
+  Rendered api/servers/index.json.jbuilder (6.5ms)
+Completed 200 OK in 15ms (Views: 7.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/servers" for ::1 at 2020-03-08 13:52:15 -0700
+Processing by Api::ServersController#create as JSON
+  Parameters: {"server"=>{"name"=>"", "private"=>"false"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:22
+  Rendering api/servers/create.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.2ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.2ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.2ms)
+  Rendered api/servers/create.json.jbuilder (1.6ms)
+Completed 200 OK in 12ms (Views: 2.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:52:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:52:25 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.7ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.3ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" IN ($1, $2)[0m  [["server_id", 1], ["server_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.4ms)
+  Rendered api/servers/_server.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.5ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.5ms)
+  Rendered api/servers/index.json.jbuilder (17.1ms)
+Completed 200 OK in 27ms (Views: 19.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/servers" for ::1 at 2020-03-08 13:52:37 -0700
+Processing by Api::ServersController#create as JSON
+  Parameters: {"server"=>{"name"=>"", "private"=>"false"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:22
+  Rendering api/servers/create.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.5ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.4ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.4ms)
+  Rendered api/servers/create.json.jbuilder (3.6ms)
+Completed 200 OK in 35ms (Views: 5.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/api/servers" for ::1 at 2020-03-08 13:52:40 -0700
+Processing by Api::ServersController#create as JSON
+  Parameters: {"server"=>{"name"=>"", "private"=>"false"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:22
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:22
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:22
+  Rendering api/servers/create.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.6ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.6ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.6ms)
+  Rendered api/servers/create.json.jbuilder (5.4ms)
+Completed 200 OK in 29ms (Views: 9.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/api/servers" for ::1 at 2020-03-08 13:54:22 -0700
+Processing by Api::ServersController#create as JSON
+  Parameters: {"server"=>{"name"=>"", "private"=>"false"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+Started POST "/api/servers" for ::1 at 2020-03-08 13:55:05 -0700
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:23
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:23
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:23
+  Rendering api/servers/create.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.2ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.2ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.2ms)
+  Rendered api/servers/create.json.jbuilder (1.9ms)
+Completed 200 OK in 43518ms (Views: 3.3ms | ActiveRecord: 10.8ms)
+
+
+Processing by Api::ServersController#create as JSON
+  Parameters: {"server"=>{"name"=>"", "private"=>"false"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  Rendered api/errors/_server_errors.json.jbuilder (1.2ms)
+Completed 422 Unprocessable Entity in 854ms (Views: 5.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 13:55:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 70ms (Views: 67.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 13:55:12 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.3ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.3ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" IN ($1, $2)[0m  [["server_id", 1], ["server_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.6ms)
+  Rendered api/servers/_server.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.4ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.1ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.4ms)
+  Rendered api/servers/index.json.jbuilder (9.5ms)
+Completed 200 OK in 48ms (Views: 12.4ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/api/servers" for ::1 at 2020-03-08 13:55:15 -0700
+Processing by Api::ServersController#create as JSON
+  Parameters: {"server"=>{"name"=>"", "private"=>"false"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/servers_controller.rb:17
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/servers_controller.rb:17
+  Rendered api/errors/_server_errors.json.jbuilder (1.0ms)
+Completed 422 Unprocessable Entity in 23ms (Views: 3.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-03-08 14:09:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 278ms (Views: 277.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/servers" for ::1 at 2020-03-08 14:09:27 -0700
+Processing by Api::ServersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nxEL_TpmnbI8MULbfvgsHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mServer Load (0.4ms)[0m  [1m[34mSELECT "servers".* FROM "servers" INNER JOIN "subscriptions" ON "servers"."id" = "subscriptions"."server_id" WHERE "subscriptions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mSubscription Load (0.3ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."server_id" IN ($1, $2)[0m  [["server_id", 1], ["server_id", 2]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  ↳ app/controllers/api/servers_controller.rb:8
+  Rendering api/servers/index.json.jbuilder
+  Rendered api/servers/_server.json.jbuilder (0.2ms)
+  Rendered api/servers/_server.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.2ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/subscriptions/_subscription.json.jbuilder (0.0ms)
+  Rendered api/errors/_server_errors.json.jbuilder (0.2ms)
+  Rendered api/servers/index.json.jbuilder (4.9ms)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 1.4ms)
+
+

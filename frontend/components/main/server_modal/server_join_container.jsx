@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { openModal, closeModal } from '../../../actions/modal_actions';
-import { makeServer } from '../../../actions/server_actions'
-import ServerCreate from './server_create';
+import { getServer } from '../../../actions/server_key_actions';
+import ServerJoin from './server_join';
 
 const mapStateToProps = state => ({
   errors: state.errors.serverErrors
@@ -11,7 +12,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({ 
   openModal: (modal) => dispatch(openModal(modal)),
   closeModal: () => dispatch(closeModal()),
-  makeServer: (server) => dispatch(makeServer(server))
+  getServer: (key) => dispatch(getServer(key))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ServerCreate);
+export default connect(mapStateToProps, mapDispatchToProps)(ServerJoin);

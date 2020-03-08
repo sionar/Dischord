@@ -15,7 +15,8 @@ class Api::ServersController < ApplicationController
 
   def create
     @server = Server.create(server_params)
-    unless @server
+    debugger
+    unless @server.id
       flash.now[:errors] = @server.errors.full_messages
       render partial: 'api/errors/server_errors', status: 422
     else

@@ -36,26 +36,26 @@
   to { width: 540px; height: 420px; }
 }
 
-#server-selection-form {
+#server-select-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 
 }
 
-#server-selection-header {
+#server-select-header {
   margin-top: 35px;
   color: #7289DA;
   font-size: 18px;
   font-weight: bolder
 }
 
-#server-selection-buttons-container {
+#server-select-buttons-container {
   display: flex;
   flex-direction: row;
 }
 
-.server-selection-button {
+.server-select-button {
   width: 200px;
   height: 260px;
   background-color: white;
@@ -71,23 +71,23 @@
   transition: box-shadow 0.5s;
 }
 
-.server-selection-button:hover {
+.server-select-button:hover {
   box-shadow: 0 0 5px #aaaaaa;
 }
 
-#server-selection-create-button h3 {
+#server-select-create-button h3 {
   font-size: 18px;
   margin-top: 20px;
   color: #7289DA;
 }
 
-#server-selection-join-button h3 {
+#server-select-join-button h3 {
   font-size: 17px;
   margin-top: 20px;
   color: #3CA374;
 }
 
-.server-selection-button p {
+.server-select-button p {
   width: 166px;
   height: 40px;
   padding-left: 8px;
@@ -98,14 +98,14 @@
   color: rgba(153,170,181,0.75);
 }
 
-.server-selection-image {
+.server-select-image {
   width: 196px;
   height: 78px;
   margin-top: 26px;
   margin-bottom: 26px;
 }
 
-#server-selection-join-button {
+#server-select-join-button {
   margin-left: 16px;;
 }
 

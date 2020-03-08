@@ -1,6 +1,8 @@
 import React from 'react';
 
-import ServerSelectionContainer from './server_selection_container';
+import ServerSelectContainer from './server_select_container';
+import ServerCreateContainer from './server_create_container';
+import ServerJoinContainer from './server_join_container';
 
 const ServerModal = ({modal, closeModal}) => {
   if (!modal) {
@@ -8,8 +10,8 @@ const ServerModal = ({modal, closeModal}) => {
   }
   let component;
   switch (modal) {
-    case 'selection':
-      component = <ServerSelectionContainer />;
+    case 'select':
+      component = <ServerSelectContainer />;
       break;
     case 'create':
       component = <ServerCreateContainer />;

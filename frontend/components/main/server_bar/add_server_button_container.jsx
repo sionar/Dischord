@@ -5,7 +5,7 @@ import AddServerButton from './add_server_button';
 
 
 const mapDispatchToProps = dispatch => ({
-  openModal: () => dispatch(openModal('selection'))
+  openModal: () => dispatch(openModal('select'))
 });
 
 export default connect(null, mapDispatchToProps)(AddServerButton);
