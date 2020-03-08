@@ -13,3 +13,36 @@
   font-weight: bold;
   font-size: 16px;
 }
+
+#user-name-button {
+  display: flex;
+  align-items: center;
+}
+
+#user-name-button-content {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+#user-name-button-username {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+}
+
+#user-name-button-usertag {
+  color: #b9bbbe;
+  font-size: 12px;
+  line-height: 13px;
+}
+
+#user-name-avatar {
+  height: 32px;
+  border-radius: 50%;
+}
+
+#user-name-box {
+  margin-left: 5px;
+}
