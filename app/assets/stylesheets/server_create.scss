@@ -1,0 +1,122 @@
+#server-create-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+#server-create-form-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  animation: form-slide-in 0.2s ease-out 0s 1 forwards;
+}
+
+@keyframes form-slide-in {
+  from { left: -50px }
+  to { left: 0px }
+}
+
+#server-create-header {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bolder;
+  margin-top: 25px;
+}
+
+#server-create-subheader {
+  width: 414px;
+  font-size: 16px;
+  color: rgba(98, 106, 110, 0.75);
+  line-height: 20px;
+  text-align: center;
+}
+
+#server-image-icon-placeholder {
+  margin-top: 30px;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  color: white;
+  background-color: #7289DA;
+  text-align: center;
+  line-height: 120px;
+  font-size: 12px;
+}
+
+#server-create-name-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+#server-create-name-label {
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(98, 106, 110, 0.75);
+}
+
+#server-create-name-input {
+  box-sizing: content-box;
+  width: 327px;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid rgba(98, 106, 110, 0.75);
+  background-color: rgba(79,84,92,0.02);
+}
+
+#server-create-buttons-bottom {
+  justify-self: end;
+  background-color: #f6f6f7;
+  width: 100%;
+  height: 74px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  animation: create-buttons-slide-in 0.2s ease-out 0s 1 forwards;
+}
+
+@keyframes create-buttons-slide-in {
+  from { bottom: -30px }
+  to { bottom: 0px }
+}
+
+
+
+#server-create-back-button {
+  box-sizing: border-box;
+  height: 42px;
+  width: 91px;
+  padding: 2px 16px;
+  background-color: #747F8D;
+  color: #ffffff;
+  margin: 10px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+#server-create-back-button:hover {
+  background-color: #68727f;
+}
+
+#server-create-create-button {
+  box-sizing: border-box;
+  height: 42px;
+  width: 376px;
+  padding: 2px 16px;
+  background-color: #43B581;
+  color: #ffffff;
+  margin: 10px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+#server-create-create-button:hover {
+  background-color: #3ca374;
+}
+

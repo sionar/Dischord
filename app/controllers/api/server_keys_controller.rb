@@ -16,13 +16,13 @@ class Api::ServerKeysController < ApplicationController
   def show
     server_key = ServerKey.find_by(server_key: params[:server_key])
     unless server_key
-      flash[:errors] = ['Server not found']
+      flash[:errors] = ['This invite is invalid or has expired.']
       render partial: 'api/errors/server_key_errors', status: 422
     else
       @server = Server.find_by(id: server_key.server_id)
       user = Subscription.find_by(server_id: @server.id, user_id: current_user.id)
       if user
-        flash[:errors] = ['Already subscribed to server']
+        flash[:errors] = ['You are already connected to this server!']
         render partial: 'api/errors/server_key_errors', status: 422
       else
         @users = @server.subscribed_users

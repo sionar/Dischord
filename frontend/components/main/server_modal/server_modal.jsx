@@ -11,25 +11,39 @@ const ServerModal = ({modal, closeModal}) => {
   let component;
   switch (modal) {
     case 'select':
-      component = <ServerSelectContainer />;
+      component = (
+        <div className="modal-child" onClick={e => e.stopPropagation()}> 
+          <ServerSelectContainer />;
+        </div>
+      )
       break;
     case 'create':
-      component = <ServerCreateContainer />;
+      component = (
+        <div className="modal-child" onClick={e => e.stopPropagation()}> 
+          <ServerCreateContainer />;
+        </div>
+      )
       break;
     case 'join':
-      component = <ServerJoinContainer />;
+      component = (
+        <div className="modal-child" onClick={e => e.stopPropagation()}> 
+          <ServerJoinContainer />;
+        </div>
+      )
       break;
     case 'key':
-      component = <ShowKeyContainer />;
+      component = (
+        <div className="modal-child" onClick={e => e.stopPropagation()}> 
+          <ShowKeyContainer />;
+        </div>
+      )
       break;
     default:
       return null;
   }
   return (
     <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
         {component}
-      </div>
     </div>
   );
 }

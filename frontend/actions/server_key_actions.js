@@ -26,13 +26,13 @@ export const receiveServerKeyErrors = (errors) => ({
 });
 
 export const getKeys = serverId => dispatch => ServerKeyUtil.getKeys(serverId)
-  .then(res => dispatch(receiveServerKeys(res.entities.sessionKeys)))
-  .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverKeyErrors)));
+  .then(res => dispatch(receiveServerKeys(res.entities.serverKeys)))
+  .fail(res => dispatch(receiveServerKeyErrors(res.responseJSON.errors.serverKeyErrors)));
 
 export const makeKey = serverId => dispatch => ServerKeyUtil.makeKey(serverId)
-  .then(res => dispatch(createServerKey(res.entities.sessionKeys)))
-  .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverKeyErrors)));
+  .then(res => dispatch(createServerKey(res.entities.serverKeys)))
+  .fail(res => dispatch(receiveServerKeyErrors(res.responseJSON.errors.serverKeyErrors)));
 
 export const getServer = serverKey => dispatch => ServerKeyUtil.getServer(serverKey)
   .then(res => dispatch(receiveServerData(res.entities)))
-  .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverKeyErrors)));
+  .fail(res => dispatch(receiveServerKeyErrors(res.responseJSON.errors.serverKeyErrors)));

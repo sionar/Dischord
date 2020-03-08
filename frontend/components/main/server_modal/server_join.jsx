@@ -17,7 +17,7 @@ class ServerJoin extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.joinServer(this.state);
+    this.props.getServer(this.state);
   }
 
   handleClick(modal) {

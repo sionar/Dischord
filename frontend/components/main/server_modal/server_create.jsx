@@ -4,7 +4,7 @@ class ServerCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      name: `${this.props.user.username}'s Server`,
       private: false
     }
     this.handleChange = this.handleChange.bind(this);
@@ -31,14 +31,16 @@ class ServerCreate extends React.Component {
   render() {
     return(
       <div id="server-create-form">
-        <h2 id="server-create-header">Create Your Server</h2>
-        <h3 id="server-create-subheader">A server is a superpowered group chat where people come together around a topic or to hang out.</h3>          
-        <div id="server-image-icon-container">
-          <div id="server-image-icon-placeholder"><p>Upload an image</p></div>
-        </div>
-        <div id="server-create-name-container">
-          <label id="server-create-name-label">SERVER NAME</label>
-          <input onChange={this.handleChange()} type="text" value={this.state.name}></input>
+        <div id="server-create-form-top">
+          <h2 id="server-create-header">Create Your Server</h2>
+          <h3 id="server-create-subheader">A server is a superpowered group chat where people come together around a topic or to hang out.</h3>          
+          <div id="server-image-icon-container">
+            <div id="server-image-icon-placeholder"><p>Upload an image</p></div>
+          </div>
+          <div id="server-create-name-container">
+            <label id="server-create-name-label">SERVER NAME</label>
+            <input id="server-create-name-input" onChange={this.handleChange()} type="text" value={this.state.name}></input>
+          </div>
         </div>
         <div id="server-create-buttons-bottom">
           <button onClick={this.handleClick("select")} id="server-create-back-button">Back</button>

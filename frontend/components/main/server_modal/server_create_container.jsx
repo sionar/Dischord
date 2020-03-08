@@ -5,6 +5,7 @@ import { makeServer } from '../../../actions/server_actions'
 import ServerCreate from './server_create';
 
 const mapStateToProps = state => ({
+  user: state.entities.users[state.session.id],
   errors: state.errors.serverErrors
 });
 
