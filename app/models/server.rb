@@ -13,7 +13,7 @@ class Server < ApplicationRecord
   validates :name, presence: true
   validates :owner_id, presence: true
 
-  has_one_attached :photo
+  has_one_attached :server_image
 
   belongs_to :owner,
     foreign_key: :owner_id,

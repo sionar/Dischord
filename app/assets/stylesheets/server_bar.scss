@@ -68,3 +68,21 @@
   width: 24px;
   height: 24px;
 }
+
+#add-server-button-container:hover {
+  animation: change-background-color 0.5s ease-in-out 0s 1 forwards;
+}
+
+@keyframes change-background-color {
+  from { background-color: #36393F; border-radius: 50% }
+  to { background-color: #43B581; border-radius: 35% }
+}
+
+#add-server-button-container:hover #add-server-button-icon path {
+  animation: change-icon-color 0.5s ease-in-out 0s 1 forwards;
+}
+
+@keyframes change-icon-color {
+  from { fill: #43B581 }
+  to { fill: #FFFFFF }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
+import CreateServerModalContainer from './create_server_modal/create_server_modal_container';
 import ServerBarContainer from './server_bar/server_bar_container';
 import ServerNameButtonContainer from './channel_bar/server_name_button_container';
 import UserNameButtonContainer from './channel_bar/user_name_button_container';
@@ -14,6 +15,7 @@ class Main extends React.Component {
   render() {
     return (
       <div id="main-container">
+        <CreateServerModalContainer />
         <ServerBarContainer />
         <div id="channel-bar-container">
           <Route path="/channels/:serverId" component={ServerNameButtonContainer} />
