@@ -1,0 +1,129 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  animation: darken 0.12s linear 0s 1 forwards;
+}
+
+@keyframes darken {
+  from { background: rgba(0, 0, 0, 0.2); }
+  to { background: rgba(0, 0, 0, 0.7); }
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 540px;
+  height: 420px;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+
+  animation: enlarge 0.12s ease-out 0s 1 forwards;
+}
+
+@keyframes enlarge {
+  from { width: 400px; height: 300px; }
+  to { width: 540px; height: 420px; }
+}
+
+#server-selection-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#server-selection-header {
+  margin-top: 35px;
+  color: #7289DA;
+  font-size: 18px;
+  font-weight: bolder
+}
+
+#server-selection-buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.server-selection-button {
+  width: 200px;
+  height: 260px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 42px;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 0px;
+  transition: box-shadow 0.5s;
+}
+
+.server-selection-button:hover {
+  box-shadow: 0 0 5px #aaaaaa;
+}
+
+#server-selection-create-button h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #7289DA;
+}
+
+#server-selection-join-button h3 {
+  font-size: 17px;
+  margin-top: 20px;
+  color: #3CA374;
+}
+
+.server-selection-button p {
+  width: 166px;
+  height: 40px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(153,170,181,0.75);
+}
+
+.server-selection-image {
+  width: 196px;
+  height: 78px;
+  margin-top: 26px;
+  margin-bottom: 26px;
+}
+
+#server-selection-join-button {
+  margin-left: 16px;;
+}
+
+.server-bottom-button {
+  box-sizing: border-box;
+  padding: 2px 16px;
+  box-sizing: border-box;
+  width: 196px;
+  height: 38px;  
+  color: white;
+  line-height: 34px;
+  font-size: 15px;
+}
+
+#server-create-bottom-button {
+  background-color: #7289DA;
+}
+
+#server-join-bottom-button {
+  background-color: #3CA374;
+}

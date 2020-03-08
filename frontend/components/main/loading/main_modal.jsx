@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Loading from './loading';
-import Main from './main';
+import Main from '../main';
 
 class MainModal extends React.Component {
   constructor(props) {

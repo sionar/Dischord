@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 
 import AuthPage from './components/auth_page/auth_page';
 import SplashContainer from './components/splash/splash-container';
-import MainModalContainer from './components/main/main_modal_container';
+import MainModalContainer from './components/main/loading/main_modal_container';
 
 const App = () => {
   return (

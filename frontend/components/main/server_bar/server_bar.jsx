@@ -2,7 +2,7 @@ import React from 'react';
 
 import HomeButton from './home_button';
 import ServerButton from './server_button';
-import AddServerButton from './add_server_button';
+import AddServerButtonContainer from './add_server_button_container';
 
 class ServerBar extends React.Component{
   constructor(props) {
@@ -16,7 +16,7 @@ class ServerBar extends React.Component{
         <HomeButton />
         <div className="server-bar-separator"></div>
         {this.props.servers.map(server => <ServerButton key={server.id} server={server} />)}
-        <AddServerButton />
+        <AddServerButtonContainer />
       </section>
     )
   }
