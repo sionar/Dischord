@@ -39,7 +39,7 @@ class Server < ApplicationRecord
 
   def ensure_image
     unless self.image.attached?
-      file = open('https://dischord-dev.s3-us-west-1.amazonaws.com/server-default-icon.png')
+      file = open('https://dischord-seeds.s3-us-west-1.amazonaws.com/server-default-icon.png')
       self.image.attach(io: file, filename: 'server-default-icon.png')
     end
   end

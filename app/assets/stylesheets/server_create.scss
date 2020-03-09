@@ -48,6 +48,10 @@
   font-size: 12px;
 }
 
+#server-image-upload-text {
+  user-select: none;
+}
+
 #server-create-name-container {
   display: flex;
   flex-direction: column;

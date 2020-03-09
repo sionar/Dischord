@@ -65,7 +65,7 @@ class ServerCreate extends React.Component {
             <div id="server-image-icon-placeholder" onClick={this.handleImageClick}>
               {preview}
               <input id="server-image-upload-input" type="file" onChange={this.handleFile} style={{display: "none"}}/>
-              <p>Upload an image</p>
+              <p id="server-image-upload-text">Upload an image</p>
             </div>
           </div>
           <div id="server-create-name-container">

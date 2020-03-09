@@ -10,9 +10,7 @@ json.entities do
   end
 
   json.subscriptions do
-    @subscriptions.each do |subscription|
-      json.partial! 'api/subscriptions/subscription', subscription: subscription
-    end
+    json.partial! 'api/subscriptions/subscription', subscription: @subscription
   end
 
   json.serverKeys do

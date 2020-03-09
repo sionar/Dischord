@@ -10,7 +10,7 @@ export default (state = {}, action) => {
     case RECEIVE_SERVER_DATA:
       return Object.assign(nextState, action.payload.subscriptions);
     case CREATE_SERVER:
-      return Object.assign(nextState, action.subscriptions);
+      return Object.assign(nextState, action.payload.subscriptions);
     case RECEIVE_DATA:
       return action.payload.subscriptions;
     case LOGOUT_CURRENT_USER:
