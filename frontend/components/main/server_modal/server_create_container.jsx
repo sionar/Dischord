@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({ 
   openModal: (modal) => dispatch(openModal(modal)),
   closeModal: () => dispatch(closeModal()),
-  makeServer: (server) => dispatch(makeServer(server))
+  makeServer: (formData) => dispatch(makeServer(formData))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ServerCreate);

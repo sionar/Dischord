@@ -27,11 +27,5 @@
   background-color: white;
   display: flex;
   justify-content: center;
-
-  animation: enlarge 0.12s ease-out 0s 1 forwards;
 }
 
-@keyframes enlarge {
-  from { width: 400px; height: 300px; }
-  to { width: 540px; height: 420px; }
-}

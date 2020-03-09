@@ -19,6 +19,7 @@ class Api::ServersController < ApplicationController
       flash.now[:errors] = @server.errors.full_messages
       render partial: 'api/errors/server_errors', status: 422
     else
+      @server_key = ServerKey.create(server_id: params[:server_id])
       @subscription = Subscription.create(user_id: current_user.id, server_id: @server.id)
       render :create, status: 200
     end
@@ -65,7 +66,7 @@ class Api::ServersController < ApplicationController
   end
 
   def server_params
-    serv_params = params.require(:server).permit(:name, :private)
+    serv_params = params.require(:server).permit(:name, :private, :image)
     serv_params[:owner_id] = current_user.id
     serv_params
   end

@@ -5,11 +5,14 @@ class ServerCreate extends React.Component {
     super(props);
     this.state = {
       name: `${this.props.user.username}'s Server`,
-      private: false
+      private: false,
+      imageFile: null,
+      imageUrl: null
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   handleChange() {
@@ -18,13 +21,31 @@ class ServerCreate extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.makeServer(this.state);
+    const formData = new FormData();
+    formData.append('server[name]', this.state.name);
+    formData.append('server[private', this.state.private);
+    if (this.state.imageFile) {
+      formData.append('server[image]', this.state.imageFile);
+    }
+    this.props.makeServer(formData)
+      .then(response => console.log(response));
   }
 
   handleClick(modal) {
     return e => {
       e.preventDefault();
       this.props.openModal(modal);
+    }
+  }
+
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({imageFile: file, imageUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
     }
   }
 
@@ -35,7 +56,10 @@ class ServerCreate extends React.Component {
           <h2 id="server-create-header">Create Your Server</h2>
           <h3 id="server-create-subheader">A server is a superpowered group chat where people come together around a topic or to hang out.</h3>          
           <div id="server-image-icon-container">
-            <div id="server-image-icon-placeholder"><p>Upload an image</p></div>
+            <div id="server-image-icon-placeholder">
+              <input type="file" onChange={this.handleFile}/>
+              <p>Upload an image</p>
+            </div>
           </div>
           <div id="server-create-name-container">
             <label id="server-create-name-label">SERVER NAME</label>

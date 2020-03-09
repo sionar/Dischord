@@ -5,11 +5,13 @@ export const getData = () => (
   })
 );
 
-export const makeServer = server => (
+export const makeServer = formData => (
   $.ajax({
     url: `api/servers`,
     method: 'POST',
-    data: { server }
+    data: formData,
+    contentType: false,
+    processData: false
   })
 );
 

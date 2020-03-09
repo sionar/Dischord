@@ -86,3 +86,17 @@
   from { fill: #43B581 }
   to { fill: #FFFFFF }
 }
+
+.server-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.server-image:hover {
+  animation: change-border-radius 0.2s linear 0s 1 forwards;
+}
+
+.server-button-active .server-image {
+  border-radius: 35%;
+}
