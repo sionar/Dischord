@@ -3,11 +3,11 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  animation: form-slide-in 0.2s ease-out 0s 1 forwards;
+  animation: select-form-slide-in 0.2s ease-out 0s 1 forwards;
 }
 
-@keyframes form-slide-in {
-  from { left: 50px }
+@keyframes select-form-slide-in {
+  from { left: 100px }
   to { left: 0px }
 }
 

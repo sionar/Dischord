@@ -30,18 +30,25 @@ class ServerJoin extends React.Component {
   render() {
     return(
       <div id="server-join-form">
-        <h2 id="server-join-header">JOIN A SERVER</h2>
-        <h3 id="server-join-subheader">Enter an invite below to join an existing server.</h3>
-        <h3 id="server-join-subheader2">The invite will look something like this:</h3>
-        <p id="server-join-example"> cFummm </p>
-                
-        <div id="server-join-input-container">
-          <input onChange={this.handleChange()} type="text" value={this.state.name}></input>
-          <label id="server-join-name-label">Enter an invite</label>
+        <div id="server-join-form-top">
+          <h2 id="server-join-header">JOIN A SERVER</h2>
+          <h3 className="server-join-subheader" id="server-join-subheader-1">Enter an invite below to join an existing server.</h3>
+          <h3 className="server-join-subheader">The invite will look something like this:</h3>
+          <p id="server-join-example">cFuMkm</p>
+                  
+          <div id="server-join-input-container">
+            <input id="server-join-name-input" onChange={this.handleChange()} type="text" value={this.state.name}></input>
+            <label id="server-join-name-label">Enter an invite</label>
+          </div>
         </div>
         <div id="server-join-buttons-bottom">
-          <button onClick={this.handleClick("select")} id="server-join-back-button">Back</button>
-          <button onClick={this.handleSubmit} id="server-join-join-button">Join</button>
+          <div id="server-join-buttons-container">     
+              <button onClick={this.handleClick("select")} id="server-join-back-button">
+                <img src={window.serverJoinBackIcon} id="server-join-back-icon"/> BACK
+              </button>
+
+            <button onClick={this.handleSubmit} id="server-join-join-button">Join</button>
+          </div>
         </div>
       </div>
     )

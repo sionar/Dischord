@@ -43,8 +43,10 @@ class ServerCreate extends React.Component {
           </div>
         </div>
         <div id="server-create-buttons-bottom">
-          <button onClick={this.handleClick("select")} id="server-create-back-button">Back</button>
-          <button onClick={this.handleSubmit} id="server-create-create-button">Create Server</button>
+          <div id="server-create-buttons-container">
+            <button onClick={this.handleClick("select")} id="server-create-back-button">Back</button>
+            <button onClick={this.handleSubmit} id="server-create-create-button">Create Server</button>
+          </div>
         </div>
       </div>
     )

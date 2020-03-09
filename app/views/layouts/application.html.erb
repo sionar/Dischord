@@ -8,8 +8,8 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
-      window.authBackground = "<%= image_url('auth-background.jpg') %>";
       window.favicon = "<%= image_url('favicon.svg') %>";
+      window.authBackground = "<%= image_url('auth-background.jpg') %>";
       window.splashFloatBomb = "<%= image_url('splash-float-bomb.svg') %>";
       window.splashFloatCoin = "<%= image_url('splash-float-coin.svg') %>";
       window.splashFloatDisk = "<%= image_url('splash-float-disk.svg') %>";
@@ -33,8 +33,9 @@
       window.splashShapesTriangle = "<%= image_url('splash-shapes-triangle.svg') %>";
       window.loadingIcon = "<%= image_url('loading.gif') %>";
       window.defaultAvatar = "<%= image_url('default-avatar.png') %>";
-      window.createServerIcon = "<%= image_url('create-server-icon.svg') %>";
-      window.joinServerIcon = "<%= image_url('join-server-icon.svg') %>";
+      window.serverCreateIcon = "<%= image_url('server-create-icon.svg') %>";
+      window.serverJoinIcon = "<%= image_url('server-join-icon.svg') %>";
+      window.serverJoinBackIcon = "<%= image_url('server-join-back-icon.svg') %>";
     </script>
 
     <% if current_user %>

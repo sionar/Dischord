@@ -1,0 +1,145 @@
+#server-join-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+  
+
+#server-join-form-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  animation: join-form-slide-in 0.2s ease-out 0s 1 forwards;
+}
+
+@keyframes join-form-slide-in {
+  from { left: 100px }
+  to { left: 0px }
+}
+
+#server-join-header {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: bolder;
+  margin-top: 25px;
+  color: #43B581;
+}
+
+.server-join-subheader {
+  width: 414px;
+  font-size: 18px;
+  color: rgba(98, 106, 110, 0.75);
+  line-height: 20px;
+  text-align: center;
+}
+
+#server-join-subheader-1 {
+  margin-top: 20px;
+}
+
+#server-join-example {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 20px;
+  color: #7289DA;
+}
+
+#server-join-input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+#server-join-name-label {
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(98, 106, 110, 0.75);
+}
+
+#server-join-name-input {
+  box-sizing: content-box;
+  width: 374px;
+  height: 18px;
+  padding: 10px 4px;
+  border: 0px;
+  border-bottom: 2px solid rgba(98, 106, 110, 0.35);
+  font-size: 16px;
+  outline: none;
+}
+
+
+#server-join-buttons-bottom {
+  justify-self: end;
+  background-color: #f6f6f7;
+  width: 100%;
+  height: 62px;
+  margin-top: 80px;
+  position: relative;
+  animation: create-buttons-slide-in 0.2s ease-out 0s 1 forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes create-buttons-slide-in {
+  from { bottom: -30px }
+  to { bottom: 0px }
+}
+
+#server-join-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+}
+
+
+
+#server-join-back-button {
+  box-sizing: border-box;
+  height: 42px;
+  width: 80px;
+  padding: 2px 16px;
+  background-color: #f6f6f7;
+  color: #99AAB5;
+  margin: 10px;
+  border-radius: 3px;
+  font-size: 11px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2px solid #f6f6f7;
+}
+
+#server-join-back-button:hover {
+  border-bottom: 2px solid rgba(98, 106, 110, 0.35);
+}
+
+#server-join-back-icon {
+  height: 16px;
+  position: relative;
+  left: -4px;
+}
+
+#server-join-join-button {
+  box-sizing: border-box;
+  height: 42px;
+  width: 91px;
+  padding: 2px 16px;
+  background-color: #43B581;
+  color: #ffffff;
+  margin: 10px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+#server-join-join-button:hover {
+  background-color: #3ca374;
+}
+
