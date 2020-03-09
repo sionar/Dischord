@@ -16,6 +16,12 @@ json.entities do
       json.partial! 'api/subscriptions/subscription', subscription: subscription
     end
   end
+
+  json.serverKeys do
+    @server_keys.each do |server_key|
+      json.partial! 'api/server_keys/server_key', server_key: server_key
+    end
+  end
 end
 
 json.partial! '/api/errors/server_errors'

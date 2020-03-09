@@ -2,12 +2,14 @@ class Api::ServersController < ApplicationController
   before_action :require_login
 
   def index
-    @servers = current_user.subscribed_servers.includes(:subscribed_users, :subscriptions)
+    @servers = current_user.subscribed_servers.includes(:subscribed_users, :subscriptions, :server_keys)
     @users = Array.new
     @subscriptions = Array.new
+    @server_keys = Array.new
     @servers.each do |server|
       @users += server.subscribed_users
       @subscriptions += server.subscriptions
+      @server_keys += server.server_keys
     end
 
     render :index, status: 200

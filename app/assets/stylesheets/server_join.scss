@@ -56,6 +56,18 @@
   margin-top: 60px;
 }
 
+#server-join-label-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#server-join-error {
+  font-size: 12px;
+  line-height: 16px;
+  color: red;
+  margin-left: 8px;
+}
+
 #server-join-name-label {
   font-size: 12px;
   line-height: 16px;

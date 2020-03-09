@@ -1,8 +1,10 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
 import ServerSelectContainer from './server_select_container';
 import ServerCreateContainer from './server_create_container';
 import ServerJoinContainer from './server_join_container';
+import ServerInviteContainer from './server_invite_container';
 
 const ServerModal = ({modal, closeModal}) => {
   if (!modal) {
@@ -31,10 +33,10 @@ const ServerModal = ({modal, closeModal}) => {
         </div>
       )
       break;
-    case 'key':
+    case 'invite':
       component = (
         <div className="modal-child" onClick={e => e.stopPropagation()}> 
-          <ShowKeyContainer />;
+          <Route path="/channels/:serverId" component={ServerInviteContainer} />
         </div>
       )
       break;

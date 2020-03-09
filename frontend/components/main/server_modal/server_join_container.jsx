@@ -6,7 +6,7 @@ import { getServer } from '../../../actions/server_key_actions';
 import ServerJoin from './server_join';
 
 const mapStateToProps = state => ({
-  errors: state.errors.serverErrors
+  errors: state.errors.serverKeyErrors
 });
 
 const mapDispatchToProps = dispatch => ({ 

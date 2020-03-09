@@ -17,7 +17,8 @@ class ServerJoin extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.getServer(this.state);
+    this.props.getServer(this.state)
+      .then(res => this.props.closeModal());
   }
 
   handleClick(modal) {
@@ -30,6 +31,8 @@ class ServerJoin extends React.Component {
   
 
   render() {
+    const errors = this.props.errors.length > 0 ? <p id="server-join-error">{this.props.errors[0]}</p> : null;
+    console.log(errors)
     return(
       <div id="server-join-form">
         <div id="server-join-form-top">
@@ -37,10 +40,12 @@ class ServerJoin extends React.Component {
           <h3 className="server-join-subheader" id="server-join-subheader-1">Enter an invite below to join an existing server.</h3>
           <h3 className="server-join-subheader">The invite will look something like this:</h3>
           <p id="server-join-example">cFuMkm</p>
-                  
           <div id="server-join-input-container">
             <input id="server-join-name-input" onChange={this.handleChange()} type="text" value={this.state.name}></input>
-            <label id="server-join-name-label">Enter an invite</label>
+            <div id="server-join-label-container">
+              <label id="server-join-name-label">Enter an invite</label>
+              {errors}
+            </div>
           </div>
         </div>
         <div id="server-join-buttons-bottom">

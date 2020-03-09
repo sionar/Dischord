@@ -11,6 +11,8 @@ export default (state = {}, action) => {
       return Object.assign(nextState, action.serverKey);
     case LOGOUT_CURRENT_USER:
       return {}
+    case CREATE_SERVER:
+      return Object.assign(nextState, action.payload.serverKeys)
     default:
       return state;
   }
