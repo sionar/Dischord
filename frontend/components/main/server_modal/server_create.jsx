@@ -29,7 +29,7 @@ class ServerCreate extends React.Component {
       formData.append('server[image]', this.state.imageFile);
     }
     this.props.makeServer(formData)
-      .then(res => this.props.closeModal());;
+      .then(res => this.props.closeModal('invite'));
   }
 
   handleClick(modal) {
@@ -55,7 +55,6 @@ class ServerCreate extends React.Component {
   }
 
   render() {
-    console.log(preview)
     const preview = this.state.imageUrl ? <img className="preview-image" src={this.state.imageUrl} /> : null;
     return(
       <div id="server-create-form">

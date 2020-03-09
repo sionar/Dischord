@@ -1,0 +1,31 @@
+#server-invite-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+}
+
+#server-invite-button-image {
+  height: 55px;
+}
+
+.server-invite-button-sublabel {
+  color: #dcddde;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#server-invite-button-button {
+  box-sizing: content-box;
+  width: 107px;
+  height: 38px;
+  padding: 2px 0px;
+  margin: 16px 48px 0px 48px;
+  border-radius: 3px;
+  background-color: #7289DA;
+  font-size: 13px;
+  line-height: 16px;
+  color: white;
+}
+

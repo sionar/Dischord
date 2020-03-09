@@ -35,7 +35,7 @@ const ServerModal = ({modal, closeModal}) => {
       break;
     case 'invite':
       component = (
-        <div className="modal-child" onClick={e => e.stopPropagation()}> 
+        <div className="modal-child-invite" onClick={e => e.stopPropagation()}> 
           <Route path="/channels/:serverId" component={ServerInviteContainer} />
         </div>
       )

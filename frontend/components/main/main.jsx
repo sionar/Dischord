@@ -3,9 +3,8 @@ import { Route } from 'react-router-dom';
 
 import ServerModalContainer from './server_modal/server_modal_container';
 import ServerBarContainer from './server_bar/server_bar_container';
-import ServerNameButtonContainer from './channel_bar/server_name_button_container';
-import UserNameButtonContainer from './channel_bar/user_name_button_container';
 import UsersBarContainer from './users_bar/users_bar_container';
+import ChannelBarContainer from './channel_bar/channel_bar_container';
 
 class Main extends React.Component {
   constructor(props) {
@@ -17,12 +16,7 @@ class Main extends React.Component {
       <div id="main-container">
         <ServerModalContainer />
         <ServerBarContainer />
-        <div id="channel-bar-container">
-          <Route path="/channels/:serverId" component={ServerNameButtonContainer} />
-          <section id="channel-bar"></section>
-          <UserNameButtonContainer />
-        </div>
-        
+        <ChannelBarContainer />      
         <div id="content-outer-container">
             <section id="header-bar"></section>
           <div id="content-body-container">

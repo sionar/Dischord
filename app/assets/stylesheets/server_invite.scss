@@ -1,4 +1,46 @@
 #server-invite-form {
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+#server-invite-form-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#server-invite-form-label {
+  color: white;
+  font-size: 16px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 20px 5px;
+}
+
+#server-invite-form-image {
+  width: 408px;
+  height: 176px;
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+
+#server-invite-subheader {
+  font-size: 13px;
+  color: #B9BBBE;
+  margin-bottom: 12px;
+}
+
+#server-invite-form-input {
+  width: 380px;
+  height: 20px;
+  padding: 10px;
+  outline: none;
+  border-radius: 3px;
+  color: #DCDDDE;
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.2);
+  font-size: 16px;
 }

@@ -10,6 +10,9 @@
 
 #server-bar {
   width: 72px;
+  height: auto;
+  max-height: 100%;
+  overflow: auto;
   padding-top: 12px;
   background-color: #202225;
   display: flex;

@@ -9,7 +9,6 @@ class ServerBar extends React.Component{
     super(props);
   }
 
-
   render() {
     return (
       <section id="server-bar">
