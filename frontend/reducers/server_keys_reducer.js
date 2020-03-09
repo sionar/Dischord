@@ -13,6 +13,8 @@ export default (state = {}, action) => {
       return {}
     case CREATE_SERVER:
       return Object.assign(nextState, action.payload.serverKeys)
+    case RECEIVE_DATA:
+      return action.payload.serverKeys;
     default:
       return state;
   }

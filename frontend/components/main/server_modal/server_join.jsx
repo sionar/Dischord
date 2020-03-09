@@ -32,7 +32,6 @@ class ServerJoin extends React.Component {
 
   render() {
     const errors = this.props.errors.length > 0 ? <p id="server-join-error">{this.props.errors[0]}</p> : null;
-    console.log(errors)
     return(
       <div id="server-join-form">
         <div id="server-join-form-top">
