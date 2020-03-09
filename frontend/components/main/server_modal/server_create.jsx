@@ -12,6 +12,7 @@ class ServerCreate extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
     this.handleFile = this.handleFile.bind(this);
   }
 
@@ -36,6 +37,10 @@ class ServerCreate extends React.Component {
       e.preventDefault();
       this.props.openModal(modal);
     }
+  }  
+  
+  handleImageClick() {
+    $("#server-image-upload-input").trigger('click')
   }
 
   handleFile(e) {
@@ -50,14 +55,17 @@ class ServerCreate extends React.Component {
   }
 
   render() {
+    console.log(preview)
+    const preview = this.state.imageUrl ? <img className="preview-image" src={this.state.imageUrl} /> : null;
     return(
       <div id="server-create-form">
         <div id="server-create-form-top">
           <h2 id="server-create-header">Create Your Server</h2>
           <h3 id="server-create-subheader">A server is a superpowered group chat where people come together around a topic or to hang out.</h3>          
           <div id="server-image-icon-container">
-            <div id="server-image-icon-placeholder">
-              <input type="file" onChange={this.handleFile}/>
+            <div id="server-image-icon-placeholder" onClick={this.handleImageClick}>
+              {preview}
+              <input id="server-image-upload-input" type="file" onChange={this.handleFile} style={{display: "none"}}/>
               <p>Upload an image</p>
             </div>
           </div>

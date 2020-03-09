@@ -27,6 +27,8 @@ class ServerJoin extends React.Component {
     }
   }
 
+  
+
   render() {
     return(
       <div id="server-join-form">
