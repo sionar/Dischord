@@ -12,12 +12,12 @@ class ServerJoin extends React.Component {
   }
 
   handleChange() {
-    return e => this.setState({ name: e.target.value });
+    return e => this.setState({ server_key: e.target.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.getServer(this.state)
+    this.props.getServer(this.state.server_key)
       .then(res => this.props.closeModal());
   }
 

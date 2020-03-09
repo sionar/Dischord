@@ -3,10 +3,16 @@ import React from 'react';
 class ServerInvite extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    const el = document.getElementById('server-invite-form-input');
+    el.select();
+    document.execCommand("copy");
   }
 
   render() {
-    
     const serverId = this.props.match.params.serverId;
     const serverName = this.props.servers[serverId].name;
     const serverKeys = Object.values(this.props.serverKeys);
@@ -25,7 +31,10 @@ class ServerInvite extends React.Component {
         </div>
         <img id="server-invite-form-image" src={window.serverKeyInvite}></img>
         <p id="server-invite-subheader">Share this code with others to grant access to your server!</p>
-        <input id="server-invite-form-input" value={serverKey} readOnly></input>
+        <div id="server-invite-input-container">
+          <input id="server-invite-form-input" value={serverKey} readOnly></input>
+          <button id="server-invite-copy-button" onClick={this.handleClick}>Copy</button>
+        </div>
       </div>
     )
   }

@@ -27,6 +27,7 @@ class Api::ServerKeysController < ApplicationController
       else
         @users = @server.subscribed_users
         @subscriptions = @server.subscriptions
+        @server_keys = @server.server_keys
         render :show, status: 200
       end
     end

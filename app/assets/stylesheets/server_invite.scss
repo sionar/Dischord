@@ -1,7 +1,14 @@
 #server-invite-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: invite-form-slide-in 0.3s ease-out 0s 1 forwards;
+}
+
+@keyframes invite-form-slide-in {
+  from { top: 100px }
+  to { top: 0px }
 }
 
 #server-invite-form-header {
@@ -33,14 +40,35 @@
   margin-bottom: 12px;
 }
 
-#server-invite-form-input {
+#server-invite-input-container {
   width: 380px;
   height: 20px;
   padding: 10px;
-  outline: none;
   border-radius: 3px;
-  color: #DCDDDE;
   background-color: rgba(0,0,0,0.1);
   border: 1px solid rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#server-invite-form-input {
+  background-color: transparent;
+  border: 0px;
+  outline: none;
   font-size: 16px;
+  height: 20px;
+  padding: 10px;
+  width: 307px;
+  color: #DCDDDE;
+}
+
+#server-invite-copy-button {
+  box-sizing: content-box;
+  width: 42px;
+  height: 28px;
+  padding: 2px 16px;
+  background-color: #7289DA;
+  color: #DCDDDE;
+  border-radius: 3px;
 }

@@ -1,6 +1,7 @@
 import { RECEIVE_SERVER_KEYS, CREATE_SERVER_KEY } from '../actions/server_key_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 import { CREATE_SERVER, RECEIVE_DATA } from '../actions/server_actions';
+import { RECEIVE_SERVER_DATA } from '../actions/server_key_actions';
 
 export default (state = {}, action) => {
   Object.freeze(state);
@@ -16,6 +17,8 @@ export default (state = {}, action) => {
       return Object.assign(nextState, action.payload.serverKeys)
     case RECEIVE_DATA:
       return action.payload.serverKeys;
+    case RECEIVE_SERVER_DATA:
+      return Object.assign(nextState, action.payload.serverKeys)
     default:
       return state;
   }

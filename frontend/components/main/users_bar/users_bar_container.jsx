@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import UsersBar from './users_bar';
 
 const mapStateToProps = state => {
+  debugger
   const servers = Object.keys(state.entities.servers);
   const subs = Object.values(state.entities.subscriptions);
   let users = {};

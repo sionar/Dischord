@@ -21,7 +21,6 @@ class Api::ServersController < ApplicationController
       flash.now[:errors] = @server.errors.full_messages
       render partial: 'api/errors/server_errors', status: 422
     else
-      debugger
       @server_key = ServerKey.create(server_id: @server.id)
       @subscription = Subscription.create(user_id: current_user.id, server_id: @server.id)
       render :create, status: 200

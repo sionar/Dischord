@@ -18,8 +18,8 @@ u2 = User.create!(username: 'Guest', email: 'guestuser@dischord.com', password: 
 
 s1 = Server.create!(name: 'Dischord Main Server', owner_id:u1.id, private: false)
 s2 = Server.create!(name: 'Cats!', owner_id:u1.id, private: false)
-file1 = open('https://dischord-dev.s3-us-west-1.amazonaws.com/server-default-icon.png')
-file2 = open('https://dischord-dev.s3-us-west-1.amazonaws.com/server-default-icon.png')
+file1 = open('https://dischord-seeds.s3-us-west-1.amazonaws.com/server-default-icon.png')
+file2 = open('https://dischord-seeds.s3-us-west-1.amazonaws.com/server-default-icon.png')
 s1.image.attach(io: file1, filename: 'server-default-icon.png')
 s2.image.attach(io: file2, filename: 'server-default-icon.png')
 

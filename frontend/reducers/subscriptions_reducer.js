@@ -8,7 +8,7 @@ export default (state = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_SERVER_DATA:
-      return action.payload.subscriptions;
+      return Object.assign(nextState, action.payload.subscriptions);
     case CREATE_SERVER:
       return Object.assign(nextState, action.subscriptions);
     case RECEIVE_DATA:
