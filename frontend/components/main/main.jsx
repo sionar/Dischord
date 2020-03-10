@@ -21,7 +21,7 @@ class Main extends React.Component {
             <section id="header-bar"></section>
           <div id="content-body-container">
             <section id="messages-box"></section>
-            <Route exact path="/channels/:serverId" component={UsersBarContainer} />
+            <Route path="/channels/:serverId" component={UsersBarContainer} />
           </div>
         </div>
       </div>
