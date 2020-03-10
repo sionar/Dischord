@@ -1,0 +1,93 @@
+#channel-list-container {
+  border-top: 1px solid rgba(142, 146, 151, 0.1);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#channel-list-header-container {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#channel-list-header-text {
+  color: #72767D;
+  font-size: 11px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+#channel-list-add-channel-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+#channel-list-add-channel-icon path {
+  fill: #8E9297;
+}
+
+.channel-list-link-container {
+  height: 32px;
+}
+
+.channel-list-item-container a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #72767D;
+  text-decoration: none;
+  height: 32px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.channel-list-item-container:hover {
+  background-color: rgba(79,84,92,0.16);
+  border-radius: 3px;
+}
+
+.channel-list-item-button-container {
+  display: none;
+}
+
+.channel-list-item-container:hover .channel-list-item-button-container {
+  width: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  bottom: 25px;
+  left: 180px;
+}
+
+.channel-list-item-label-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.channel-list-hash-icon {
+  height: 20px;
+}
+
+.channel-list-invite-icon path, .channel-list-edit-icon path {
+  fill: #72767D;
+}
+
+.channel-list-item-name {
+  margin-left: 5px;
+}
+
+
+
+.channel-list-item-active {
+  background-color: rgba(79,84,92,0.32);
+}
+
+.channel-list-item-active .channel-list-item-name {
+  color: white;
+}
