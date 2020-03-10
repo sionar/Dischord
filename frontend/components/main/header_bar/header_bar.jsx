@@ -8,9 +8,9 @@ class HeaderBar extends React.Component {
   render () {
     debugger
     const channelName = Object.keys(this.props.channels).length !== 0 ? 
-      this.props.channels[this.props.match.params.channelId].name : null;
+      <div id="main-header-channel-name">{this.props.channels[this.props.match.params.channelId].name}</div> : null;
     const channelDesc = Object.keys(this.props.channels).length !== 0 ? 
-      this.props.channels[this.props.match.params.channelId].description : null;
+      <div id="main-header-channel-description">{this.props.channels[this.props.match.params.channelId].description}</div> : null;
     const descriptionDiv = channelDesc ? <div id="main-header-description-divider"></div> : null
     
     return (

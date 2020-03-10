@@ -1,0 +1,32 @@
+#header-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-bar-hash-icon {
+  margin-left: 15px;
+}
+
+.header-bar-hash-icon path{
+  fill: #72767D;
+}
+#main-header-channel-name {
+  color: white;
+  font-weight: bolder;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+#main-header-description-divider {
+  width: 1px;
+  height: 20px;
+  background-color: rgb(142, 146, 151);
+  margin-left: 20px;
+}
+
+#main-header-channel-description {
+  color: #b9bbbe;
+  margin-left: 20px;
+  font-size: 14px;
+}
