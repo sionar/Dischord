@@ -11,6 +11,7 @@ class Api::ServersController < ApplicationController
       @subscriptions += server.subscriptions
       @server_keys += server.server_keys
     end
+    @users.push current_user if @users.empty?
 
     render :index, status: 200
   end
