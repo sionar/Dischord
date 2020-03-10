@@ -7,9 +7,11 @@ class ServerInvite extends React.Component {
   }
 
   handleClick(e) {
-    const el = document.getElementById('server-invite-form-input');
-    el.select();
+    const inputEl = document.getElementById('server-invite-form-input');
+    inputEl.select();
     document.execCommand("copy");
+    const copyEl = document.getElementById('server-invite-copy-button');
+    copyEl.innerHTML = "Copied!";
   }
 
   render() {

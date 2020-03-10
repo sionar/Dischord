@@ -65,10 +65,21 @@
 
 #server-invite-copy-button {
   box-sizing: content-box;
-  width: 42px;
+  width: 60px;
   height: 28px;
-  padding: 2px 16px;
+  padding: 2px 8px;
   background-color: #7289DA;
   color: #DCDDDE;
   border-radius: 3px;
+  text-align: center;
+}
+
+#server-invite-copy-button:hover {
+  background-color: rgba(114, 137, 218, 0.609);
+  transition: background-color 0.2s;
+}
+
+#server-invite-form-input::selection {
+  background-color: rgba(0,0,0,0.1);
+  color: #DCDDDE;
 }

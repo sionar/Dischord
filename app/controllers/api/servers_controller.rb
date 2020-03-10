@@ -7,14 +7,15 @@ class Api::ServersController < ApplicationController
     @subscriptions = Array.new
     @server_keys = Array.new
     @channels = Array.new
+    @active_channels = Hash.new
     @servers.each do |server|
       @users += server.subscribed_users
       @subscriptions += server.subscriptions
       @server_keys += server.server_keys
       @channels += server.channels
+      @active_channels[server.id] = server.channels.first.id
     end
     @users.push current_user if @users.empty?
-
     render :index, status: 200
   end
 
@@ -27,6 +28,8 @@ class Api::ServersController < ApplicationController
       @server_key = ServerKey.create(server_id: @server.id)
       @subscription = Subscription.create(user_id: current_user.id, server_id: @server.id)
       @channels = Server.channels
+      @active_channels = Hash.new
+      @active_channels[@server.id] = @channels.first.id
       render :create, status: 200
     end
   end

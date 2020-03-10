@@ -38,7 +38,7 @@ class ServerJoin extends React.Component {
           <h2 id="server-join-header">JOIN A SERVER</h2>
           <h3 className="server-join-subheader" id="server-join-subheader-1">Enter an invite below to join an existing server.</h3>
           <h3 className="server-join-subheader">The invite will look something like this:</h3>
-          <p id="server-join-example">cFuMkm</p>
+          <p id="server-join-example">cfumam</p>
           <div id="server-join-input-container">
             <input id="server-join-name-input" onChange={this.handleChange()} type="text" value={this.state.name}></input>
             <div id="server-join-label-container">

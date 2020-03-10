@@ -7,6 +7,7 @@ class ServerButton extends React.Component {
   }
   
   render() {
+    
     return (
       <NavLink to={`/channels/${this.props.server.id}`} activeClassName="server-button-active" >
         <div className="server-bar-server-button">
