@@ -37,6 +37,12 @@ class Server < ApplicationRecord
     through: :subscriptions,
     source: :user
 
+  has_many :channels,
+    foreign_key: :server_id,
+    class_name: :Channel,
+    dependent: :destroy
+
+  private
   def ensure_image
     unless self.image.attached?
       file = open('https://dischord-seeds.s3-us-west-1.amazonaws.com/server-default-icon.png')
