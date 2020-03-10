@@ -37,8 +37,8 @@ class ServerCreate extends React.Component {
       e.preventDefault();
       this.props.openModal(modal);
     }
-  }  
-  
+  }
+
   handleImageClick() {
     $("#server-image-upload-input").trigger('click')
   }
@@ -47,7 +47,7 @@ class ServerCreate extends React.Component {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({imageFile: file, imageUrl: fileReader.result});
+      this.setState({ imageFile: file, imageUrl: fileReader.result });
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -56,15 +56,15 @@ class ServerCreate extends React.Component {
 
   render() {
     const preview = this.state.imageUrl ? <img className="preview-image" src={this.state.imageUrl} /> : null;
-    return(
+    return (
       <div id="server-create-form">
         <div id="server-create-form-top">
           <h2 id="server-create-header">Create Your Server</h2>
-          <h3 id="server-create-subheader">A server is a superpowered group chat where people come together around a topic or to hang out.</h3>          
+          <h3 id="server-create-subheader">A server is a superpowered group chat where people come together around a topic or to hang out.</h3>
           <div id="server-image-icon-container">
             <div id="server-image-icon-placeholder" onClick={this.handleImageClick}>
               {preview}
-              <input id="server-image-upload-input" type="file" onChange={this.handleFile} style={{display: "none"}}/>
+              <input id="server-image-upload-input" type="file" onChange={this.handleFile} style={{ display: "none" }} />
               <p id="server-image-upload-text">Upload an image</p>
             </div>
           </div>

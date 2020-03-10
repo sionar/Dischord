@@ -15,7 +15,7 @@ const ServerModal = ({modal, closeModal}) => {
     case 'select':
       component = (
         <div className="modal-child" onClick={e => e.stopPropagation()}> 
-          <ServerSelectContainer />;
+          <ServerSelectContainer />
         </div>
       )
       break;
