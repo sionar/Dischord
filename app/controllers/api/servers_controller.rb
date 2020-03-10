@@ -6,10 +6,12 @@ class Api::ServersController < ApplicationController
     @users = Array.new
     @subscriptions = Array.new
     @server_keys = Array.new
+    @channels = Array.new
     @servers.each do |server|
       @users += server.subscribed_users
       @subscriptions += server.subscriptions
       @server_keys += server.server_keys
+      @channels += server.channels
     end
     @users.push current_user if @users.empty?
 
@@ -24,6 +26,10 @@ class Api::ServersController < ApplicationController
     else
       @server_key = ServerKey.create(server_id: @server.id)
       @subscription = Subscription.create(user_id: current_user.id, server_id: @server.id)
+      @channels = Array.new
+      @channels.push(Channel.create(name: 'announcements', description: 'Announcements for this server', server_id: @server.id))
+      @channels.push(Channel.create(name: 'general', description: 'General chat', server_id: @server.id))
+      @channels.push(Channel.create(name: 'off-topic', description: 'Anything unrelated to the main topic goes here.', server_id: @server.id))
       render :create, status: 200
     end
   end

@@ -1,4 +1,4 @@
-class ChannelsController < ApplicationController
+class Api::ChannelsController < ApplicationController
   before_action :require_login, :require_owner
 
   def create
@@ -9,6 +9,7 @@ class ChannelsController < ApplicationController
     else
       render :create, status: 200
     end
+
   end
 
   def update
@@ -51,3 +52,4 @@ class ChannelsController < ApplicationController
     end
   end
 end
+
