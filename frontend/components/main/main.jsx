@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import ServerModalContainer from './server_modal/server_modal_container';
+import ModalContainer from './modal/modal_container';
 import ServerBarContainer from './server_bar/server_bar_container';
 import UsersBarContainer from './users_bar/users_bar_container';
 import ChannelBarContainer from './channel_bar/channel_bar_container';
@@ -15,7 +15,7 @@ class Main extends React.Component {
   render() {
     return (
       <div id="main-container">
-        <ServerModalContainer />
+        <ModalContainer />
         <ServerBarContainer />
         <ChannelBarContainer />      
         <div id="content-outer-container">

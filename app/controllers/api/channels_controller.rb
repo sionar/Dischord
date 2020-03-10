@@ -13,7 +13,7 @@ class Api::ChannelsController < ApplicationController
   end
 
   def update
-    @channel = Channel.find_by(id: params[:id])
+    @channel = Channel.find_by(id: params[:channel][:id])
     unless @channel.update(channel_params)
       flash.now[:errors] = @channel.errors.full_messages
       render partial: 'api/errors/channel_errors', status: 422
@@ -39,13 +39,13 @@ class Api::ChannelsController < ApplicationController
 
   private
   def channel_params
-    chan_params = params.require(:channel).permit(:name, description)
-    chan_params[:server_id] = params[:server_id]
+    chan_params = params.require(:channel).permit(:name, :description)
+    chan_params[:server_id] = params[:channel][:serverId]
     chan_params
   end
 
   def require_owner
-    server = Server.find_by(id: params[:server_id])
+    server = Server.find_by(id: params[:channel][:serverId])
     unless server.owner_id == current_user.id
       flash.now[:errors] = ['You do not own this server.']
       render partial: 'api/errors/channel_errors', status: 403

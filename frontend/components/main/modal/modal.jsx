@@ -5,8 +5,9 @@ import ServerSelectContainer from './server_select_container';
 import ServerCreateContainer from './server_create_container';
 import ServerJoinContainer from './server_join_container';
 import ServerInviteContainer from './server_invite_container';
+import ChannelEditContainer from './channel_edit_container';
 
-const ServerModal = ({modal, closeModal}) => {
+const Modal = ({modal, closeModal}) => {
   if (!modal) {
     return null;
   }
@@ -40,6 +41,13 @@ const ServerModal = ({modal, closeModal}) => {
         </div>
       )
       break;
+    case 'editChannel':
+      component = (
+        <div className="modal-child-edit" onMouseDown={e => e.stopPropagation()}> 
+          <Route path="/channels/:serverId/:channelId" component={ChannelEditContainer} />
+        </div>
+      )
+      break;
     default:
       return null;
   }
@@ -50,4 +58,4 @@ const ServerModal = ({modal, closeModal}) => {
   );
 }
 
-export default ServerModal;
+export default Modal;

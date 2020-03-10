@@ -8,7 +8,7 @@ export const makeChannel = channel => (
 
 export const updateChannel = channel => (
   $.ajax({
-    url: `api/server/${channel.serverId}/channels/${channel.id}`,
+    url: `api/servers/${channel.serverId}/channels/${channel.id}`,
     method: 'PATCH',
     data: channel
   })
