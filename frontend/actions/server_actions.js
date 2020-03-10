@@ -44,6 +44,6 @@ export const updateServer = server => dispatch => ServerUtil.updateServer(server
   .then(res => dispatch(editServer(res.entities.servers)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
 
-export const destroyServer = serverId => dispatch => ServerUtil.updateServer(serverId)
-  .then(res => dispatch(deleteServer(res.entities.servers)))
+export const destroyServer = server => dispatch => ServerUtil.destroyServer(server)
+  .then(() => dispatch(deleteServer(server)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));

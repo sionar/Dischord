@@ -26,10 +26,7 @@ class Api::ServersController < ApplicationController
     else
       @server_key = ServerKey.create(server_id: @server.id)
       @subscription = Subscription.create(user_id: current_user.id, server_id: @server.id)
-      @channels = Array.new
-      @channels.push(Channel.create(name: 'announcements', description: 'Announcements for this server', server_id: @server.id))
-      @channels.push(Channel.create(name: 'general', description: 'General chat', server_id: @server.id))
-      @channels.push(Channel.create(name: 'off-topic', description: 'Anything unrelated to the main topic goes here.', server_id: @server.id))
+      @channels = Server.channels
       render :create, status: 200
     end
   end

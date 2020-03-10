@@ -19,11 +19,11 @@ export const updateServer = server => (
   $.ajax({
     url: `api/server/${server.id}`,
     method: 'PATCH',
-    data: { server }
+    data: server 
   })
 )
 
-export const destroyServer = serverId => (
+export const destroyServer = server => (
   $.ajax({
     url: `api/server/${server.id}`,
     method: 'DELETE',

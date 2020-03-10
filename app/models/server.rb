@@ -16,6 +16,7 @@ class Server < ApplicationRecord
   validates :name, presence: true
   validates :owner_id, presence: true
   after_initialize :ensure_image
+  after_create :create_default_channels
 
   has_one_attached :image
 
@@ -48,5 +49,11 @@ class Server < ApplicationRecord
       file = open('https://dischord-seeds.s3-us-west-1.amazonaws.com/server-default-icon.png')
       self.image.attach(io: file, filename: 'server-default-icon.png')
     end
+  end
+
+  def create_default_channels
+    Channel.create(name: 'announcements', description: 'Announcements for this server', server_id: self.id)
+    Channel.create(name: 'general', description: 'General chat', server_id: self.id)
+    Channel.create(name: 'off-topic', description: 'Anything unrelated to the main topic goes here.', server_id: self.id)
   end
 end

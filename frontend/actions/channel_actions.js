@@ -1,5 +1,10 @@
 import * as ChannelUtil from '../util/api_channel_util';
 
+export const CREATE_CHANNEL = 'CREATE_CHANNEL';
+export const EDIT_CHANNEL = 'EDIT_CHANNEL';
+export const DELETE_CHANNEL = 'DELETE_CHANNEL';
+export const RECEIVE_CHANNEL_ERRORS = 'RECEIVE_CHANNEL_ERRORS';
+
 export const createChannel = payload => ({
   type: CREATE_CHANNEL,
   payload
@@ -10,9 +15,9 @@ export const editChannel = payload => ({
   payload
 });
 
-export const deleteChannel = payload => ({
+export const deleteChannel = channel => ({
   type: DELETE_CHANNEL,
-  payload
+  channel
 });
 
 export const receiveChannelErrors = (errors) => ({
@@ -29,5 +34,5 @@ export const updateChannel = channel => dispatch => ChannelUtil.updateChannel(ch
   .fail(res => dispatch(receiveChannelErrors(res.responseJSON.errors.channelErrors)));
 
 export const destroyChannel = channel => dispatch => ChannelUtil.destroyChannel(channel)
-  .then(res => dispatch(deleteChannel(res.entities)))
+  .then(() => dispatch(deleteChannel(channel)))
   .fail(res => dispatch(receiveChannelErrors(res.responseJSON.errors.channelErrors)));
