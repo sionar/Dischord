@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ChannelListItem from './channel_list_item';
+import ChannelListItemContainer from './channel_list_item_container';
 
 class ChannelList extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class ChannelList extends React.Component {
     const channels = this.props.channels.filter(el => Number(el.serverId) === Number(this.props.match.params  .serverId));
     const channelItems =
       channels.length > 0 ? 
-        channels.map(channel => <ChannelListItem key={channel.id} channel={channel} changeActiveChannel={this.props.changeActiveChannel}/>)
+        channels.map(channel => <ChannelListItemContainer key={channel.id} channel={channel} changeActiveChannel={this.props.changeActiveChannel}/>)
         : null
     return (
       <div id="channel-list-container">

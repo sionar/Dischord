@@ -3,7 +3,7 @@ import React from 'react';
 import Loading from './loading';
 import Main from '../main';
 
-class MainModal extends React.Component {
+class LoadingModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,4 +25,4 @@ class MainModal extends React.Component {
   }
 }
 
-export default MainModal;
+export default LoadingModal;
