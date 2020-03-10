@@ -17,7 +17,7 @@ class ChannelBar extends React.Component{
         <Route path="/channels/:serverId" component={ServerNameButtonContainer} />
         <section id="channel-bar">
           <Route path="/channels/:serverId" component={ServerInviteButtonContainer} />
-          <Route path="/channels/:serverId" component={ChannelListContainer} />
+          <Route path="/channels/:serverId/:channelId" component={ChannelListContainer} />
         </section>
         <UserNameButtonContainer />
       </div>
