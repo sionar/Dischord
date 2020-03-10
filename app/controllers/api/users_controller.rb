@@ -16,8 +16,8 @@ class Api::UsersController < ApplicationController
       render partial: 'api/errors/session_errors', status: 422
     else
       login!(@user)
-      Subscription.create({server_id: 1, user_id: @user.id})
-      Subscription.create({server_id: 2, user_id: @user.id})
+      Subscription.create({server_id: Server.first.id, user_id: @user.id})
+      Subscription.create({server_id: Server.second.id, user_id: @user.id})
       render :create, status: 200
     end
   end
