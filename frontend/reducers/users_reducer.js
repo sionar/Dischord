@@ -10,7 +10,6 @@ export default (state = {}, action) => {
     case RECEIVE_DATA:
       return action.payload.users
     case RECEIVE_SERVER_DATA:
-      debugger
       return Object.assign(nextState, action.payload.users);
     case RECEIVE_USER:
       return Object.assign(nextState, action.user);
