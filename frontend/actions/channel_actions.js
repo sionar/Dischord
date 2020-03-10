@@ -3,7 +3,9 @@ import * as ChannelUtil from '../util/api_channel_util';
 export const CREATE_CHANNEL = 'CREATE_CHANNEL';
 export const EDIT_CHANNEL = 'EDIT_CHANNEL';
 export const DELETE_CHANNEL = 'DELETE_CHANNEL';
+export const CHANGE_ACTIVE_CHANNEL = "CHANGE_ACTIVE_CHANNEL"
 export const RECEIVE_CHANNEL_ERRORS = 'RECEIVE_CHANNEL_ERRORS';
+
 
 export const createChannel = payload => ({
   type: CREATE_CHANNEL,
@@ -20,10 +22,16 @@ export const deleteChannel = channel => ({
   channel
 });
 
+export const changeActiveChannel = (data) => ({
+  type: CHANGE_ACTIVE_CHANNEL,
+  data
+})
+
 export const receiveChannelErrors = (errors) => ({
   type: RECEIVE_CHANNEL_ERRORS,
   errors
 });
+
 
 export const makeChannel = channel => dispatch => ChannelUtil.makeChannel(channel)
   .then(res => dispatch(createChannel(res.entities)))

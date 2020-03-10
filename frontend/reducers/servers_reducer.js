@@ -1,5 +1,6 @@
-import { RECEIVE_DATA, CREATE_SERVER, EDIT_SERVER, DELETE_SERVER, CHANGE_ACTIVE_CHANNEL } from '../actions/server_actions';
+import { RECEIVE_DATA, CREATE_SERVER, EDIT_SERVER, DELETE_SERVER } from '../actions/server_actions';
 import { RECEIVE_SERVER_DATA } from '../actions/server_key_actions';
+import { CHANGE_ACTIVE_CHANNEL } from '../actions/channel_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 export default (state = {}, action) => {

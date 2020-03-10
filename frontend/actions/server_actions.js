@@ -4,7 +4,6 @@ export const RECEIVE_DATA = "RECEIVE_DATA";
 export const CREATE_SERVER = "CREATE_SERVER";
 export const EDIT_SERVER = "EDIT_SERVER";
 export const DELETE_SERVER = "DELETE_SERVER";
-export const CHANGE_ACTIVE_CHANNEL = "CHANGE_ACTIVE_CHANNEL"
 export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
 
 export const receiveData = payload => ({
@@ -26,11 +25,6 @@ export const deleteServer = server => ({
   type: DELETE_SERVER,
   server
 });
-
-export const changeActiveChannel = (data) => ({
-  type: CHANGE_ACTIVE_CHANNEL,
-  data
-})
 
 export const receiveServerErrors = (errors) => ({
   type: RECEIVE_SERVER_ERRORS,
