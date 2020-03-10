@@ -25,8 +25,8 @@ class Api::ServerKeysController < ApplicationController
         flash[:errors] = ['You are already connected to this server!']
         render partial: 'api/errors/server_key_errors', status: 422
       else
-        @users = @server.subscribed_users
         @subscription = Subscription.create(user_id: current_user.id, server_id: @server.id)
+        @users = @server.subscribed_users
         @server_keys = @server.server_keys
         render :show, status: 200
       end
