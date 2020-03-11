@@ -5,7 +5,8 @@ import { openModal } from '../../../actions/modal_actions';
 import { setEditChannelId } from '../../../actions/channel_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  channel: ownProps.channel
+  channel: ownProps.channel,
+  isOwner: ownProps.isOwner
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

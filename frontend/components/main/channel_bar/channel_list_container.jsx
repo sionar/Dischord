@@ -5,7 +5,9 @@ import { changeActiveChannel } from '../../../actions/channel_actions';
 import { openModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = state => ({
-  channels: Object.values(state.entities.channels)
+  channels: Object.values(state.entities.channels),
+  servers: state.entities.servers,
+  currentUserId: state.session.id
 });
 
 const mapDispatchToProps = dispatch => ({
