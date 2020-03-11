@@ -22,8 +22,28 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    unless current_user.id == params[:id]
+      flash.now[:errors] = ['You do not have permissions to edit this user.']
+      render partial: 'api/errors/users_errors', status: 403
+    else
+      @user = current_user
+      @user.image.purge
+      unless @user.update(edit_params)
+        flash.now[:errors] = @user.errors.full_messages
+        render partial: 'api/errors/users_errors', status: 422
+      else
+        render :update, status: 200
+      end
+    end
+  end
+
   private
   def user_params
     user_params = params.require(:user).permit(:username, :email, :password)
+  end
+
+  def edit_params
+    user_params = params.require(:user).permit(:image)
   end
 end
