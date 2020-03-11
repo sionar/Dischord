@@ -5,15 +5,17 @@ export const getUser = userId => (
   })
 );
 
-export const updateUser = formdata => (
-  $.ajax({
-    url: `api/users/${formdata.user.id}`,
-    method: 'PATCH',
-    data: formdata,
-    contentType: false,
-    processData: false
-  })
-);
+export const updateUser = (formdata, id) => {
+  return (
+    $.ajax({
+      url: `api/users/${id}`,
+      method: 'PATCH',
+      data: formdata,
+      contentType: false,
+      processData: false
+    })
+  )
+};
 
 export const signup = user => (
   $.ajax({

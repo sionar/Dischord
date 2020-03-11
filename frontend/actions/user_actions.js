@@ -23,7 +23,7 @@ export const getUser = userId => dispatch => UserUtil.getUser(userId)
   .then(res => dispatch(receiveUser(res.entities)))
   .fail(res => dispatch(receiveUserErrors(res.responseJSON.errors.userErrors)));
 
-export const updateUser = user => dispatch => UserUtil.updateUser(user)
+export const updateUser = (user, id) => dispatch => UserUtil.updateUser(user, id)
   .then(res => dispatch(editUser(res.entities)))
   .fail(res => dispatch(receiveUserErrors(res.responseJSON.errors.userErrors)));
 

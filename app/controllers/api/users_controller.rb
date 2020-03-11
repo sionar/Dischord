@@ -23,7 +23,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    unless current_user.id == params[:id]
+    unless current_user.id == params[:id].to_i
       flash.now[:errors] = ['You do not have permissions to edit this user.']
       render partial: 'api/errors/users_errors', status: 403
     else

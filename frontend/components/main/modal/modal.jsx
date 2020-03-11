@@ -8,6 +8,7 @@ import ServerInviteContainer from './server_invite_container';
 import ChannelEditContainer from './channel_edit_container';
 import ChannelCreateContainer from './channel_create_container';
 import ChannelDeleteContainer from './channel_delete_container';
+import UserEditContainer from './user_edit_container';
 
 const Modal = ({modal, closeModal}) => {
   if (!modal) {
@@ -64,7 +65,13 @@ const Modal = ({modal, closeModal}) => {
         </div>
       )
       break;
-    
+    case 'editUser':
+      component = (
+        <div className="modal-child-channel" onMouseDown={e => e.stopPropagation()}> 
+          <UserEditContainer />
+        </div>
+      )
+      break;   
     default:
       return null;
   }

@@ -39,7 +39,16 @@
   line-height: 13px;
 }
 
+#user-name-avatar-button {
+  height: 32px;
+  background-color: inherit;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
 #user-name-avatar {
+  width: 32px;
   height: 32px;
   border-radius: 50%;
 }
@@ -54,6 +63,7 @@
   margin-left: 114px;
   background-color: inherit;
   outline: none;
+  cursor: pointer;
 }
 
 #user-logout-button-image {
@@ -69,4 +79,10 @@
 #user-logout-button-button:hover .tooltip {
   display: block;
   margin-top: -50px;
+}
+
+#user-name-avatar-button:hover .tooltip {
+  display: block;
+  margin-top: -50px;
+  margin-left: -25px;
 }

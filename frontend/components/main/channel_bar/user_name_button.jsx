@@ -4,10 +4,17 @@ class UserNameButton extends React.Component {
   constructor (props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(e) {
+    e.preventDefault();
     this.props.logout();
+  }
+
+  handleImageClick(e) {
+    e.preventDefault();
+    this.props.openModal('editUser');
   }
 
   render() {
@@ -18,7 +25,10 @@ class UserNameButton extends React.Component {
     return (
       <section id="user-name-button">
         <div id="user-name-button-content">
-          <img src={imageUrl} id="user-name-avatar"/>
+          <button id="user-name-avatar-button" onClick={this.handleImageClick}>
+            <div className="tooltip">Edit Avatar</div>
+            <img src={imageUrl} id="user-name-avatar"/>
+          </button>
           <div id="user-name-box">
             <div id="user-name-button-username">{username}</div>
             <div id="user-name-button-usertag">#{usertag}</div>
