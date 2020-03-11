@@ -26,13 +26,16 @@ class ChannelEdit extends React.Component {
 
   render() {
     return( 
-      <form id="channel-edit-form" onSubmit={this.handleSubmit}>
-        <h2>Update Channel</h2>
-        <label>Name</label>
-        <input type="text" onChange={this.handleChange("name")} type="text" value={this.state.name}/>
-        <label>Channel Topic</label>
-        <input type="text" onChange={this.handleChange("description")} type="text" value={this.state.description}/>
-        <input type="submit" type="submit" value="Update Channel"/>
+      <form className="channel-form" onSubmit={this.handleSubmit}>
+        <h2 className="channel-header-label">update channel</h2>
+        <label className="channel-form-label">Name</label>
+        <input className="channel-form-input" type="text" onChange={this.handleChange("name")} type="text" value={this.state.name}/>
+        <label className="channel-form-label" >Channel Topic</label>
+        <textarea className="channel-form-input" id="channel-form-desc-input" type="text" onChange={this.handleChange("description")} type="text" value={this.state.description}></textarea>
+        <div className="channel-button-container">
+          <button className="channel-cancel-button">Cancel</button>
+          <input className="channel-submit-button" type="submit" value="Create Channel"/>
+        </div>
       </form>
     )
   }

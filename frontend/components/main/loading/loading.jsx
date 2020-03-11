@@ -3,7 +3,7 @@ import React from 'react';
 const Loading = () => {
   return (
     <section id="loading-flex-container">
-      <img src={window.loadingIcon} id="loading-icon"></img>
+      <img src={"https://dischord-seeds.s3-us-west-1.amazonaws.com/loading.gif"} id="loading-icon"></img>
       <h2 id="loading-text">LOADING</h2>
     </section>
   )

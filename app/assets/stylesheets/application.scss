@@ -14,6 +14,7 @@
 
  @import 'reset.scss';
  @import 'fonts.scss';
+ @import 'utility.scss';
  @import 'splash.scss';
  @import 'splash_images.scss';
  @import 'auth_page.scss';
@@ -33,4 +34,5 @@
  @import 'server_invite.scss';
  @import 'header_bar.scss';
  @import 'channel_list.scss';
- @import 'channel_edit.scss'
+ @import 'channel_form.scss';
+ 

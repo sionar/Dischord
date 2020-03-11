@@ -1,4 +1,5 @@
 import { RECEIVE_DATA, CREATE_SERVER, EDIT_SERVER, DELETE_SERVER, RECEIVE_SERVER_ERRORS } from '../actions/server_actions';
+import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
 
 export default (state = [], action) => {
   Object.freeze(state);
@@ -12,7 +13,11 @@ export default (state = [], action) => {
     case DELETE_SERVER:
       return [];
     case RECEIVE_SERVER_ERRORS:
-      return action.errors;    
+      return action.errors;
+    case OPEN_MODAL:
+      return [];
+    case CLOSE_MODAL:
+      return [];  
     default:
       return state;
   }

@@ -27,7 +27,7 @@ class Api::ServersController < ApplicationController
     else
       @server_key = ServerKey.create(server_id: @server.id)
       @subscription = Subscription.create(user_id: current_user.id, server_id: @server.id)
-      @channels = Server.channels
+      @channels = @server.channels
       @active_channels = Hash.new
       @active_channels[@server.id] = @channels.first.id
       render :create, status: 200

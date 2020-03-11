@@ -44,14 +44,14 @@ const Modal = ({modal, closeModal}) => {
       break;
     case 'editChannel':
       component = (
-        <div className="modal-child-edit" onMouseDown={e => e.stopPropagation()}> 
+        <div className="modal-child-channel" onMouseDown={e => e.stopPropagation()}> 
           <Route path="/channels/:serverId/:channelId" component={ChannelEditContainer} />
         </div>
       )
       break;
     case 'addChannel':
       component = (
-        <div className="modal-child-add" onMouseDown={e => e.stopPropagation()}> 
+        <div className="modal-child-channel" onMouseDown={e => e.stopPropagation()}> 
           <Route path="/channels/:serverId/:channelId" component={ChannelCreateContainer} />
         </div>
       )

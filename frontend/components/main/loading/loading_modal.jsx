@@ -6,19 +6,14 @@ import Main from '../main';
 class LoadingModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      doneLoading: false
-    }
   }
 
-  componentDidMount() {
-    this.props.getData().then(
-      this.setState({doneLoading: true})
-    );
+  componentWillMount() {
+    this.props.getData()
   }
 
   render() {
-    const component = this.state.doneLoading ? <Main /> : <Loading />;
+    const component = this.props.doneLoading ? <Main /> : <Loading /> 
     return (
       component
     )
