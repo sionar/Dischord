@@ -21,8 +21,9 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
-  before_validation :ensure_session_token, :ensure_usertag
+  before_validation :ensure_session_token
   after_initialize :ensure_image
+  after_create :ensure_usertag
 
   has_one_attached :image
   

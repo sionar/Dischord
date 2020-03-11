@@ -38,7 +38,7 @@ class ChannelsController < ApplicationController
 
   private
   def channel_params
-    chan_params = params.require(:channel).permit(:name, description)
+    chan_params = params.require(:channel).permit(:name, :description)
     chan_params[:server_id] = params[:server_id]
     chan_params
   end
