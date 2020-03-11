@@ -1,10 +1,11 @@
 import React from 'react';
 
+import UserButtonContainer from './user_button_container';
+
 class UsersBar extends React.Component{
   constructor(props) {
     super(props);
   }
-
 
   render() {
     let list;
@@ -13,13 +14,14 @@ class UsersBar extends React.Component{
       list = null;
     else {
       const id = Number(serverId);
-      list = this.props.users[id].map(user => <div key={user.id} className="users-bar-user-name">{user.username}</div>)  
-    }
+      list = this.props.users[id].map(
+        user => <UserButtonContainer key={user.id} user={user} />)
+      }
     return (
       <section id="users-bar">
         <div id="users-bar-content">
           <div id="users-bar-user-header">USERS</div>
-          {list}
+          <div id="users-bar-user-list">{list}</div>
         </div>
       </section>
     )

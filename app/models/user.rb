@@ -11,6 +11,9 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+
+require 'open-uri'
+
 class User < ApplicationRecord
 
   attr_reader :password
@@ -18,10 +21,11 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
-  
-  has_one_attached :user_image
-
   before_validation :ensure_session_token, :ensure_usertag
+  after_initialize :ensure_image
+
+  has_one_attached :image
+  
 
   has_many :owned_servers,
     foreign_key: :owner_id,
@@ -71,4 +75,10 @@ class User < ApplicationRecord
     self.usertag = usertag
   end
 
+  def ensure_image
+    unless self.image.attached?
+      file = open('https://dischord-seeds.s3-us-west-1.amazonaws.com/default-avatar.png')
+      self.image.attach(io: file, filename: 'server-default-icon.png')
+    end
+  end
 end
