@@ -29,7 +29,7 @@ class ServerCreate extends React.Component {
       formData.append('server[image]', this.state.imageFile);
     }
     this.props.makeServer(formData)
-      .then(res => this.props.closeModal('invite'));
+    this.props.closeModal();
   }
 
   handleClick(modal) {

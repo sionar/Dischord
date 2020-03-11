@@ -62,7 +62,7 @@ const SplashFooter = (props) => {
           <h3>JOIN OVER 250 MILLION PLAYERS TODAY</h3>
         </div>
         <Link to={props.loggedIn ? "/channels/@me" : "/register"}>
-            <button id="splash-footer-signup-button">{props.loggedIn ? "Open Discord" : "Sign Up Now"}</button>
+            <button id="splash-footer-signup-button">{props.loggedIn ? "Open Dischord" : "Sign Up Now"}</button>
         </Link>
       </ul>
       <img src={window.splashFooterBackground} id="splash-footer-background"></img>

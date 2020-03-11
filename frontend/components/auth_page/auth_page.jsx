@@ -17,7 +17,7 @@ class Register extends React.Component {
     })
   }
 
-  render () {
+  render() {
     return (
       <section id="auth-page-container">
         <img src={window.authBackground} id="auth-background"/>

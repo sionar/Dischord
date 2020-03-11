@@ -14,7 +14,7 @@ const SplashBody = (props) => {
       <div id="splash-button-container">
         <SplashDemoButtonContainer/>
         <Link to={props.loggedIn ? "/channels/@me" : "/register"}>
-          <button id="splash-register-button" className="splash-button">{props.loggedIn? "Open Discord" : "Sign up"}</button>
+          <button id="splash-register-button" className="splash-button">{props.loggedIn? "Open Dischord" : "Sign up"}</button>
         </Link>
       </div>        
     </section>  

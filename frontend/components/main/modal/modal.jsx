@@ -7,6 +7,7 @@ import ServerJoinContainer from './server_join_container';
 import ServerInviteContainer from './server_invite_container';
 import ChannelEditContainer from './channel_edit_container';
 import ChannelCreateContainer from './channel_create_container';
+import ChannelDeleteContainer from './channel_delete_container';
 
 const Modal = ({modal, closeModal}) => {
   if (!modal) {
@@ -56,6 +57,14 @@ const Modal = ({modal, closeModal}) => {
         </div>
       )
       break;
+    case 'deleteChannel':
+      component = (
+        <div className="modal-child-channel" onMouseDown={e => e.stopPropagation()}> 
+          <Route path="/channels/:serverId/:channelId" component={ChannelDeleteContainer} />
+        </div>
+      )
+      break;
+    
     default:
       return null;
   }

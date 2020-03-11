@@ -17,7 +17,7 @@ class ChannelCreate extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();   
+    e.preventDefault();  
     this.props.makeChannel({channel: this.state});
     this.props.closeModal();
   }

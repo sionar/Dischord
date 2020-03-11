@@ -1,22 +1,25 @@
-export const makeChannel = channel => (
+export const makeChannel = channel => {
+  return (
   $.ajax({
-    url: `api/servers/${channel.serverId}/channels`,
+    url: `api/servers/${channel.channel.serverId}/channels`,
     method: 'POST',
     data: channel
-  })
-);
+  }))
+};
 
 export const updateChannel = channel => (
   $.ajax({
-    url: `api/servers/${channel.serverId}/channels/${channel.id}`,
+    url: `api/servers/${channel.channel.serverId}/channels/${channel.channel.id}`,
     method: 'PATCH',
     data: channel
   })
 )
 
-export const destroyChannel = channel => (
+export const destroyChannel = channel => {
+  return (
   $.ajax({
-    url: `api/server/${channel.serverId}/channels/${channel.id}`,
+    url: `api/servers/${channel.serverId}/channels/${channel.id}`,
     method: 'DELETE',
   })
-)
+  )
+}

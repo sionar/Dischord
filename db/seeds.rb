@@ -18,10 +18,13 @@ u2 = User.create!(username: 'Guest', email: 'guestuser@dischord.com', password: 
 
 s1 = Server.create!(name: 'Dischord Main Server', owner_id:u1.id, private: false)
 s2 = Server.create!(name: 'Cats!', owner_id:u1.id, private: false)
+s3 = Server.create!(name: 'Anime Alleyway', owner_id: u2.id, private: false)
 
 k1 = ServerKey.create!(server_id: s1.id)
 k2 = ServerKey.create!(server_id: s2.id)
+k3 = ServerKey.create!(server_id: s3.id)
 
 sub1 = Subscription.create(user_id: u1.id, server_id: s1.id)
 sub2 = Subscription.create(user_id: u1.id, server_id: s2.id)
 sub3 = Subscription.create(user_id: u2.id, server_id: s1.id)
+sub4 = Subscription.create(user_id: u2.id, server_id: s3.id)

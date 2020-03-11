@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .channel-cancel-button {
@@ -27,6 +27,7 @@
   outline: none;
   color: white;
   background-color: inherit;
+  cursor: pointer;
 }
 
 .channel-submit-button {
@@ -41,6 +42,7 @@
   color: white;
   background-color: #7289DA;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .channel-form-input {
@@ -92,4 +94,51 @@
   align-self: flex-start;
   margin-left: 20px;
   margin-bottom: 20px;
+}
+
+.channel-delete-button {
+  justify-self: flex-start;
+  width: 122px;
+  height: 38px;
+  padding: 2px 16px;
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 16px;
+  border: 0px;
+  text-align: center;
+  color: white;
+  background-color: #43B581;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.channel-delete-button:hover {
+  background-color: rgb(55, 148, 106);
+  transition: background-color 0.2s;
+}
+
+.channel-cancel-button:hover {
+  text-decoration: underline;
+}
+
+.channel-submit-button:hover {
+  background-color: rgba(114, 137, 218, 0.753);
+  transition: background-color 0.2s;
+}
+
+.channel-delete-image {
+  height: 180px;
+  margin-bottom: 20px;
+  background-color: inherit;
+  opacity: 20%;
+}
+
+#channel-delete-subheader {
+  line-height: 20px;
+  color: #8E9297;
+}
+
+#channel-delete-subheader2 {
+  line-height: 20px;
+  color: #ff4040;
 }

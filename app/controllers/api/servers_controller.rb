@@ -13,7 +13,7 @@ class Api::ServersController < ApplicationController
       @subscriptions += server.subscriptions
       @server_keys += server.server_keys
       @channels += server.channels
-      @active_channels[server.id] = server.channels.first.id
+      @active_channels[server.id] = server.channels.first.id if server.channels.first
     end
     @users.push current_user if @users.empty?
     render :index, status: 200

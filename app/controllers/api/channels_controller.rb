@@ -45,8 +45,8 @@ class Api::ChannelsController < ApplicationController
   end
 
   def require_owner
-    server = Server.find_by(id: params[:channel][:serverId])
-    unless server.owner_id == current_user.id
+    server = Server.find_by(id: params[:server_id])
+    unless server && server.owner_id == current_user.id
       flash.now[:errors] = ['You do not own this server.']
       render partial: 'api/errors/channel_errors', status: 403
     end
