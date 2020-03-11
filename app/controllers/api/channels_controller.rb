@@ -2,7 +2,7 @@ class Api::ChannelsController < ApplicationController
   before_action :require_login, :require_owner
 
   def create
-    @channel = Channel.create(chan_params)
+    @channel = Channel.create(channel_params)
     unless @channel.id
       flash.now[:errors] = @channel.errors.full_messages
       render partial: 'api/errors/channel_errors', status: 422

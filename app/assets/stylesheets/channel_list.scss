@@ -55,6 +55,10 @@
   display: none;
 }
 
+#channel-list-create-button {
+  background-color: inherit;
+}
+
 .channel-list-item-container:hover .channel-list-item-button-container {
   width: 40px;
   display: flex;

@@ -6,6 +6,7 @@ import ServerCreateContainer from './server_create_container';
 import ServerJoinContainer from './server_join_container';
 import ServerInviteContainer from './server_invite_container';
 import ChannelEditContainer from './channel_edit_container';
+import ChannelCreateContainer from './channel_create_container';
 
 const Modal = ({modal, closeModal}) => {
   if (!modal) {
@@ -45,6 +46,13 @@ const Modal = ({modal, closeModal}) => {
       component = (
         <div className="modal-child-edit" onMouseDown={e => e.stopPropagation()}> 
           <Route path="/channels/:serverId/:channelId" component={ChannelEditContainer} />
+        </div>
+      )
+      break;
+    case 'addChannel':
+      component = (
+        <div className="modal-child-add" onMouseDown={e => e.stopPropagation()}> 
+          <Route path="/channels/:serverId/:channelId" component={ChannelCreateContainer} />
         </div>
       )
       break;
