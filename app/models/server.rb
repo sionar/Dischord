@@ -43,6 +43,10 @@ class Server < ApplicationRecord
     class_name: :Channel,
     dependent: :destroy
   
+  has_many :messages,
+    through: :channels,
+    source: :messages
+
 
   private
   def ensure_image

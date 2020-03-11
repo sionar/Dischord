@@ -19,7 +19,7 @@ class Api::ServerKeysController < ApplicationController
       flash[:errors] = ['This invite is invalid or has expired.']
       render partial: 'api/errors/server_key_errors', status: 422
     else
-      @server = Server.find_by(id: server_key.server_id)
+      @server = Server.includes(:subscribed_users, :subscriptions, :server_keys, :channels, :messages).find_by(id: server_key.server_id)
       user = Subscription.find_by(server_id: @server.id, user_id: current_user.id)
       if user
         flash[:errors] = ['You are already connected to this server!']
@@ -32,6 +32,7 @@ class Api::ServerKeysController < ApplicationController
         @subscriptions = @server.subscriptions
         @active_channels = Hash.new
         @active_channels[@server.id] = @channels.first.id unless @channels.empty?
+        @messages = @server.messages
         render :show, status: 200
       end
     end

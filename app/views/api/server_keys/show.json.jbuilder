@@ -20,6 +20,12 @@ json.entities do
       json.partial! 'server_key', server_key: server_key
     end
   end
+
+  json.messages do
+    @messages.each do |message|
+      json.partial! 'message', message: message
+    end
+  end
 end
 
 json.partial! '/api/errors/server_key_errors'

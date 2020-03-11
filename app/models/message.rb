@@ -21,4 +21,8 @@ class Message < ApplicationRecord
   belongs_to :channel,
     foreign_key: :channel_id,
     class_name: :Channel
+
+  delegate :server, 
+    to: :channel, 
+    allow_nil: true
 end

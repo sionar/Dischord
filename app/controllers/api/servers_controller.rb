@@ -8,12 +8,14 @@ class Api::ServersController < ApplicationController
     @server_keys = Array.new
     @channels = Array.new
     @active_channels = Hash.new
+    @messages = Array.new
     @servers.each do |server|
       @users += server.subscribed_users
       @subscriptions += server.subscriptions
       @server_keys += server.server_keys
       @channels += server.channels
       @active_channels[server.id] = server.channels.first.id if server.channels.first
+      @messages += server.messages
     end
     @users.push current_user if @users.empty?
     render :index, status: 200
