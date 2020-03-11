@@ -1,6 +1,6 @@
 json.entities do
   json.servers do
-    json.partial! '/api/servers/server', server: @server
+    json.partial! '/api/servers/server', server: @server, active_channels: @active_channels
   end
 
   json.users do

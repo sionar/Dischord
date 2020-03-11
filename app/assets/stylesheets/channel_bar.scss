@@ -23,6 +23,7 @@
   margin-left: 10px;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 #user-name-button-username {
@@ -45,4 +46,27 @@
 
 #user-name-box {
   margin-left: 5px;
+}
+
+#user-logout-button-button {
+  width: 25px;
+  height: 25px;
+  margin-left: 114px;
+  background-color: inherit;
+  outline: none;
+}
+
+#user-logout-button-image {
+  width: 25px;
+  height: 25px;
+  fill: rgb(93, 96, 105);
+}
+
+#user-logout-button-button:hover #user-logout-button-image{
+  fill: rgb(145, 149, 163);
+}
+
+#user-logout-button-button:hover .tooltip {
+  display: block;
+  margin-top: -50px;
 }

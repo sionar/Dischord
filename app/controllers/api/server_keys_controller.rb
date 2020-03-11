@@ -28,7 +28,10 @@ class Api::ServerKeysController < ApplicationController
         Subscription.create(user_id: current_user.id, server_id: @server.id)
         @users = @server.subscribed_users
         @server_keys = @server.server_keys
+        @channels = @server.channels
         @subscriptions = @server.subscriptions
+        @active_channels = Hash.new
+        @active_channels[@server.id] = @channels.first.id unless @channels.empty?
         render :show, status: 200
       end
     end

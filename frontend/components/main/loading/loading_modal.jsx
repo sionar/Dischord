@@ -6,9 +6,6 @@ import Main from '../main';
 class LoadingModal extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  componentWillMount() {
     this.props.getData()
   }
 
