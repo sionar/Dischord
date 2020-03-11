@@ -11,12 +11,12 @@
   border-radius: 5px;
   margin-left: -34px;
   display: none;
-  animation: tooltip-fade 0.2s ease-out 0s 1 forwards;
+  animation: tooltip-fade 0.15s ease-out 0s 1 forwards;
 }
 
 @keyframes tooltip-fade {
-  from { background-color: rgba(0,0,0,0.0) }
-  to { background-color: rgba(0,0,0,0.7) }
+  from { background-color: rgba(0,0,0,0.0); color: rgba(255,255,255,0) }
+  to { background-color: rgba(0,0,0,0.7); color: rgba(255, 255, 255,1) }
 }
 
 #channel-list-create-button:hover .tooltip {
