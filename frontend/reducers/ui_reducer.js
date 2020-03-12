@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import modalReducer from './modal_reducer';
-import channelIdReducer from './channel_id_reducer';
+import modalsReducer from './modals_reducer';
+import channelIdsReducer from './channel_ids_reducer';
 import loadingReducer from './loading_reducer'
 
 const uiReducer = combineReducers({
-  modal: modalReducer,
-  channelId: channelIdReducer,
+  modal: modalsReducer,
+  channelId: channelIdsReducer,
   doneLoading: loadingReducer
 });
 

@@ -4,13 +4,15 @@ import serversReducer from './servers_reducer';
 import serverKeysReducer from './server_keys_reducer';
 import subscriptionsReducer from './subscriptions_reducer';
 import channelsReducer from './channels_reducer';
+import messagesReducer from './messages_reducer';
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
   servers: serversReducer,
   serverKeys: serverKeysReducer,
   subscriptions: subscriptionsReducer,
-  channels: channelsReducer
+  channels: channelsReducer,
+  messages: messagesReducer
 });
 
 export default entitiesReducer;
