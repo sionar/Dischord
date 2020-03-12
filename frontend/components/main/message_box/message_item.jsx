@@ -18,7 +18,14 @@ class MessageItem extends React.Component {
     )
     const username = this.props.users[firstMessage.userId].username;
     const userImageUrl = this.props.users[firstMessage.userId].imageUrl;
-    const time = firstMessage.createdAt;
+    const time = moment(firstMessage.createdAt);
+    const now = moment();
+    let timeDisplay;
+    if (now.diff(time, 'days') > 1)
+      timeDisplay = time.format("MMM D YY");
+    else
+      timeDisplay = time.fromNow();
+      
     return (
       <div className="message-block">
         <div className="message-first-container">
@@ -26,7 +33,7 @@ class MessageItem extends React.Component {
           <div className="message-first-body">
             <div className="message-header-container">
               <span className="message-header-username">{username}</span>
-              <span className="message-header-time">{time}</span>
+              <span className="message-header-time">{timeDisplay}</span>
             </div>
             <span className="message-first-content-text">{firstMessage.content}</span>
           </div>
