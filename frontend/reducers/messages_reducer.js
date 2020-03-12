@@ -15,9 +15,9 @@ export default (state = {}, action) => {
       delete nextState[action.message.id];
       return nextState;
     case RECEIVE_SERVER_DATA:
-      return Object.assign(nextState, action.payload.messages);
+      return Object.assign(nextState, action.payload.messages);   
     case RECEIVE_DATA:
-      return action.payload.messages;
+      return Object.assign(nextState, action.payload.messages);
     case LOGOUT_CURRENT_USER:
       return {};
     default:

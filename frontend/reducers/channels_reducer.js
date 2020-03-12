@@ -17,7 +17,7 @@ export default (state = {}, action) => {
     case RECEIVE_SERVER_DATA:
       return Object.assign(nextState, action.payload.channels);
     case RECEIVE_DATA:
-      return action.payload.channels;
+      return Object.assign(nextState, action.payload.channels);
     case CREATE_SERVER:
       return Object.assign(nextState, action.payload.channels);
     case DELETE_SERVER:
