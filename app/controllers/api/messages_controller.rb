@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+class Api::MessagesController < ApplicationController
   before_action :require_login
   before_action :require_owner, only: [:update, :destroy]
 
@@ -38,7 +38,7 @@ class MessagesController < ApplicationController
 
   private
   def create_params
-    m_params = params.require(:channel).permit(:content, :content_type)
+    m_params = params.require(:message).permit(:content, :content_type)
     m_params[:channel_id] = params[:channel_id]
     m_params[:user_id] = current_user.id
     m_params[:edited] = false
@@ -46,7 +46,7 @@ class MessagesController < ApplicationController
   end
 
   def update_params
-    m_params = params.require(:channel).permit(:content, :content_type)
+    m_params = params.require(:message).permit(:content, :content_type)
     m_params[:edited] = true
     m_params
   end

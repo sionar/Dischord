@@ -26,9 +26,12 @@
  @import './server_bar/server_bar.scss';
  @import './channel_bar/channel_bar.scss';
  @import './channel_bar/channel_bar_invite.scss';
- @import './users_bar/users_bar.scss';
- @import './header_bar/header_bar.scss';
  @import './channel_bar/channel_list.scss';
+ @import './header_bar/header_bar.scss';
+ @import './message_box/input_box.scss';
+ @import './message_box/messages_box.scss';
+ @import './message_box/message_box_scroll.scss';
+ @import './users_bar/users_bar.scss';
  @import './modals/server_select.scss';
  @import './modals/server_create.scss';
  @import './modals/server_join.scss';
@@ -36,4 +39,3 @@
  @import './modals/modal.scss';
  @import './modals/channel_form.scss';
  @import './modals/user_edit.scss';
- 

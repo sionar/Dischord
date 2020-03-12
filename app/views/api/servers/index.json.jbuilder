@@ -28,6 +28,12 @@ json.entities do
       json.partial! 'api/channels/channel', channel: channel
     end
   end
+
+  json.messages do
+    @messages.each do |message|
+      json.partial! 'api/messages/message', message: message
+    end
+  end
 end
 
 json.partial! '/api/errors/server_errors'

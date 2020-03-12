@@ -1,6 +1,6 @@
 json.entities do
   json.messages do
-    json.partial! 'channel', channel: @channel
+    json.partial! 'message', message: @message
   end
 end
 

@@ -1,10 +1,12 @@
 #server-name-button {
+  width: 240px;
   border-bottom: 1px solid rgba(0,0,0,0.5);
   height: 49px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: left;
+  background-color: #2F3136;
 }
 
 #server-name-button span {

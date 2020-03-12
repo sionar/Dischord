@@ -27,8 +27,14 @@
   flex-direction: column;
 }
 
+#content-header-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
 #channel-bar {
-  flex-grow: 1;
+  height: 100%;
 }
 
 #user-name-button {
@@ -40,6 +46,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  max-height: 100%;
 }
 
 #content-body-container {
@@ -49,15 +56,30 @@
 }
 
 #header-bar {
+  flex-grow: 1;
   border-bottom: 1px solid rgba(0,0,0,0.3);
-  height: 52px;
+  min-height: 52px;
   background-color: #36393f;
   box-sizing: border-box;
 }
 
-#messages-box {
+#message-box {
+  min-height: 100%;
+  max-height: 100%;
+  height: 100%;
   background-color: #36393f;
   flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+#message-box-inner {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 #users-bar {
