@@ -1,0 +1,44 @@
+.message-block:hover {
+  background-color: rgba(4, 4, 5,0.07);
+}
+
+.message-first-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 17px;
+}
+
+.message-first-body {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.message-header-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.message-user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.message-first-content-text {
+  line-height: 28px;
+}
+
+.message-content-text {
+  margin-left: 60px;
+  line-height: 28px;
+}
+
+.message-header-username {
+  font-weight: bold;
+}
+
+.message-header-time {
+  margin-left: 10px;
+  color: #72767d;
+}

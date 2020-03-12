@@ -1,16 +1,22 @@
 import React from 'react';
 
+import MessageItemContainer from './message_item_container';
+
 class MessageList extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const messages = this.props.messages.map(message => <div>{message.content}</div>)
+    if (this.props.messageBlocks[0].length === 0)
+      return null;
+    const messages = this.props.messageBlocks.map(
+      messageBlock => <MessageItemContainer key={messageBlock[0].id} messageBlock={messageBlock}/>
+    )
 
     return (
-      <div id="messages-box-container">
-        <div id="messages-box-inner-container">
+      <div id="message-box-container">
+        <div id="message-box-inner-container">
           {messages}
         </div>
       </div>
