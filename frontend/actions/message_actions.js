@@ -1,9 +1,15 @@
 import * as MessageUtil from '../util/api_message_util';
 
+export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const CREATE_MESSAGE = 'CREATE_MESSAGE';
 export const EDIT_MESSAGE = 'EDIT_MESSAGE';
 export const DELETE_MESSAGE = 'DELETE_MESSAGE';
 export const RECEIVE_MESSAGE_ERRORS = 'RECEIVE_MESSAGE_ERRORS';
+
+export const receiveMessage = (payload) => ({
+  type: RECEIVE_MESSAGE,
+  payload
+})
 
 export const createMessage = payload => ({
   type: CREATE_MESSAGE,
@@ -19,7 +25,6 @@ export const deleteMessage = message => ({
   type: DELETE_MESSAGE,
   message
 });
-
 
 export const receiveMessageErrors = (errors) => ({
   type: RECEIVE_MESSAGE_ERRORS,

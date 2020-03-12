@@ -8,6 +8,7 @@ import ServerBarContainer from './server_bar/server_bar_container';
 import UsersBarContainer from './users_bar/users_bar_container';
 import ChannelBarContainer from './channel_bar/channel_bar_container';
 import MessageBox from './message_box/message_box';
+import ListenerContainer from './listener_container'
 
 class Main extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Main extends React.Component {
   render() {
     return (
       <div id="main-container">
+        <ListenerContainer />
         <ModalContainer />
         <ServerBarContainer />
         <div id="content-outer-container">

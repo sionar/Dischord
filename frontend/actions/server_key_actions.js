@@ -35,7 +35,6 @@ export const makeKey = serverId => dispatch => ServerKeyUtil.makeKey(serverId)
 
 export const getServer = serverKey => dispatch => ServerKeyUtil.getServer(serverKey)
   .then(res => {
-    console.log(res)
     dispatch(receiveServerData(res.entities))
   })
   .fail(res => dispatch(receiveServerKeyErrors(res.responseJSON.errors.serverKeyErrors)));

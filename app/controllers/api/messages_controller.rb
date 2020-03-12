@@ -8,6 +8,17 @@ class Api::MessagesController < ApplicationController
       flash.now[:errors] = @message.errors.full_messages
       render partial: 'api/errors/message_errors', status: 422
     else
+      ActionCable.server.broadcast("room-#{@message.server.id}:messages",
+        message: {
+          id: @message.id,
+          user_id: @message.user_id,
+          channel_id: @message.channel_id,
+          content: @message.content,
+          content_type: @message.content_type,
+          edited: @message.edited,
+          createdAt: @message.created_at,
+        },
+      )
       render :create, status: 200
     end
   end
