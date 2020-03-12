@@ -22,8 +22,7 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
   before_validation :ensure_session_token
-  after_initialize :ensure_image
-  after_create :ensure_usertag
+  after_initialize :ensure_image, :ensure_usertag
 
   has_one_attached :image
   
@@ -71,6 +70,8 @@ class User < ApplicationRecord
   end
 
   def ensure_usertag
+    return if self.usertag
+
     already_taken = true
     while already_taken do
       usertag = rand(1000..9999)
