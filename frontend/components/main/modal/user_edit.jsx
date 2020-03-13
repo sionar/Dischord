@@ -59,9 +59,9 @@ class userEdit extends React.Component {
               <input id="user-image-upload-input" type="file" onChange={this.handleFile} style={{ display: "none" }} />
               <p id="user-image-upload-text">Upload an image</p>
             </div>
-            <div id="user-edit-name-container">
-              <p id="user-name-username">{this.props.currentUser.username}#{this.props.currentUser.usertag}</p>
-            </div>
+          </div>
+          <div id="user-edit-name-container">
+            <p id="user-name-username">{this.props.currentUser.username}#{this.props.currentUser.usertag}</p>
           </div>
         </div>
         <div id="user-edit-buttons-bottom">
