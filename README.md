@@ -70,7 +70,7 @@ The dispatch to the redux store when the user clicks on the channel on the front
   }
  ```
  
- And finally, our activeChannelsReducer slice of state:
+ And finally, our servers reducer:
  
  ```
  export default (state = {}, action) => {
