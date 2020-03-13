@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.id,
   serverIds: Object.values(state.entities.subscriptions)
     .filter(subscription => subscription.userId === state.session.id)
-    .map(subscription => subscription.serverId)
+    .map(subscription => subscription.serverId),
 });
 
 const mapDispatchToProps = (dispatch) => ({

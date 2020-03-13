@@ -7,6 +7,9 @@ class MessageList extends React.Component {
     super(props);
   }
 
+  componentDidUpdate() {
+  }
+  
   render() {
     if (this.props.messageBlocks[0].length === 0)
       return null;

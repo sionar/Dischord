@@ -11,10 +11,10 @@ class Api::MessagesController < ApplicationController
       ActionCable.server.broadcast("room-#{@message.server.id}:messages",
         message: {
           id: @message.id,
-          user_id: @message.user_id,
-          channel_id: @message.channel_id,
+          userId: @message.user_id,
+          channelId: @message.channel_id,
           content: @message.content,
-          content_type: @message.content_type,
+          contentType: @message.content_type,
           edited: @message.edited,
           createdAt: @message.created_at,
         },

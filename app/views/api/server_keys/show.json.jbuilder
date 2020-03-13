@@ -21,9 +21,15 @@ json.entities do
     end
   end
 
+  json.channels do
+    @channels.each do |channel|
+      json.partial! 'api/channels/channel', channel: channel
+    end
+  end
+
   json.messages do
     @messages.each do |message|
-      json.partial! 'message', message: message
+      json.partial! 'api/messages/message', message: message
     end
   end
 end
