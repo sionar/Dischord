@@ -20,6 +20,7 @@ class MessageInputBox extends React.Component {
   }
 
   render() {
+    if (this.props.channel === undefined) return null;
     return (
       <div id="message-input-box-container">
         <form id="message-input-box-form" onSubmit={this.handleSubmit}>
