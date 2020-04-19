@@ -8,8 +8,8 @@ const SplashBody = (props) => {
   return (
     <section id="splash-body-flex-container">
       <div id="splash-text-container">
-        <h1 id="splash-h1">It's time to ditch Skype and TeamSpeak.</h1>
-        <p id="splash-p">All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone. Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.</p>
+        <h1 id="splash-h1">A new way to chat with your communities and friends.</h1>
+        <p id="splash-p">Discord is the easiest way to communicate over voice, video, and text, whether you’re part of a school club, a nightly gaming group, a worldwide art community, or just a handful of friends that want to hang out.</p>
       </div>
       <div id="splash-button-container">
         <SplashDemoButtonContainer/>

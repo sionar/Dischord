@@ -44,17 +44,25 @@ html {
   user-select: none;
 }
 
-#splash-header-github-logo {
-  padding: 20px;
-  width: 20px;
-  height: 20px;
+.splash-link-icon {
+  padding: 10px;
+  width: 30px;
+  height: 30px;
   user-select: none;
 }
 
+.splash-link-icon path{
+  fill:hsla(0,0%,100%,.6);
+}
+
+.splash-link-icon path:hover {
+  fill: hsla(0,0%,100%,.8);
+}
+
 .splash-header-button {
-  color:hsla(0,0%,100%,.8);
+  color:hsla(0,0%,100%,.6);
   background-color: transparent;
-  border: 2px solid hsla(0,0%,100%,.8);
+  border: 2px solid hsla(0,0%,100%,.6);
   border-radius: 20px;
   line-height: 24px;
   margin-left: 5px;
@@ -67,9 +75,9 @@ html {
   cursor: pointer;
 }
 
-#splash-header-login-button:hover {
-  color: hsla(0,0%,100%,1);
-  border: 2px solid hsla(0,0%,100%,1);
+.splash-header-button:hover {
+  color: hsla(0,0%,100%,0.8);
+  border: 2px solid hsla(0,0%,100%,10.8);
 }
 
 #splash-body-flex-container {
@@ -91,18 +99,20 @@ html {
   color: white;
   font-family: WhitneyBold,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 35px;
   line-height: 44px;
+  text-align: center;
+  width: 1000px;
 }
 
 #splash-p {
-  color: hsla(0,0%,100%,.8);
+  color: hsla(0,0%,100%,.6);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 24px;
   text-align: center;
   margin-top: 11px;
-  max-width: 710px;
+  max-width: 1000px;
 }
 
 #splash-button-container {

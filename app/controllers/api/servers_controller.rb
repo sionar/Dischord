@@ -2,7 +2,7 @@ class Api::ServersController < ApplicationController
   before_action :require_login
 
   def index
-    @servers = current_user.subscribed_servers.includes(:subscribed_users, :subscriptions, :server_keys, :channels)
+    @servers = current_user.subscribed_servers.includes(:subscribed_users, :subscriptions, :server_keys, :channels, :messages)
     @users = Array.new
     @subscriptions = Array.new
     @server_keys = Array.new
