@@ -103,6 +103,7 @@ html {
   line-height: 44px;
   text-align: center;
   width: 1000px;
+  user-select: none;
 }
 
 #splash-p {
@@ -113,6 +114,7 @@ html {
   text-align: center;
   margin-top: 11px;
   max-width: 1000px;
+  user-select: none;
 }
 
 #splash-button-container {
@@ -179,6 +181,7 @@ html {
   flex-direction: row;
   height: 149px;
   margin-top: 810px;
+  user-select: none;
 }
 
 #splash-footer-background {
@@ -242,7 +245,7 @@ html {
   padding: 35px;
   border-top: 1px solid hsla(0,0%,100%,0.1);
   bottom: 89px;
-
+  user-select: none;
 }
 
 #splash-footer-signup-button {

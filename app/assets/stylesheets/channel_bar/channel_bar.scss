@@ -7,6 +7,18 @@
   align-items: center;
   justify-content: left;
   background-color: #2F3136;
+  position: relative;
+  outline: none;
+  user-select: none;
+}
+
+#server-name-button:hover {
+  animation: server-name-bg-change 0.2s ease-out 0s 1 forwards;
+}
+
+@keyframes server-name-bg-change {
+  from { background-color: #2F3136; }
+  to { background-color: #36393f; }
 }
 
 #server-name-button span {
