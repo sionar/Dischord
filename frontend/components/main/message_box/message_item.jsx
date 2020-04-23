@@ -21,10 +21,14 @@ class MessageItem extends React.Component {
     const time = moment(firstMessage.createdAt);
     const now = moment();
     let timeDisplay;
-    if (now.diff(time, 'days') > 1)
-      timeDisplay = time.format("MMM D YY");
+    if (now.diff(time, 'days') > 7)
+      timeDisplay = time.calendar();
+    else if (now.diff(time, 'days') > 2)
+      timeDisplay = time.format("dddd [at] h:mm A");
+    else if (now.diff(time, 'days') > 1)
+      timeDisplay = time.format("[Yesterday at] h:mm A");
     else
-      timeDisplay = time.fromNow();
+      timeDisplay = time.format("[Today at] h:mm A");
       
     return (
       <div className="message-block">

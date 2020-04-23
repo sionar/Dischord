@@ -12,6 +12,7 @@
   margin-left: -34px;
   display: none;
   animation: tooltip-fade 0.15s ease-out 0s 1 forwards;
+  z-index: 100;
 }
 
 @keyframes tooltip-fade {
