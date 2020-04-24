@@ -7,7 +7,7 @@ const SplashFooter = (props) => {
       <ul id="splash-footer-links-container">
         <Link to="/">
           <img src={window.splashHeaderLogo} id="splash-footer-logo"
-          onClick={()=> document.documentElement.scrollTop = 0}/>
+          onClick={()=> window.scrollTo({top: 0, left: 0, behavior: 'smooth'})}/>
         </Link >
         <li>
           <ul className="splash-footer-links-ul">

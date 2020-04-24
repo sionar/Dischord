@@ -15,8 +15,7 @@ require 'open-uri'
 class Server < ApplicationRecord
   validates :name, presence: true
   validates :owner_id, presence: true
-  after_initialize :ensure_image
-  after_create :create_default_channels
+  after_create :create_default_channels, :ensure_image
 
   has_one_attached :image
 
