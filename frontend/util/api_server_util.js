@@ -27,7 +27,7 @@ export const updateServer = (formData, id) => (
 
 export const destroyServer = server => (
   $.ajax({
-    url: `api/server/${server.id}`,
+    url: `api/servers/${server.id}`,
     method: 'DELETE',
   })
 )

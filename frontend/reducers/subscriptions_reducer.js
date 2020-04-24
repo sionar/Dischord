@@ -1,5 +1,5 @@
 import { RECEIVE_SERVER_DATA } from '../actions/server_key_actions';
-import { CREATE_SERVER, RECEIVE_DATA } from '../actions/server_actions';
+import { CREATE_SERVER, RECEIVE_DATA, DELETE_SERVER } from '../actions/server_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 export default (state = {}, action) => {
@@ -15,6 +15,13 @@ export default (state = {}, action) => {
       return action.payload.subscriptions;
     case LOGOUT_CURRENT_USER:
       return {};
+    case DELETE_SERVER:
+      const keys = Object.keys(nextState);
+      keys.forEach(key => {
+        if (nextState[key].serverId === action.server.id)
+          delete nextState[key];
+        })
+      return nextState;
     default:
       return state;
   }

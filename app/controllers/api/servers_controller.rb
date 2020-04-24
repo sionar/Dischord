@@ -73,7 +73,7 @@ class Api::ServersController < ApplicationController
       end
     else
       flash.now[:errors] = ['Server not found.'] 
-      ender partial: 'api/errors/server_errors', status: 404
+      render partial: 'api/errors/server_errors', status: 404
     end
   end
 

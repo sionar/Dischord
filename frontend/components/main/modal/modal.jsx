@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import ServerSelectContainer from './server_select_container';
 import ServerCreateContainer from './server_create_container';
+import ServerDeleteContainer from './server_delete_container';
 import ServerJoinContainer from './server_join_container';
 import ServerInviteContainer from './server_invite_container';
 import ServerEditContainer from './server_edit_container';
@@ -27,7 +28,7 @@ const Modal = ({modal, closeModal}) => {
     case 'create':
       component = (
         <div className="modal-child" onMouseDown={e => e.stopPropagation()}> 
-          <ServerEditContainer />;
+          <ServerCreateContainer />;
         </div>
       )
       break;
@@ -48,10 +49,17 @@ const Modal = ({modal, closeModal}) => {
     case 'editServer':
       component = (
         <div className="modal-child" onMouseDown={e => e.stopPropagation()}> 
-          <Route path="/channels/:serverId"component={ServerEditContainer} />;
+          <Route path="/channels/:serverId" component={ServerEditContainer} />;
         </div>
       )
-      break;     
+      break;
+    case 'deleteServer':
+      component = (
+        <div className="modal-child-channel" onMouseDown={e => e.stopPropagation()}> 
+          <Route path="/channels/:serverId/" component={ServerDeleteContainer} />
+        </div>
+      )
+      break;   
     case 'editChannel':
       component = (
         <div className="modal-child-channel" onMouseDown={e => e.stopPropagation()}> 

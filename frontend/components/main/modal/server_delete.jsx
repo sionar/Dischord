@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ChannelDelete extends React.Component {
+class ServerDelete extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -9,9 +9,9 @@ class ChannelDelete extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let channel = this.props.channels[this.props.id];
-    channel.serverId = channel.serverId;
-    this.props.destroyChannel(channel);
+    const server = this.props.servers[this.props.match.params.serverId]
+    this.props.destroyServer(server);
+    this.props.history.push('/channels/@me');
     this.props.closeModal();
   }
 
@@ -23,13 +23,13 @@ class ChannelDelete extends React.Component {
   render() {
     return (
       <form className="channel-form" onSubmit={this.handleSubmit}>
-        <h2 className="channel-header-label">delete channel</h2>
-        <h3 id="channel-delete-subheader">Are you sure you want to delete this channel?</h3>
+        <h2 className="channel-header-label">delete server</h2>
+        <h3 id="channel-delete-subheader">Are you sure you want to delete this server?</h3>
         <h3 id="channel-delete-subheader2">This action cannot be undone.</h3>
         <img className="channel-delete-image" src={window.channelDestroyBomb}></img>
         <div className="channel-button-container">
           <button className="channel-cancel-button" onClick={this.handleCancel}>Cancel</button>
-          <input className="channel-submit-button" type="submit" value="Delete Channel"/>
+          <input className="channel-submit-button" type="submit" value="Delete Server"/>
         </div>
       </form>
     )
@@ -37,4 +37,4 @@ class ChannelDelete extends React.Component {
 
 }
 
-export default ChannelDelete;
+export default ServerDelete;

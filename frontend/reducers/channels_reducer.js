@@ -22,7 +22,7 @@ export default (state = {}, action) => {
       return Object.assign(nextState, action.payload.channels);
     case DELETE_SERVER:
       const serverId = action.server.id
-      const channelKeys = nextState.keys
+      const channelKeys = Object.keys(nextState);
       for (let i = 0; i < channelKeys.length; i++) {
         if (nextState[channelKeys[i]].serverId === serverId)
           delete nextState[channelKeys[i]]; 

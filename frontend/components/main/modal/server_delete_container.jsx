@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../../actions/modal_actions';
-import { updateServer } from '../../../actions/server_actions'
-import ServerEdit from './server_edit';
+import { destroyServer } from '../../../actions/server_actions'
+import ServerDelete from './server_delete';
 
 const mapStateToProps = state => ({
   servers: state.entities.servers,
@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({ 
   openModal: modal => dispatch(openModal(modal)),
   closeModal: () => dispatch(closeModal()),
-  updateServer: (formData, id) => dispatch(updateServer(formData, id))
+  destroyServer: server => dispatch(destroyServer(server))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ServerEdit);
+export default connect(mapStateToProps, mapDispatchToProps)(ServerDelete);
