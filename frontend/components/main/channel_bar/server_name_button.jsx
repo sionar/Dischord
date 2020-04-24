@@ -14,15 +14,20 @@ class ServerNameButton extends React.Component {
 
   render() {
     const serverId = this.props.match.params.serverId;
-    let id, label
+    let id, label, isOwner, serverNameDropdown;
     if (serverId === "@me")
       label = "Home";
     else {
       id = Number(serverId);
       label = this.props.servers[id] ? this.props.servers[id].name : "";
     }
-    const isOwner = this.props.servers[serverId].ownerId === this.props.currentUserId;
-    const serverNameDropdown = this.state.selected ? <ServerNameDropdownContainer isOwner={isOwner}/> : null;
+    if (this.props.servers[serverId]) {
+      isOwner = this.props.servers[serverId].ownerId === this.props.currentUserId;
+      serverNameDropdown = <ServerNameDropdownContainer isOwner={isOwner}/>
+    } else {
+      serverNameDropdown = null;
+    }
+
     return (
       <section id="server-name-button" tabIndex="1" onClick={this.handleClick}>
         <span>{label}</span>

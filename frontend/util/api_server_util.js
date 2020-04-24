@@ -15,11 +15,13 @@ export const makeServer = formData => (
   })
 );
 
-export const updateServer = server => (
+export const updateServer = (formData, id) => (
   $.ajax({
-    url: `api/server/${server.id}`,
+    url: `api/servers/${id}`,
     method: 'PATCH',
-    data: server 
+    data: formData,
+    contentType: false,
+    processData: false 
   })
 )
 

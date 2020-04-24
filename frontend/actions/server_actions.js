@@ -39,7 +39,7 @@ export const makeServer = server => dispatch => ServerUtil.makeServer(server)
   .then(res => dispatch(createServer(res.entities)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
 
-export const updateServer = server => dispatch => ServerUtil.updateServer(server)
+export const updateServer = (server, id) => dispatch => ServerUtil.updateServer(server, id)
   .then(res => dispatch(editServer(res.entities.servers)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
 

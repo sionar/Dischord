@@ -22,8 +22,8 @@ class userEdit extends React.Component {
     const formData = new FormData();
     if (this.state.imageFile) {
       formData.append('user[image]', this.state.imageFile);
+      this.props.updateUser(formData, this.props.currentUser.id);
     }
-    this.props.updateUser(formData, this.props.currentUser.id)
     this.props.closeModal();
   }
 

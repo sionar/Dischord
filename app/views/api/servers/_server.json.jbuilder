@@ -4,7 +4,9 @@ json.set! server.id do
   json.ownerId server.owner_id
   json.private server.private
   json.imageUrl url_for(server.image)
-  json.activeChannel active_channels[server.id] || 0
+  if active_channels
+    json.activeChannel active_channels[server.id] || 0
+  end
 end
 
 

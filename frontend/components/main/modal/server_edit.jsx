@@ -1,13 +1,15 @@
 import React from 'react';
 
-class ServerCreate extends React.Component {
+class ServerEdit extends React.Component {
   constructor(props) {
     super(props);
+    const server = this.props.servers[this.props.match.params.serverId]
     this.state = {
-      name: `${this.props.user.username}'s Server`,
+      id: server.id,
+      name: server.name,
       private: false,
       imageFile: null,
-      imageUrl: null
+      imageUrl: server.imageUrl
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +30,7 @@ class ServerCreate extends React.Component {
     if (this.state.imageFile) {
       formData.append('server[image]', this.state.imageFile);
     }
-    this.props.makeServer(formData)
+    this.props.updateServer(formData, this.state.id);
     this.props.closeModal();
   }
 
@@ -59,8 +61,8 @@ class ServerCreate extends React.Component {
     return (
       <div id="server-create-form">
         <div id="server-create-form-top">
-          <h2 id="server-create-header">Create Your Server</h2>
-          <h3 id="server-create-subheader">A server is a superpowered group chat where people come together around a topic or to hang out.</h3>
+          <h2 id="server-create-header">Edit Your Server</h2>
+          <h3 id="server-create-subheader">You can change your server's name and icon.</h3>
           <div id="server-image-icon-container">
             <div id="server-image-icon-placeholder" onClick={this.handleImageClick}>
               {preview}
@@ -76,7 +78,7 @@ class ServerCreate extends React.Component {
         <div id="server-create-buttons-bottom">
           <div id="server-create-buttons-container">
             <button onClick={this.handleClick("select")} id="server-create-back-button">Back</button>
-            <button onClick={this.handleSubmit} id="server-create-create-button">Create Server</button>
+            <button onClick={this.handleSubmit} id="server-create-create-button">Edit Server</button>
           </div>
         </div>
       </div>
@@ -84,7 +86,7 @@ class ServerCreate extends React.Component {
   }
 }
 
-export default ServerCreate;
+export default ServerEdit;
 
 
 

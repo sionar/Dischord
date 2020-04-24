@@ -46,6 +46,7 @@ class Api::ServersController < ApplicationController
         flash.now[:errors] = ['You do not own this server.']
         render partial: 'api/errors/server_errors', status: 403
       else
+        @server.image.purge if params[:server][:image]
         unless @server.update(server_params)
           flash.now[:errors] = @server.errors.full_messages
           render partial: 'api/errors/server_errors', status: 422

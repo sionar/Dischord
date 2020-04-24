@@ -3,7 +3,7 @@
   width: 220px;
   display: none;
   top: 55px;
-  left: 10px;
+  left: 5px;
   border-radius: 5px;
   background-color: #18191C;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.60);
@@ -15,7 +15,13 @@
   align-items: center;
   flex-direction: column;
   outline: none;
-  
+}
+
+#server-name-dropdown:hover {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  outline: none;
 }
 
 .server-name-dropdown-item {
