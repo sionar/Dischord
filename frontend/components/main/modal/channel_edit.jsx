@@ -13,6 +13,7 @@ class ChannelEdit extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleChange(field) {
@@ -22,6 +23,11 @@ class ChannelEdit extends React.Component {
   handleClick(e) {
     e.preventDefault();
     this.props.openModal('deleteChannel')
+  }
+
+  handleCancel(e) {
+    e.preventDefault();
+    this.props.closeModal();
   }
 
   handleSubmit(e) {
@@ -40,7 +46,7 @@ class ChannelEdit extends React.Component {
         <textarea className="channel-form-input" id="channel-form-desc-input" type="text" onChange={this.handleChange("description")} type="text" value={this.state.description}></textarea>
         <div className="channel-button-container">
           <button className="channel-delete-button" onClick={this.handleClick}>Delete Channel</button>
-          <button className="channel-cancel-button">Cancel</button>
+          <button className="channel-cancel-button" onClick={this.handleCancel}>Cancel</button>
           <input className="channel-submit-button" type="submit" value="Update Channel"/>
         </div>
       </form>
