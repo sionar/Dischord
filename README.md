@@ -1,5 +1,7 @@
 # [Dischord](https://dischord-app.herokuapp.com)
+![screenshot](https://github.com/sionar/Dischord/blob/master/screenshots/2.png)
 ![screenshot](https://github.com/sionar/Dischord/blob/master/screenshots/1.png)
+
 
 ## Description
 
