@@ -7,8 +7,6 @@ class ServerNameDropdown extends React.Component {
   }
 
   handleClickInvite(e) {
-    debugger
-    console.log('hi');
     e.preventDefault();
     this.props.openModal('invite');
   }

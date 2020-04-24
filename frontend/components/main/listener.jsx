@@ -33,7 +33,6 @@ class Listener extends React.Component {
                     const identifier = `{"channel":"MessageChannel","id":${prevProps.serverIds[i]}}`
                     this.chats[identifier].unsubscribe();
                     delete this.chats[identifier];
-                    console.log('left', prevProps.serverIds[i])
                     break;
                 }
             }
@@ -51,7 +50,6 @@ class Listener extends React.Component {
         serverIds.forEach(id => {
             this.createSocket(id);
         })
-        console.log(this.chats);
     }
 
     createSocket(id) {
@@ -62,7 +60,6 @@ class Listener extends React.Component {
             },
             {
                 connected: () => {
-                    console.log(`connected to ${id}`)
                 },
                 disconnected: () => {
                 },
