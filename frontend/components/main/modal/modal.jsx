@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import ServerSelectContainer from './server_select_container';
 import ServerCreateContainer from './server_create_container';
 import ServerDeleteContainer from './server_delete_container';
+import ServerLeaveContainer from './server_leave_container';
 import ServerJoinContainer from './server_join_container';
 import ServerInviteContainer from './server_invite_container';
 import ServerEditContainer from './server_edit_container';
@@ -57,6 +58,13 @@ const Modal = ({modal, closeModal}) => {
       component = (
         <div className="modal-child-channel" onMouseDown={e => e.stopPropagation()}> 
           <Route path="/channels/:serverId/" component={ServerDeleteContainer} />
+        </div>
+      )
+      break;
+    case 'leaveServer':
+      component = (
+        <div className="modal-child-channel" onMouseDown={e => e.stopPropagation()}> 
+          <Route path="/channels/:serverId/" component={ServerLeaveContainer} />
         </div>
       )
       break;   

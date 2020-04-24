@@ -31,3 +31,10 @@ export const destroyServer = server => (
     method: 'DELETE',
   })
 )
+
+export const leaveServer = subscription => (
+  $.ajax({
+    url: `api/subscriptions/${subscription.id}`,
+    method: 'DELETE',
+  })
+)

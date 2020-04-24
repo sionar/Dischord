@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         resources :messages, only: [:create, :update, :destroy]
       end
     end
+    resources :subscriptions, only: [:destroy]
     get '/server_key/:server_key', to: 'server_keys#show', as: :server_key
   end
 

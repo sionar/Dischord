@@ -9,7 +9,6 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  changeActiveChannel: data => dispatch(ownProps.changeActiveChannel(data)),
   openModal: type => dispatch(openModal(type))
 });
 

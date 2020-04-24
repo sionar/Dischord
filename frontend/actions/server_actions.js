@@ -4,6 +4,7 @@ export const RECEIVE_DATA = "RECEIVE_DATA";
 export const CREATE_SERVER = "CREATE_SERVER";
 export const EDIT_SERVER = "EDIT_SERVER";
 export const DELETE_SERVER = "DELETE_SERVER";
+export const REMOVE_SERVER = "REMOVE_SERVER";
 export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
 
 export const receiveData = payload => ({
@@ -26,6 +27,11 @@ export const deleteServer = server => ({
   server
 });
 
+export const removeServer = subscription => ({
+  type: REMOVE_SERVER,
+  subscription
+})
+
 export const receiveServerErrors = (errors) => ({
   type: RECEIVE_SERVER_ERRORS,
   errors
@@ -46,3 +52,10 @@ export const updateServer = (server, id) => dispatch => ServerUtil.updateServer(
 export const destroyServer = server => dispatch => ServerUtil.destroyServer(server)
   .then(() => dispatch(deleteServer(server)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
+
+export const leaveServer = subscription => dispatch => ServerUtil.leaveServer(subscription)
+  .then(() => dispatch(removeServer(subscription)))
+  .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
+
+
+  

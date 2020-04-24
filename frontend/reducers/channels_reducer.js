@@ -1,11 +1,12 @@
 import { CREATE_CHANNEL, EDIT_CHANNEL, DELETE_CHANNEL } from '../actions/channel_actions';
 import { RECEIVE_SERVER_DATA } from '../actions/server_key_actions';
-import { RECEIVE_DATA, CREATE_SERVER, DELETE_SERVER } from '../actions/server_actions';
+import { RECEIVE_DATA, CREATE_SERVER, DELETE_SERVER, REMOVE_SERVER } from '../actions/server_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 export default (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
+  let serverId, channelKeys;
   switch (action.type) {
     case CREATE_CHANNEL:
       return Object.assign(nextState, action.payload.channels);
@@ -21,8 +22,16 @@ export default (state = {}, action) => {
     case CREATE_SERVER:
       return Object.assign(nextState, action.payload.channels);
     case DELETE_SERVER:
-      const serverId = action.server.id
-      const channelKeys = Object.keys(nextState);
+      serverId = action.server.id;
+      channelKeys = Object.keys(nextState);
+      for (let i = 0; i < channelKeys.length; i++) {
+        if (nextState[channelKeys[i]].serverId === serverId)
+          delete nextState[channelKeys[i]]; 
+      }
+      return nextState;
+    case REMOVE_SERVER:
+      serverId = action.subscription.serverId;
+      channelKeys = Object.keys(nextState);
       for (let i = 0; i < channelKeys.length; i++) {
         if (nextState[channelKeys[i]].serverId === serverId)
           delete nextState[channelKeys[i]]; 
