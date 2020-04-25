@@ -13,12 +13,11 @@ class MessageList extends React.Component {
   }
   
   render() {
-    if (this.props.messageBlocks[0].length === 0)
-      return null;
-    const messages = this.props.messageBlocks.map(
-      messageBlock => <MessageItemContainer key={messageBlock[0].id} messageBlock={messageBlock}/>
-    )
-
+    const messages = this.props.messageBlocks[0].length > 0 ?    
+      this.props.messageBlocks.map(
+        messageBlock => <MessageItemContainer key={messageBlock[0].id} messageBlock={messageBlock}/>
+      )
+      : null
     return (
       <div id="message-box-container">
         <div id="message-box-inner-container">

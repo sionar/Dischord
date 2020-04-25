@@ -10,16 +10,20 @@ const mapStateToProps = (state, ownProps) => {
   let messageBlock = [];
   let prevUser = null;
   let currUser = null;
+  let prevTime = messages.length > 0 ? moment(messages[0].createdAt) : null;
+  let currTime;
   for (let i = 0; i < messages.length; i++ ) {
     currUser = messages[i].userId;
-    if ( prevUser != currUser ) {
-      prevUser = currUser
+    currTime = moment(messages[i].createdAt);
+    if ( prevUser != currUser || currTime.diff(prevTime, 'minutes') > 10) {
+      prevUser = currUser;
       if (messageBlock.length > 0)
         messageBlocks.push(messageBlock);
       messageBlock = [ messages[i] ];
     } else {
       messageBlock.push(messages[i]);
     }
+    prevTime = currTime;
   }
   messageBlocks.push(messageBlock);
 
