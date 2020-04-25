@@ -10,9 +10,11 @@ class MessageInputBox extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const message = {message: {content: this.state.content, content_type: 'text'}}
-    this.props.makeMessage( message, this.props.channel);
-    this.setState({content: ''});
+    if (this.state.content) {
+      const message = {message: {content: this.state.content, content_type: 'text'}}
+      this.props.makeMessage( message, this.props.channel);
+      this.setState({content: ''});
+    }
   }
 
   handleChange(e) {

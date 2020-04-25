@@ -1,4 +1,5 @@
 import React from 'react';
+import MessageActionsContainer from './message_actions_container';
 
 class MessageItem extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class MessageItem extends React.Component {
       <div key={message.id} className="message-other-container">
         <div className="message-content-time">{moment(message.createdAt).format('h:mm A')}</div>
         <div className="message-content-text">{message.content}</div>
+        <MessageActionsContainer message={message}/>
       </div>
     )
     const username = this.props.users[firstMessage.userId].username;
@@ -27,7 +29,6 @@ class MessageItem extends React.Component {
       timeDisplay = time.format("[Yesterday at] h:mm A");
     else
       timeDisplay = time.format("[Today at] h:mm A");
-      
     return (
       <div className="message-block">
         <div className="message-first-container">
@@ -39,6 +40,7 @@ class MessageItem extends React.Component {
             </div>
             <span className="message-first-content-text">{firstMessage.content}</span>
           </div>
+          <MessageActionsContainer message={firstMessage}/>
         </div>
         {otherMessagesContent}
       </div>

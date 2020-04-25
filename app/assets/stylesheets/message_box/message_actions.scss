@@ -1,0 +1,49 @@
+.message-actions-panel {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 5px;
+  background-color: #36393F;
+  display: none;
+}
+
+.message-first-container:hover .message-actions-panel {
+  display: block;
+}
+
+.message-other-container:hover .message-actions-panel {
+  display: block;
+}
+
+.message-edit-button:hover {
+  background-color: #474A50;
+}
+
+.message-delete-button:hover {
+  background-color: #474A50;
+}
+
+.message-delete-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #36393F;
+  outline: none;
+}
+
+.message-delete-icon path {
+  fill: rgba(255,0,0,0.6);
+}
+
+.message-edit-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: #36393F;
+  outline: none;
+}
+
+.message-edit-icon path {
+  fill: rgba(255,255,255,0.6);
+}

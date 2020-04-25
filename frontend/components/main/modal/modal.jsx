@@ -12,6 +12,7 @@ import ChannelEditContainer from './channel_edit_container';
 import ChannelCreateContainer from './channel_create_container';
 import ChannelDeleteContainer from './channel_delete_container';
 import UserEditContainer from './user_edit_container';
+import MessageDeleteContainer from './message_delete_container';
 
 const Modal = ({modal, closeModal}) => {
   if (!modal) {
@@ -95,7 +96,14 @@ const Modal = ({modal, closeModal}) => {
           <UserEditContainer />
         </div>
       )
-      break;   
+      break;
+    case 'deleteMessage':
+        component = (
+          <div className="modal-child-channel" onMouseDown={e => e.stopPropagation()}> 
+            <MessageDeleteContainer />
+          </div>
+        )
+      break;
     default:
       return null;
   }
