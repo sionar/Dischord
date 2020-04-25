@@ -5,16 +5,14 @@ class MessageItem extends React.Component {
     super(props);
   }
 
-  componentDidUpdate() {
-    const messageBox = document.getElementById('message-box-inner-container');
-    messageBox.scrollTop = messageBox.scrollHeight;
-  }
-
   render() {
     const firstMessage = this.props.messageBlock[0];
     const otherMessages = this.props.messageBlock.slice(1);
-    const otherMessagesContent = otherMessages.map(message => 
-    <div key={message.id} className="message-content-text">{message.content}</div>
+    const otherMessagesContent = otherMessages.map(message =>
+      <div key={message.id} className="message-other-container">
+        <div className="message-content-time">{moment(message.createdAt).format('h:mm A')}</div>
+        <div className="message-content-text">{message.content}</div>
+      </div>
     )
     const username = this.props.users[firstMessage.userId].username;
     const userImageUrl = this.props.users[firstMessage.userId].imageUrl;

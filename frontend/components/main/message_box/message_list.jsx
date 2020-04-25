@@ -8,6 +8,8 @@ class MessageList extends React.Component {
   }
 
   componentDidUpdate() {
+    const messageBox = document.getElementById('message-box-inner-container');
+    messageBox.scrollTo({left: 0, top: messageBox.scrollHeight, behavior: 'smooth'});
   }
   
   render() {

@@ -1,5 +1,9 @@
-.message-first-container:hover, .message-content-text:hover {
+.message-first-container:hover, .message-other-container:hover {
   background-color: rgba(4, 4, 5,0.07);
+}
+
+.message-other-container:hover .message-content-time {
+  visibility: visible;
 }
 
 .message-first-container {
@@ -30,11 +34,6 @@
   line-height: 28px;
 }
 
-.message-content-text {
-  margin-left: 70px;
-  line-height: 28px;
-}
-
 .message-header-username {
   font-weight: bold;
 }
@@ -44,4 +43,24 @@
   line-height: 15px;
   margin-left: 10px;
   color: #72767d;
+}
+
+.message-other-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+}
+
+.message-content-time {
+  visibility: hidden;
+  width: 51px;
+  font-size: 12px;
+  line-height: 15px;
+  margin-left: 10px;
+  color: #72767d;
+}
+
+.message-content-text {
+  margin-left: 9px;
+  line-height: 28px;
 }

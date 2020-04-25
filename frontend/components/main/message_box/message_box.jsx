@@ -10,6 +10,7 @@ class MessageBox extends React.Component {
     super(props);
   }
 
+  
   render() {
     return (
       <section id="message-box">
