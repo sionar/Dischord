@@ -9,7 +9,8 @@ class Api::MessagesController < ApplicationController
       flash.now[:errors] = @message.errors.full_messages
       render partial: 'api/errors/message_errors', status: 422
     else
-      ActionCable.server.broadcast("room-#{@message.server.id}:messages",
+      ActionCable.server.broadcast("server-#{@message.server.id}",
+        action: 'receiveMessage',
         message: {
           id: @message.id,
           userId: @message.user_id,
@@ -29,6 +30,18 @@ class Api::MessagesController < ApplicationController
       flash.now[:errors] = @channel.errors.full_messages
       render partial: 'api/errors/message_errors', status: 422
     else
+      ActionCable.server.broadcast("server-#{@message.server.id}",
+        action: 'editMessage',
+        message: {
+          id: @message.id,
+          userId: @message.user_id,
+          channelId: @message.channel_id,
+          content: @message.content,
+          contentType: @message.content_type,
+          edited: @message.edited,
+          createdAt: @message.created_at,
+        },
+      )
       render :update, status: 200
     end
   end
@@ -37,6 +50,18 @@ class Api::MessagesController < ApplicationController
     @message = Message.find_by(id: params[:id])
     if @message
       if @message.destroy
+        ActionCable.server.broadcast("server-#{@message.server.id}",
+          action: 'deleteMessage',
+          message: {
+            id: @message.id,
+            userId: @message.user_id,
+            channelId: @message.channel_id,
+            content: @message.content,
+            contentType: @message.content_type,
+            edited: @message.edited,
+            createdAt: @message.created_at,
+          },
+        )
         render :destroy, status: 200
       else
         flash.now[:errors] = @message.errors.full_messages

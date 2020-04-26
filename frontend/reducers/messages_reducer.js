@@ -14,7 +14,8 @@ export default (state = {}, action) => {
     case EDIT_MESSAGE:
       return Object.assign(nextState, action.payload.messages);
     case DELETE_MESSAGE:
-      delete nextState[action.message.id];
+      const message = Object.values(action.payload.messages)[0];
+      delete nextState[message.id];
       return nextState;
     case RECEIVE_SERVER_DATA:
       return Object.assign(nextState, action.payload.messages);   

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import Listener from './listener';
-import { receiveMessage } from '../../actions/message_actions';
+import { receiveMessage, editMessage, deleteMessage } from '../../actions/message_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.id,
@@ -12,7 +12,9 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  receiveMessage: (message) => dispatch(receiveMessage(message))
+  receiveMessage: payload => dispatch(receiveMessage(payload)),
+  editMessage: payload => dispatch(editMessage(payload)),
+  deleteMessage: payload => dispatch(deleteMessage(payload)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Listener);

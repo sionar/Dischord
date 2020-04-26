@@ -6,7 +6,7 @@ export const EDIT_MESSAGE = 'EDIT_MESSAGE';
 export const DELETE_MESSAGE = 'DELETE_MESSAGE';
 export const RECEIVE_MESSAGE_ERRORS = 'RECEIVE_MESSAGE_ERRORS';
 
-export const receiveMessage = (payload) => ({
+export const receiveMessage = payload => ({
   type: RECEIVE_MESSAGE,
   payload
 })
@@ -21,12 +21,12 @@ export const editMessage = payload => ({
   payload
 });
 
-export const deleteMessage = message => ({
+export const deleteMessage = payload => ({
   type: DELETE_MESSAGE,
-  message
+  payload
 });
 
-export const receiveMessageErrors = (errors) => ({
+export const receiveMessageErrors = errors => ({
   type: RECEIVE_MESSAGE_ERRORS,
   errors
 });
@@ -41,5 +41,5 @@ export const updateMessage = (message, channel) => dispatch => MessageUtil.updat
   .fail(res => dispatch(receiveMessageErrors(res.responseJSON.errors.messageErrors)));
 
 export const destroyMessage = (message, channel) => dispatch => MessageUtil.destroyMessage(message, channel)
-  .then(() => dispatch(deleteMessage(message)))
+  .then(() => dispatch(deleteMessage(res.entities)))
   .fail(res => dispatch(receiveMessageErrors(res.responseJSON.errors.messageErrors)));

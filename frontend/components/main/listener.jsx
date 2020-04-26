@@ -7,6 +7,11 @@ class Listener extends React.Component {
         this.chats = {};
         this.createSockets = this.createSockets.bind(this);
         this.createSocket = this.createSocket.bind(this);
+        this.actions = {
+            receiveMessage: this.props.receiveMessage,
+            editMessage: this.props.editMessage,
+            deleteMessage: this.props.deleteMessage
+        }
     }
 
     componentDidMount() {
@@ -69,7 +74,7 @@ class Listener extends React.Component {
                             [data.message.id]: data.message
                         }
                     }
-                    this.props.receiveMessage(payload);
+                    this.actions[data.action](payload);
                 }
             }               
         );
