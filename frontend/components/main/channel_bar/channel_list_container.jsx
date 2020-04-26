@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import ChannelList from './channel_list';
-import { changeActiveChannel } from '../../../actions/channel_actions';
+import { changeActiveChannel } from '../../../actions/ui_actions';
 import { openModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = state => ({

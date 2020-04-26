@@ -27,5 +27,9 @@
   font-size: 13px;
   line-height: 16px;
   color: white;
+  cursor: pointer;
 }
 
+#server-invite-button-button:hover {
+  background-color: rgb(119, 142, 226);
+}

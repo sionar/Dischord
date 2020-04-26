@@ -77,7 +77,7 @@ class ServerEdit extends React.Component {
         </div>
         <div id="server-create-buttons-bottom">
           <div id="server-create-buttons-container">
-            <button onClick={this.handleClick("select")} id="server-create-back-button">Back</button>
+            <button onClick={() => this.props.closeModal()} id="server-create-back-button">Back</button>
             <button onClick={this.handleSubmit} id="server-create-create-button">Edit Server</button>
           </div>
         </div>

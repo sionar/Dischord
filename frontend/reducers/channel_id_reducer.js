@@ -1,4 +1,4 @@
-import { SET_EDIT_CHANNEL_ID } from '../actions/channel_actions';
+import { SET_EDIT_CHANNEL_ID } from '../actions/ui_actions';
 
 export default (state = null, action) => {
   Object.freeze(state);
