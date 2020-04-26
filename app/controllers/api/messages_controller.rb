@@ -1,6 +1,7 @@
 class Api::MessagesController < ApplicationController
   before_action :require_login
-  before_action :require_owner, only: [:update, :destroy]
+  before_action :require_owner, only: [:update]
+  before_action :require_permission, only: [:destroy]
 
   def create
     @message = Message.create(create_params)
@@ -66,6 +67,16 @@ class Api::MessagesController < ApplicationController
     @message = Message.find_by(id: params[:id])
     unless @message.user_id == current_user.id
       flash.now[:errors] = ['You do not own this message.']
+      render partial: 'api/errors/channel_errors', status: 403
+    end
+  end
+
+  def require_permission
+    @message = Message.find_by(id: params[:id])
+    @server = @message.server
+    @owner = @server.owner_id
+    unless @message.user_id == current_user.id || @owner == current_user.id
+      flash.now[:errors] = ['You do have permissions for this message.']
       render partial: 'api/errors/channel_errors', status: 403
     end
   end
