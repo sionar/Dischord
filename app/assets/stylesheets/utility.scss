@@ -31,3 +31,15 @@
   margin-top: -50px;
   z-index: 100;
 }
+
+.message-edit-button:hover .tooltip {
+  display: block;
+  margin-top: -80px;
+  z-index: 100;
+}
+
+.message-delete-button:hover .tooltip {
+  display: block;
+  margin-top: -80px;
+  z-index: 100;
+}

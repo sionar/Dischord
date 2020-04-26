@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { openModal } from '../../../actions/modal_actions';
 import { setDeleteMessageId, setEditMessageId } from '../../../actions/ui_actions';
 
-import MessageActions from './message_actions';
+import MessageOptions from './message_options';
 
 
 const mapStateToProps = (state, ownProps) => ({
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
   setEditMessageId: id => dispatch(setEditMessageId(id))
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MessageActions));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MessageOptions));

@@ -101,3 +101,16 @@
   color: rgba(255,255,255,0.2);
   margin-left: 5px;
 }
+
+.message-edit-inline-button {
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: inherit;
+  color: #7289DA;
+  outline: none;
+  cursor: pointer;
+}
+
+.message-edit-inline-button:hover {
+  text-decoration: underline;
+}

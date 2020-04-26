@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageActionsContainer from './message_actions_container';
+import MessageOptionsContainer from './message_options_container';
 
 class MessageItem extends React.Component {
   constructor(props) {
@@ -46,7 +46,11 @@ class MessageItem extends React.Component {
     const firstMessageContent = (firstMessage.id === this.props.editId) ?
       <form className="message-edit-box-form" onSubmit={this.handleSubmit}>
         <input className="message-edit-box-input"onChange={this.handleChange} value={this.state.editInput}/>
-        <p className="message-edit-box-footer">escape to cancel • enter to save</p>
+        <p className="message-edit-box-footer">escape to  
+          <button className="message-edit-inline-button" onClick={() => this.props.setMessageEditId(null)}>cancel</button>
+          • escape to 
+          <button className="message-edit-inline-button" onClick={() => this.handleSubmit}>save</button> 
+        </p>
       </form> :
       <span className="message-first-content-text">{firstMessage.content}{firstMessageEdited}</span>
       
@@ -56,10 +60,14 @@ class MessageItem extends React.Component {
           {message.id === this.props.editId ?
             <form className="message-edit-box-form" onSubmit={this.handleSubmit}>
               <input className="message-edit-box-input" onChange={this.handleChange} value={this.state.editInput}/>
-              <p className="message-edit-box-footer">escape to cancel • enter to save</p>
+              <p className="message-edit-box-footer">escape to
+                <button className="message-edit-inline-button" onClick={() => this.props.setMessageEditId(null)}>cancel</button>
+                • enter to 
+                <button className="message-edit-inline-button" onClick={() => this.handleSubmit}>save</button> 
+              </p>
             </form> :
             <div className="message-content-text">{message.content}{message.edited ? <span className="message-edited">(edited)</span> : null}</div>}
-          <MessageActionsContainer message={message}/>
+          <MessageOptionsContainer message={message}/>
         </div>
     )
     const username = this.props.users[firstMessage.userId].username;
@@ -86,7 +94,7 @@ class MessageItem extends React.Component {
             </div>
             {firstMessageContent}
           </div>
-          <MessageActionsContainer message={firstMessage}/>
+          <MessageOptionsContainer message={firstMessage}/>
         </div>
         {otherMessagesContent}
       </div>
