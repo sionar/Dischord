@@ -25,7 +25,7 @@ class Api::MessagesController < ApplicationController
   end
 
   def update
-    unless @message.update(update_params)
+    unless @message.update({content: params[:content], content_type: params[:contentType], edited: true})
       flash.now[:errors] = @channel.errors.full_messages
       render partial: 'api/errors/message_errors', status: 422
     else
@@ -54,12 +54,6 @@ class Api::MessagesController < ApplicationController
     m_params[:channel_id] = params[:channel_id]
     m_params[:user_id] = current_user.id
     m_params[:edited] = false
-    m_params
-  end
-
-  def update_params
-    m_params = params.require(:message).permit(:content, :content_type)
-    m_params[:edited] = true
     m_params
   end
 

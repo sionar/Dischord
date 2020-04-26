@@ -7,11 +7,17 @@ class MessageList extends React.Component {
     super(props);
   }
 
-  componentDidUpdate() {
-    const messageBox = document.getElementById('message-box-inner-container');
-    messageBox.scrollTo({left: 0, top: messageBox.scrollHeight, behavior: 'smooth'});
+  componentDidUpdate(prevProps) {
+    if (this.props.editMessageId === null && prevProps.editMessageId === null) {
+      const messageBox = document.getElementById('message-box-inner-container');
+      messageBox.scrollTo({left: 0, top: messageBox.scrollHeight, behavior: 'smooth'});
+    }
   }
   
+  setEditId(id) {
+    this.editId = id;
+  }
+
   render() {
     const messages = this.props.messageBlocks[0].length > 0 ?    
       this.props.messageBlocks.map(

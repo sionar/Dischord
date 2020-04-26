@@ -29,11 +29,13 @@ const mapStateToProps = (state, ownProps) => {
 
   return ({
     messageBlocks: messageBlocks,
-    users: state.entities.users
+    users: state.entities.users,
+    editMessageId: state.ui.editMessageId
   })
 }
 
 const mapDispatchToProps = dispatch => ({
+  setEditMessageId: id => dispatch(setEditMessageId(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageList);

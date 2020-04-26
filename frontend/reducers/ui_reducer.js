@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux';
 import modalsReducer from './modals_reducer';
 import channelIdReducer from './channel_id_reducer';
-import messageIdReducer from './message_id_reducer';
+import editMessageIdReducer from './edit_message_id_reducer';
+import deleteMessageIdReducer from './delete_message_id_reducer';
 import loadingReducer from './loading_reducer'
 
 const uiReducer = combineReducers({
   modal: modalsReducer,
   channelId: channelIdReducer,
-  messageId: messageIdReducer,
+  editMessageId: editMessageIdReducer,
+  deleteMessageId: deleteMessageIdReducer,
   doneLoading: loadingReducer
 });
 

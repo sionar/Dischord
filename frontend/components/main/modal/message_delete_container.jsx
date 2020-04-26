@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
   messages: state.entities.messages,
   channels: state.entities.channels,
   users: state.entities.users,
-  id: state.ui.messageId,
+  id: state.ui.deleteMessageId,
   errors: state.errors.messageErrors
 });
 
