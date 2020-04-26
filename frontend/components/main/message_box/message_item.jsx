@@ -8,12 +8,18 @@ class MessageItem extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePress = this.handlePress.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.editId && prevProps.editId !== this.props.editId) {
       this.setState({editInput: this.props.messages[this.props.editId].content});
     }
+  }
+
+  handleCancel(e) {
+    e.preventDefault();
+    this.props.setEditMessageId(null);
   }
 
   handlePress(e) {
@@ -47,7 +53,7 @@ class MessageItem extends React.Component {
       <form className="message-edit-box-form" onSubmit={this.handleSubmit}>
         <input className="message-edit-box-input"onChange={this.handleChange} value={this.state.editInput}/>
         <p className="message-edit-box-footer">escape to  
-          <button className="message-edit-inline-button" onClick={() => this.props.setMessageEditId(null)}>cancel</button>
+          <button className="message-edit-inline-button" onClick={() => this.handleCancel}>cancel</button>
           • escape to 
           <button className="message-edit-inline-button" onClick={() => this.handleSubmit}>save</button> 
         </p>
@@ -61,7 +67,7 @@ class MessageItem extends React.Component {
             <form className="message-edit-box-form" onSubmit={this.handleSubmit}>
               <input className="message-edit-box-input" onChange={this.handleChange} value={this.state.editInput}/>
               <p className="message-edit-box-footer">escape to
-                <button className="message-edit-inline-button" onClick={() => this.props.setMessageEditId(null)}>cancel</button>
+                <button className="message-edit-inline-button" onClick={() => this.handleCancel}>cancel</button>
                 • enter to 
                 <button className="message-edit-inline-button" onClick={() => this.handleSubmit}>save</button> 
               </p>

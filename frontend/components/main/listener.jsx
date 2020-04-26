@@ -69,12 +69,7 @@ class Listener extends React.Component {
                 disconnected: () => {
                 },
                 received: data => {
-                    let payload = {
-                        messages: {
-                            [data.message.id]: data.message
-                        }
-                    }
-                    this.actions[data.action](payload);
+                    this.actions[data.action](data.payload);
                 }
             }               
         );

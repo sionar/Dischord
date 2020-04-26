@@ -9,18 +9,7 @@ class Api::MessagesController < ApplicationController
       flash.now[:errors] = @message.errors.full_messages
       render partial: 'api/errors/message_errors', status: 422
     else
-      ActionCable.server.broadcast("server-#{@message.server.id}",
-        action: 'receiveMessage',
-        message: {
-          id: @message.id,
-          userId: @message.user_id,
-          channelId: @message.channel_id,
-          content: @message.content,
-          contentType: @message.content_type,
-          edited: @message.edited,
-          createdAt: @message.created_at,
-        },
-      )
+      broadcast('receiveMessage', @message)
       render :create, status: 200
     end
   end
@@ -30,18 +19,7 @@ class Api::MessagesController < ApplicationController
       flash.now[:errors] = @channel.errors.full_messages
       render partial: 'api/errors/message_errors', status: 422
     else
-      ActionCable.server.broadcast("server-#{@message.server.id}",
-        action: 'editMessage',
-        message: {
-          id: @message.id,
-          userId: @message.user_id,
-          channelId: @message.channel_id,
-          content: @message.content,
-          contentType: @message.content_type,
-          edited: @message.edited,
-          createdAt: @message.created_at,
-        },
-      )
+      broadcast('editMessage', @message)
       render :update, status: 200
     end
   end
@@ -50,18 +28,7 @@ class Api::MessagesController < ApplicationController
     @message = Message.find_by(id: params[:id])
     if @message
       if @message.destroy
-        ActionCable.server.broadcast("server-#{@message.server.id}",
-          action: 'deleteMessage',
-          message: {
-            id: @message.id,
-            userId: @message.user_id,
-            channelId: @message.channel_id,
-            content: @message.content,
-            contentType: @message.content_type,
-            edited: @message.edited,
-            createdAt: @message.created_at,
-          },
-        )
+        broadcast('deleteMessage', @message)
         render :destroy, status: 200
       else
         flash.now[:errors] = @message.errors.full_messages
@@ -98,5 +65,22 @@ class Api::MessagesController < ApplicationController
       flash.now[:errors] = ['You do have permissions for this message.']
       render partial: 'api/errors/channel_errors', status: 403
     end
+  end
+
+  def broadcast(action, message)
+    response = Hash.new
+    response[:action] = action
+    response[:payload] = Hash.new
+    response[:payload][:messages] = Hash.new
+    response[:payload][:messages][message.id] = {
+      id: message.id,
+      userId: message.user_id,
+      channelId: message.channel_id,
+      content: message.content,
+      contentType: message.content_type,
+      edited: message.edited,
+      createdAt: message.created_at,
+    }
+    ActionCable.server.broadcast("server-#{message.server.id}", response)
   end
 end

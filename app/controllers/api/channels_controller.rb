@@ -7,9 +7,18 @@ class Api::ChannelsController < ApplicationController
       flash.now[:errors] = @channel.errors.full_messages
       render partial: 'api/errors/channel_errors', status: 422
     else
+      ActionCable.server.broadcast("server-#{@channel.server_id}",
+        dataType: 'channel',
+        action: 'createChannel',
+        channel: {
+          id: @channel.id,
+          name: @channel.name,
+          description: @channel.description,
+          serverId: @channel.server_id,
+        },
+      )
       render :create, status: 200
     end
-
   end
 
   def update
@@ -18,6 +27,16 @@ class Api::ChannelsController < ApplicationController
       flash.now[:errors] = @channel.errors.full_messages
       render partial: 'api/errors/channel_errors', status: 422
     else
+      ActionCable.server.broadcast("server-#{@channel.server_id}",
+        dataType: 'channel',
+        action: 'createChannel',
+        channel: {
+          id: @channel.id,
+          name: @channel.name,
+          description: @channel.description,
+          serverId: @channel.server_id,
+        },
+      )
       render :update, status: 200
     end
   end
