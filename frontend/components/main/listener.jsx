@@ -17,7 +17,8 @@ class Listener extends React.Component {
             deleteChannel: this.props.deleteChannel,
             editServer: this.props.editServer,
             deleteServer: this.props.deleteServer,
-            foreignLeaveServer: this.props.foreignLeaveServer
+            foreignLeaveServer: this.props.foreignLeaveServer,
+            receiveUser: this.props.receiveUser
         }
     }
 

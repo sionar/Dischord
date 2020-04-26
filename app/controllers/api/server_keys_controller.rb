@@ -28,10 +28,12 @@ class Api::ServerKeysController < ApplicationController
         @users = @server.subscribed_users
         @server_keys = @server.server_keys
         @channels = @server.channels
-        @subscriptions = @server.subscriptions.push(Subscription.create(user_id: current_user.id, server_id: @server.id))
+        @subscription = Subscription.create(user_id: current_user.id, server_id: @server.id)
+        @subscriptions = @server.subscriptions.push(@subscription)
         @active_channels = Hash.new
         @active_channels[@server.id] = @channels.first.id unless @channels.empty?
         @messages = @server.messages
+        broadcast('receiveUser', @subscription)
         render :show, status: 200
       end
     end
@@ -54,5 +56,26 @@ class Api::ServerKeysController < ApplicationController
       flash[:errors] = ['Current user not subscribed to the server.']
       render partial: 'api/errors/server_errors', status: 422
     end
+  end
+
+  def broadcast(action, subscription)
+    user = User.find_by(id: subscription.user_id)
+    response = Hash.new
+    response[:action] = action
+    response[:payload] = Hash.new
+    response[:payload][:subscriptions] = Hash.new
+    response[:payload][:subscriptions][subscription.id] = {
+      id: subscription.id,
+      userId: subscription.user_id,
+      serverId: subscription.server_id
+    }
+    response[:payload][:users] = Hash.new
+    response[:payload][:users][user.id] = {
+      id: user.id,
+      username: user.username,
+      usertag: user.usertag,
+      imageUrl: url_for(user.image)
+    }
+    ActionCable.server.broadcast("server-#{subscription.server_id}", response)
   end
 end

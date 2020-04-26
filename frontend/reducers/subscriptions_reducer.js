@@ -1,3 +1,4 @@
+import { RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_SERVER_DATA } from '../actions/server_key_actions';
 import { CREATE_SERVER, RECEIVE_DATA, DELETE_SERVER} from '../actions/server_actions';
 import { LEAVE_SERVER, FOREIGN_LEAVE_SERVER } from '../actions/subscription_actions';
@@ -9,6 +10,8 @@ export default (state = {}, action) => {
   let keys, serverId, subscriptionId;
   
   switch (action.type) {
+    case RECEIVE_USER:
+      return Object.assign(nextState, action.payload.subscriptions);
     case RECEIVE_SERVER_DATA:
       return Object.assign(nextState, action.payload.subscriptions);
     case CREATE_SERVER:
