@@ -9,7 +9,7 @@ class Api::MessagesController < ApplicationController
       flash.now[:errors] = @message.errors.full_messages
       render partial: 'api/errors/message_errors', status: 422
     else
-      broadcast('receiveMessage', @message)
+      broadcast('createMessage', @message)
       render :create, status: 200
     end
   end

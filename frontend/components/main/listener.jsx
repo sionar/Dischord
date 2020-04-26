@@ -8,9 +8,12 @@ class Listener extends React.Component {
         this.createSockets = this.createSockets.bind(this);
         this.createSocket = this.createSocket.bind(this);
         this.actions = {
-            receiveMessage: this.props.receiveMessage,
+            createMessage: this.props.createMessage,
             editMessage: this.props.editMessage,
-            deleteMessage: this.props.deleteMessage
+            deleteMessage: this.props.deleteMessage,
+            createChannel: this.props.createChannel,
+            editChannel: this.props.editChannel,
+            deleteChannel: this.props.deleteChannel,
         }
     }
 

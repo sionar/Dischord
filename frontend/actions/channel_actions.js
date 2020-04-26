@@ -17,18 +17,15 @@ export const editChannel = payload => ({
   payload
 });
 
-export const deleteChannel = channel => ({
+export const deleteChannel = payload => ({
   type: DELETE_CHANNEL,
-  channel
+  payload
 });
 
 export const receiveChannelErrors = (errors) => ({
   type: RECEIVE_CHANNEL_ERRORS,
   errors
 });
-
-
-
 
 export const makeChannel = channel => dispatch => ChannelUtil.makeChannel(channel)
   .then(res => dispatch(createChannel(res.entities)))
@@ -39,5 +36,5 @@ export const updateChannel = channel => dispatch => ChannelUtil.updateChannel(ch
   .fail(res => dispatch(receiveChannelErrors(res.responseJSON.errors.channelErrors)));
 
 export const destroyChannel = channel => dispatch => ChannelUtil.destroyChannel(channel)
-  .then(() => dispatch(deleteChannel(channel)))
+  .then(res => dispatch(deleteChannel(res.entities)))
   .fail(res => dispatch(receiveChannelErrors(res.responseJSON.errors.channelErrors)));

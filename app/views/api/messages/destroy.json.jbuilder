@@ -1,5 +1,5 @@
 json.entities do
-  json.mesages do
+  json.messages do
     json.set! @message.id, nil
   end
 end

@@ -1,15 +1,9 @@
 import * as MessageUtil from '../util/api_message_util';
 
-export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const CREATE_MESSAGE = 'CREATE_MESSAGE';
 export const EDIT_MESSAGE = 'EDIT_MESSAGE';
 export const DELETE_MESSAGE = 'DELETE_MESSAGE';
 export const RECEIVE_MESSAGE_ERRORS = 'RECEIVE_MESSAGE_ERRORS';
-
-export const receiveMessage = payload => ({
-  type: RECEIVE_MESSAGE,
-  payload
-})
 
 export const createMessage = payload => ({
   type: CREATE_MESSAGE,
@@ -41,5 +35,5 @@ export const updateMessage = (message, channel) => dispatch => MessageUtil.updat
   .fail(res => dispatch(receiveMessageErrors(res.responseJSON.errors.messageErrors)));
 
 export const destroyMessage = (message, channel) => dispatch => MessageUtil.destroyMessage(message, channel)
-  .then(() => dispatch(deleteMessage(res.entities)))
+  .then(res => dispatch(deleteMessage(res.entities)))
   .fail(res => dispatch(receiveMessageErrors(res.responseJSON.errors.messageErrors)));

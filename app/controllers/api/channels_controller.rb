@@ -7,16 +7,7 @@ class Api::ChannelsController < ApplicationController
       flash.now[:errors] = @channel.errors.full_messages
       render partial: 'api/errors/channel_errors', status: 422
     else
-      ActionCable.server.broadcast("server-#{@channel.server_id}",
-        dataType: 'channel',
-        action: 'createChannel',
-        channel: {
-          id: @channel.id,
-          name: @channel.name,
-          description: @channel.description,
-          serverId: @channel.server_id,
-        },
-      )
+      broadcast('createChannel', @channel)
       render :create, status: 200
     end
   end
@@ -27,16 +18,7 @@ class Api::ChannelsController < ApplicationController
       flash.now[:errors] = @channel.errors.full_messages
       render partial: 'api/errors/channel_errors', status: 422
     else
-      ActionCable.server.broadcast("server-#{@channel.server_id}",
-        dataType: 'channel',
-        action: 'createChannel',
-        channel: {
-          id: @channel.id,
-          name: @channel.name,
-          description: @channel.description,
-          serverId: @channel.server_id,
-        },
-      )
+      broadcast('editChannel', @channel)
       render :update, status: 200
     end
   end
@@ -45,6 +27,7 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.find_by(id: params[:id])
     if @channel
       if @channel.destroy
+        broadcast('deleteChannel', @channel)
         render :destroy, status: 200
       else
         flash.now[:errors] = @channel.errors.full_messages
@@ -69,6 +52,20 @@ class Api::ChannelsController < ApplicationController
       flash.now[:errors] = ['You do not own this server.']
       render partial: 'api/errors/channel_errors', status: 403
     end
+  end
+
+  def broadcast(action, channel)
+    response = Hash.new
+    response[:action] = action
+    response[:payload] = Hash.new
+    response[:payload][:channels] = Hash.new
+    response[:payload][:channels][channel.id] = {
+      id: channel.id,
+      name: channel.name,
+      description: channel.description,
+      serverId: channel.server_id,
+    }
+    ActionCable.server.broadcast("server-#{channel.server_id}", response)
   end
 end
 

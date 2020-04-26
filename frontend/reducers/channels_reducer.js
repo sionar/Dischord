@@ -13,7 +13,8 @@ export default (state = {}, action) => {
     case EDIT_CHANNEL:
       return Object.assign(nextState, action.payload.channels);
     case DELETE_CHANNEL:
-      delete nextState[action.channel.id];
+      const channelId = Object.keys(action.payload.channels)[0];
+      delete nextState[channelId];
       return nextState;
     case RECEIVE_SERVER_DATA:
       return Object.assign(nextState, action.payload.channels);
