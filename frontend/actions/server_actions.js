@@ -17,14 +17,14 @@ export const createServer = payload => ({
   payload
 });
 
-export const editServer = server => ({
+export const editServer = payload => ({
   type: EDIT_SERVER,
-  server
+  payload
 });
 
-export const deleteServer = server => ({
+export const deleteServer = payload => ({
   type: DELETE_SERVER,
-  server
+  payload
 });
 
 export const removeServer = subscription => ({
@@ -46,11 +46,11 @@ export const makeServer = server => dispatch => ServerUtil.makeServer(server)
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
 
 export const updateServer = (server, id) => dispatch => ServerUtil.updateServer(server, id)
-  .then(res => dispatch(editServer(res.entities.servers)))
+  .then(res => dispatch(editServer(res.entities)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
 
 export const destroyServer = server => dispatch => ServerUtil.destroyServer(server)
-  .then(() => dispatch(deleteServer(server)))
+  .then((res) => dispatch(deleteServer(res.entities)))
   .fail(res => dispatch(receiveServerErrors(res.responseJSON.errors.serverErrors)));
 
 export const leaveServer = subscription => dispatch => ServerUtil.leaveServer(subscription)

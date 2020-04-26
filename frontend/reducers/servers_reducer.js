@@ -12,9 +12,10 @@ export default (state = {}, action) => {
     case CREATE_SERVER:
       return Object.assign(nextState, action.payload.servers);
     case EDIT_SERVER:
-      return Object.assign(nextState, action.server);
+      return Object.assign(nextState, action.payload.servers);
     case DELETE_SERVER:
-      delete nextState[action.server.id];
+      const serverId = Number(Object.keys(action.payload.servers)[0]);
+      delete nextState[serverId];
       return nextState;
     case REMOVE_SERVER:
       delete nextState[action.subscription.serverId];

@@ -1,5 +1,6 @@
 import React from 'react';
 import Cable from 'actioncable';
+import { matchPath } from "react-router-dom";
 
 class Listener extends React.Component {
     constructor(props) {
@@ -14,6 +15,8 @@ class Listener extends React.Component {
             createChannel: this.props.createChannel,
             editChannel: this.props.editChannel,
             deleteChannel: this.props.deleteChannel,
+            editServer: this.props.editServer,
+            deleteServer: this.props.deleteServer
         }
     }
 
@@ -72,6 +75,15 @@ class Listener extends React.Component {
                 disconnected: () => {
                 },
                 received: data => {
+                    if (data.action == 'deleteServer') {
+                        const match = matchPath(this.props.location.pathname, {
+                            path: "/channels/:serverId/:channelId"
+                        })
+                        
+                        if (match.params.serverId === Object.keys(data.payload.servers)[0]) {
+                            this.props.history.push('/channels/@me');
+                        }
+                    }
                     this.actions[data.action](data.payload);
                 }
             }               

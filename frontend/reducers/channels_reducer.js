@@ -23,7 +23,7 @@ export default (state = {}, action) => {
     case CREATE_SERVER:
       return Object.assign(nextState, action.payload.channels);
     case DELETE_SERVER:
-      serverId = action.server.id;
+      serverId = Number(Object.keys(action.payload.servers)[0]);
       channelKeys = Object.keys(nextState);
       for (let i = 0; i < channelKeys.length; i++) {
         if (nextState[channelKeys[i]].serverId === serverId)

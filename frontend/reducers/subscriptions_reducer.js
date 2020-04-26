@@ -17,9 +17,10 @@ export default (state = {}, action) => {
     case LOGOUT_CURRENT_USER:
       return {};
     case DELETE_SERVER:
+      const serverId = Number(Object.keys(action.payload.servers)[0]);
       keys = Object.keys(nextState);
       keys.forEach(key => {
-        if (nextState[key].serverId === action.server.id)
+        if (nextState[key].serverId === serverId)
           delete nextState[key];
         })
       return nextState;

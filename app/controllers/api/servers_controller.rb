@@ -51,6 +51,7 @@ class Api::ServersController < ApplicationController
           flash.now[:errors] = @server.errors.full_messages
           render partial: 'api/errors/server_errors', status: 422
         else
+          broadcast('editServer', @server)
           render :update, status: 200
         end
       end
@@ -62,6 +63,7 @@ class Api::ServersController < ApplicationController
     if @server
       if @server.owner_id == current_user.id
         if @server.destroy
+          broadcast('deleteServer', @server)
           render :destroy, status: 200
         else
           flash.now[:errors] = @server.errors.full_messages
@@ -77,9 +79,26 @@ class Api::ServersController < ApplicationController
     end
   end
 
+  private
   def server_params
     serv_params = params.require(:server).permit(:name, :private, :image)
     serv_params[:owner_id] = current_user.id
     serv_params
+  end
+
+  def broadcast(action, server)
+    response = Hash.new
+    response[:action] = action
+    response[:payload] = Hash.new
+    response[:payload][:servers] = Hash.new
+    response[:payload][:servers][server.id] = {
+      id: server.id,
+      name: server.name,
+      ownerId: server.owner_id,
+      private: server.private,
+      imageUrl: url_for(server.image),
+      activeChannel: server.channels.first ? server.channels.first.id : 0
+    }
+    ActionCable.server.broadcast("server-#{server.id}", response)
   end
 end

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Listener from './listener';
 import { createMessage, editMessage, deleteMessage } from '../../actions/message_actions';
 import { createChannel, editChannel, deleteChannel } from '../../actions/channel_actions';
-
+import { editServer, deleteServer } from '../../actions/server_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.id,
@@ -19,7 +19,9 @@ const mapDispatchToProps = (dispatch) => ({
   deleteMessage: payload => dispatch(deleteMessage(payload)),
   createChannel: payload => dispatch(createChannel(payload)),
   editChannel: payload => dispatch(editChannel(payload)),
-  deleteChannel: payload => dispatch(deleteChannel(payload)),
+  deleteChannel: payload => dispatch(editChannel(payload)),
+  editServer: payload => dispatch(editServer(payload)),
+  deleteServer: payload => dispatch(deleteServer(payload)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Listener);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Listener));
