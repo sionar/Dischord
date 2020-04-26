@@ -8,15 +8,12 @@ class UsersBar extends React.Component{
   }
 
   render() {
-    let list;
-    let serverId = this.props.match.params.serverId
-    if (serverId === '@me'|| Object.entries(this.props.users).length === 0)
-      list = null;
-    else {
-      const id = Number(serverId);
-      list = this.props.users[id].map(
-        user => <UserButtonContainer key={user.id} user={user} />)
-      }
+    const users = Object.values(this.props.subscriptions)
+      .filter(subscription => Number(subscription.serverId) === Number(this.props.match.params.serverId))
+      .map(subscription => this.props.users[subscription.userId]);      
+
+    const list = users.map(user => <UserButtonContainer key={user.id} user={user} />);
+      
     return (
       <section id="users-bar">
         <div id="users-bar-content">

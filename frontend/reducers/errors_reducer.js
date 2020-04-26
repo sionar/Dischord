@@ -7,7 +7,6 @@ import subscriptionErrorsReducer from './subscription_errors_reducer';
 import channelErrorsReducer from './channel_errors_reducer';
 import messageErrorsReducer from './message_errors_reducer';
 
-
 const errorsReducer = combineReducers({
   sessionErrors: sessionErrorsReducer,
   userErrors: userErrorsReducer,

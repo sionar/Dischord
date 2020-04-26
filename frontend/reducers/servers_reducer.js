@@ -7,6 +7,7 @@ import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 export default (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
+  let serverId;
   switch (action.type) {
     case RECEIVE_DATA:
       return action.payload.servers;
@@ -15,11 +16,12 @@ export default (state = {}, action) => {
     case EDIT_SERVER:
       return Object.assign(nextState, action.payload.servers);
     case DELETE_SERVER:
-      const serverId = Number(Object.keys(action.payload.servers)[0]);
+      serverId = Number(Object.keys(action.payload.servers)[0]);
       delete nextState[serverId];
       return nextState;
     case LEAVE_SERVER:
-      delete nextState[action.subscription.serverId];
+      serverId = Object.values(action.payload.subscriptions)[0].serverId;
+      delete nextState[serverId];
       return nextState;
     case RECEIVE_SERVER_DATA:
       return Object.assign(nextState, action.payload.servers);

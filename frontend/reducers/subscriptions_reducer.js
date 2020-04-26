@@ -1,12 +1,12 @@
 import { RECEIVE_SERVER_DATA } from '../actions/server_key_actions';
 import { CREATE_SERVER, RECEIVE_DATA, DELETE_SERVER} from '../actions/server_actions';
-import { LEAVE_SERVER } from '../actions/subscription_actions';
+import { LEAVE_SERVER, FOREIGN_LEAVE_SERVER } from '../actions/subscription_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 export default (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
-  let keys;
+  let keys, serverId, subscriptionId;
   
   switch (action.type) {
     case RECEIVE_SERVER_DATA:
@@ -18,7 +18,7 @@ export default (state = {}, action) => {
     case LOGOUT_CURRENT_USER:
       return {};
     case DELETE_SERVER:
-      const serverId = Number(Object.keys(action.payload.servers)[0]);
+      serverId = Number(Object.keys(action.payload.servers)[0]);
       keys = Object.keys(nextState);
       keys.forEach(key => {
         if (nextState[key].serverId === serverId)
@@ -26,11 +26,12 @@ export default (state = {}, action) => {
         })
       return nextState;
     case LEAVE_SERVER:
-      keys = Object.keys(nextState);
-      keys.forEach(key => {
-        if (nextState[key].serverId === action.subscription.serverId)
-          delete nextState[key];
-        })
+      subscriptionId = Number(Object.keys(action.payload.subscriptions)[0]);
+      delete nextState[subscriptionId];
+      return nextState;
+    case FOREIGN_LEAVE_SERVER:
+      subscriptionId = Number(Object.keys(action.payload.subscriptions)[0]);
+      delete nextState[subscriptionId];
       return nextState;
     default:
       return state;

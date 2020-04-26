@@ -5,6 +5,7 @@ import Listener from './listener';
 import { createMessage, editMessage, deleteMessage } from '../../actions/message_actions';
 import { createChannel, editChannel, deleteChannel } from '../../actions/channel_actions';
 import { editServer, deleteServer } from '../../actions/server_actions';
+import { foreignLeaveServer } from '../../actions/subscription_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.id,
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
   deleteChannel: payload => dispatch(editChannel(payload)),
   editServer: payload => dispatch(editServer(payload)),
   deleteServer: payload => dispatch(deleteServer(payload)),
+  foreignLeaveServer: payload => dispatch(foreignLeaveServer(payload))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Listener));

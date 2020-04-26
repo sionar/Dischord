@@ -1,6 +1,6 @@
 json.entities do
   json.subscriptions do
-    json.set! @subscription.id, nil
+    json.partial! 'subscription', subscription: @subscription
   end
 end
 

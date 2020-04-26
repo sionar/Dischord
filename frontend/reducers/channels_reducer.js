@@ -32,7 +32,7 @@ export default (state = {}, action) => {
       }
       return nextState;
     case LEAVE_SERVER:
-      serverId = action.subscription.serverId;
+      serverId = Object.values(action.payload.subscriptions)[0].serverId;
       channelKeys = Object.keys(nextState);
       for (let i = 0; i < channelKeys.length; i++) {
         if (nextState[channelKeys[i]].serverId === serverId)
