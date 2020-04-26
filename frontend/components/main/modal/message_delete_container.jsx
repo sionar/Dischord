@@ -6,12 +6,15 @@ import MessageDelete from './message_delete';
 
 const mapStateToProps = state => ({
   messages: state.entities.messages,
+  channels: state.entities.channels,
+  users: state.entities.users,
+  id: state.ui.messageId,
   errors: state.errors.messageErrors
 });
 
 const mapDispatchToProps = dispatch => ({ 
   closeModal: () => dispatch(closeModal()),
-  destroyMessage: message => dispatch(destroyMessage(message))
+  destroyMessage: (message, channel) => dispatch(destroyMessage(message, channel))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageDelete);

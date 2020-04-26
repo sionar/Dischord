@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { openModal } from '../../../actions/modal_actions';
+import { setDeleteMessageId } from '../../../actions/ui_actions';
 
 import MessageActions from './message_actions';
 
@@ -13,6 +14,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   openModal: modal => dispatch(openModal(modal)),
+  setDeleteMessageId: id => dispatch(setDeleteMessageId(id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MessageActions));

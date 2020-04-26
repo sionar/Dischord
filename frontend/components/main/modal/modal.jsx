@@ -99,7 +99,7 @@ const Modal = ({modal, closeModal}) => {
       break;
     case 'deleteMessage':
         component = (
-          <div className="modal-child-channel" onMouseDown={e => e.stopPropagation()}> 
+          <div className="modal-child-delete-message" onMouseDown={e => e.stopPropagation()}> 
             <MessageDeleteContainer />
           </div>
         )

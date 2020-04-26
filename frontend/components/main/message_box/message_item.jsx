@@ -6,6 +6,8 @@ class MessageItem extends React.Component {
     super(props);
   }
 
+  
+
   render() {
     const firstMessage = this.props.messageBlock[0];
     const otherMessages = this.props.messageBlock.slice(1);

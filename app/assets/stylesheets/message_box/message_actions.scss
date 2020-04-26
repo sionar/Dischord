@@ -37,7 +37,7 @@
 }
 
 .message-delete-button:hover .message-delete-icon path {
-  fill: rgba(241, 46, 46, 0.6);
+  fill: #f04747;
 }
 
 .message-edit-button {
@@ -50,4 +50,18 @@
 
 .message-edit-icon path {
   fill: rgba(255,255,255,0.6);
+}
+
+.message-delete-cancel-button {
+  width: 98px;
+  height: 38px;
+  padding: 2px 16px;
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  cursor: pointer;
 }
