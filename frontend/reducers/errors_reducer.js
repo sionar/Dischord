@@ -3,6 +3,7 @@ import sessionErrorsReducer from './session_errors_reducer';
 import userErrorsReducer from './user_errors_reducer';
 import serverKeyErrorsReducer from './server_keys_errors_reducer';
 import serverErrorsReducer from './server_errors_reducer';
+import subscriptionErrorsReducer from './subscription_errors_reducer';
 import channelErrorsReducer from './channel_errors_reducer';
 import messageErrorsReducer from './message_errors_reducer';
 
@@ -12,6 +13,7 @@ const errorsReducer = combineReducers({
   userErrors: userErrorsReducer,
   serverKeyErrors: serverKeyErrorsReducer,
   serverErrors: serverErrorsReducer,
+  subscriptionErrors: subscriptionErrorsReducer,
   channelErrors: channelErrorsReducer,
   messageErrors: messageErrorsReducer
 });

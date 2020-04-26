@@ -1,6 +1,7 @@
 import { CREATE_CHANNEL, EDIT_CHANNEL, DELETE_CHANNEL } from '../actions/channel_actions';
 import { RECEIVE_SERVER_DATA } from '../actions/server_key_actions';
-import { RECEIVE_DATA, CREATE_SERVER, DELETE_SERVER, REMOVE_SERVER } from '../actions/server_actions';
+import { RECEIVE_DATA, CREATE_SERVER, DELETE_SERVER } from '../actions/server_actions';
+import { LEAVE_SERVER } from '../actions/subscription_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 export default (state = {}, action) => {
@@ -30,7 +31,7 @@ export default (state = {}, action) => {
           delete nextState[channelKeys[i]]; 
       }
       return nextState;
-    case REMOVE_SERVER:
+    case LEAVE_SERVER:
       serverId = action.subscription.serverId;
       channelKeys = Object.keys(nextState);
       for (let i = 0; i < channelKeys.length; i++) {

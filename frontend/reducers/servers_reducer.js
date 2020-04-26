@@ -1,4 +1,5 @@
-import { RECEIVE_DATA, CREATE_SERVER, EDIT_SERVER, DELETE_SERVER, REMOVE_SERVER } from '../actions/server_actions';
+import { RECEIVE_DATA, CREATE_SERVER, EDIT_SERVER, DELETE_SERVER} from '../actions/server_actions';
+import { LEAVE_SERVER } from '../actions/subscription_actions';
 import { RECEIVE_SERVER_DATA } from '../actions/server_key_actions';
 import { CHANGE_ACTIVE_CHANNEL } from '../actions/ui_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
@@ -17,7 +18,7 @@ export default (state = {}, action) => {
       const serverId = Number(Object.keys(action.payload.servers)[0]);
       delete nextState[serverId];
       return nextState;
-    case REMOVE_SERVER:
+    case LEAVE_SERVER:
       delete nextState[action.subscription.serverId];
       return nextState;
     case RECEIVE_SERVER_DATA:

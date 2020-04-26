@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../../actions/modal_actions';
-import { leaveServer } from '../../../actions/server_actions'
+import { removeServer } from '../../../actions/subscription_actions'
 import ServerLeave from './server_leave';
 
 const mapStateToProps = state => ({
@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({ 
   openModal: modal => dispatch(openModal(modal)),
   closeModal: () => dispatch(closeModal()),
-  leaveServer: server => dispatch(leaveServer(server))
+  removeServer: server => dispatch(removeServer(server))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ServerLeave);

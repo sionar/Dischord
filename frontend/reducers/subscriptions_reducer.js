@@ -1,5 +1,6 @@
 import { RECEIVE_SERVER_DATA } from '../actions/server_key_actions';
-import { CREATE_SERVER, RECEIVE_DATA, DELETE_SERVER, REMOVE_SERVER } from '../actions/server_actions';
+import { CREATE_SERVER, RECEIVE_DATA, DELETE_SERVER} from '../actions/server_actions';
+import { LEAVE_SERVER } from '../actions/subscription_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 export default (state = {}, action) => {
@@ -24,7 +25,7 @@ export default (state = {}, action) => {
           delete nextState[key];
         })
       return nextState;
-    case REMOVE_SERVER:
+    case LEAVE_SERVER:
       keys = Object.keys(nextState);
       keys.forEach(key => {
         if (nextState[key].serverId === action.subscription.serverId)

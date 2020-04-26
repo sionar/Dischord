@@ -13,7 +13,7 @@ class ServerLeave extends React.Component {
     const userId = this.props.session.id;
     const subs = Object.values(this.props.subscriptions);
     const sub = subs.filter(subscription => subscription.userId === userId && subscription.serverId === serverId)[0];
-    this.props.leaveServer(sub);
+    this.props.removeServer(sub);
     this.props.history.push('/channels/@me');
     this.props.closeModal();
   }
