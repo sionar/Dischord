@@ -54,7 +54,7 @@ class MessageItem extends React.Component {
         <input className="message-edit-box-input"onChange={this.handleChange} value={this.state.editInput}/>
         <p className="message-edit-box-footer">escape to  
           <button className="message-edit-inline-button" onClick={() => this.handleCancel}>cancel</button>
-          • escape to 
+          • enter to 
           <button className="message-edit-inline-button" onClick={() => this.handleSubmit}>save</button> 
         </p>
       </form> :
