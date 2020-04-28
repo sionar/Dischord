@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 100%;
 }
 
 #users-bar-user-list {
   margin-top: 10px;
+  overflow: scroll;
 }
 
 #users-bar-user-header {
